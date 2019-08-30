@@ -8,6 +8,7 @@ import io
 import numpy as np
 import matplotlib.pyplot as plt
 import collections
+import warnings
 
 from pynucastro.nucdata import UnidentifiedElement, PeriodicTable
 
@@ -1151,7 +1152,7 @@ class Rate(object):
         return nuc
 
     def eval(self, T):
-        """ evauate the reaction rate for temperature T """
+        """ evaluate the reaction rate for temperature T """
         tf = Tfactors(T)
         r = 0.0
         for s in self.sets:
@@ -1159,7 +1160,254 @@ class Rate(object):
             r += f(tf)
 
         return r
-
+        
+    @staticmethod
+    def _f0(Gamtau):
+        """
+        Helper for screen_chugunov2009, based on Chugunov 2009 eq. 24.
+        Computes free energy per ion.
+        """
+        
+        # Coefficients
+        C_A1 = -0.907
+        C_A2 = 0.62954
+        C_A3 = 0.2771
+        C_B1 = 0.00456
+        C_B2 = 211.6
+        C_B3 = -1e-4
+        C_B4 = 0.00462
+        
+        # Compute terms
+        sqrt_Gamtau = Gamtau**0.5
+        t1 = C_A1 * sqrt_Gamtau * (C_A2 + Gamtau)**0.5
+        t2 = -C_A1 * C_A2 * np.log(sqrt_Gamtau / C_A2**0.5 + (1 + Gamtau / C_A2)**0.5)
+        t3 = 2 * C_A3 * (sqrt_Gamtau - np.arctan(sqrt_Gamtau))
+        t4 = C_B1 * (Gamtau - C_B2 * np.log(1 + Gamtau / C_B2))
+        t5 = C_B3 / 2 * np.log(1 + Gamtau**2 / C_B4)
+        
+        return t1 + t2 + t3 + t4 + t5
+        
+    @staticmethod
+    def screen_chugunov2009(ion1, ion2, rho, T, Zbar, Abar):
+        """
+        Implementation of screening calculation in the style of Chugunov's 2009 paper.
+        
+        Refs:
+        Chugunov et al. 2009, PhRvC, DOI: 10.1103/PhysRevC.80.014611
+        Itoh et al. 1979, ApJ, DOI: 10.1086/157590
+        """
+        
+        # Proton and mass numbers
+        Z1, Z2 = ion1.Z, ion2.Z
+        A1, A2 = ion1.A, ion2.A
+        
+        # Some physical constants in CGS units
+        amu = 1.6605390666e-24 # g
+        qe = 4.80320425e-10 # esu
+        hbar = 1.05457266e-27 # erg * s
+        k_B = 1.38064903e-16 # erg / K
+        
+        # Average mass and total number density
+        mbar = Abar * amu
+        ntot = rho / mbar
+        
+        # It is unclear whether this has the same lower bound as the 2007 fit
+        """
+        # Plasma temperature and frequency
+        omega_p = Zbar * qe * (4 * np.pi * ntot / mbar)**0.5
+        T_p = hbar * omega_p / k_B
+        
+        # The 2007 fit is only accurate for T / T_p >~ 0.1
+        # Smoothly set a lower bound using a sigmoid
+        T1, T2 = 0.1, 0.2
+        T0 = 0.5 * (T1 + T2)
+        Trat = T / T_p
+        
+        if Trat <= 0.5 * T1:
+            
+            # Sigmoid will be about 0
+            # Set T to the lower bound
+            T = T1 * T_p
+            Trat = T1
+            
+        elif Trat <= 2 * T2:
+            
+            # Blend using the sigmoid
+            s = 1 / (1 + np.exp((T0 - Trat) / 0.01))
+            Trat = (1 - s) * T1 + s * Trat
+            T = Trat * T_p
+        """
+        
+        # Compute electron sphere radius
+        a_e = (0.75 / (np.pi * Zbar * ntot))**(1/3)
+        
+        # Coulomb coupling factors
+        Gamma_e = qe**2 / (a_e * k_B * T)
+        Gamma1 = Z1**(5/3) * Gamma_e
+        Gamma2 = Z2**(5/3) * Gamma_e
+        Gamma12 = 2 * Z1 * Z2 * Gamma_e / (Z1**(1/3) + Z2**(1/3))
+        Gamma12_comp = (Z1 + Z2)**(5/3) * Gamma_e
+        
+        # Reduced mass and barrier penetrability (Chugunov 2009 eq. 10)
+        mu12 = A1 * A2 / (A1 + A2) * amu
+        tau12 = (27 * (np.pi * Z1 * Z2)**2 * mu12 * qe**4 / (2 * k_B * T * hbar**2))**(1/3)
+        
+        # Fit was constructed for Gamma <= 200, but 2007 version is accurate up to ~600
+        # In 2009 paper they say that they used 400 and 600 for testing
+        # Here the bounds are on Gamma12
+        """
+        # Assume the same upper bound, set it using sigmoid
+        Gamma_lo, Gamma_hi = 550, 650
+        Gamma0 = 599
+        Gamma_max = 600
+        
+        if Gamma12 >= Gamma_hi:
+            
+            # Sigmoid will be about 1
+            # Set Gamma tilde to the upper bound
+            Gamma12 = Gamma_max
+            
+        elif Gamma12 >= Gamma_lo:
+            
+            # Blend using the sigmoid
+            s = 1 / (1 + np.exp(Gamma0 - Gamma12))
+            Gamma12 = s * Gamma_max + (1 - s) * Gamma12
+        """
+        
+        # Strong h0
+        h0 = self._f0(Gamma1 / tau12) + self._f0(Gamma2 / tau12) - self._f0(Gamma12_comp / tau12)
+        # Apply weak screening correction
+        h0 *= ()
+        fscr = np.exp(h0)
+        
+        if fscr >= 1.e300:
+            fscr = 1.e300
+            warnings.warn("Large screening factor clipped to 1.e300 for Z1, Z2 = {}, {}"
+                    .format(Z1, Z2))
+        return fscr
+        
+    @staticmethod
+    def screen_chugunov2007(ion1, ion2, rho, T, Zbar, Abar):
+        """
+        Implementation of screening calculation in the style of Chugunov's 2007 paper.
+        
+        Refs:
+        Chugunov et al. 2007, PhRvD, DOI: 10.1103/PhysRevD.76.025028
+        Itoh et al. 1979, ApJ, DOI: 10.1086/157590
+        """
+        
+        # Proton numbers
+        Z1, Z2 = ion1.Z, ion2.Z
+        
+        # Some physical constants in CGS units
+        amu = 1.6605390666e-24 # g
+        qe = 4.80320425e-10 # esu
+        hbar = 1.05457266e-27 # erg * s
+        k_B = 1.38064903e-16 # erg / K
+        
+        # Average mass and total number density
+        mbar = Abar * amu
+        ntot = rho / mbar
+        
+        # Plasma temperature and frequency
+        omega_p = Zbar * qe * (4 * np.pi * ntot / mbar)**0.5
+        T_p = hbar * omega_p / k_B
+        
+        # The fit is only accurate for T / T_p >~ 0.1
+        # Smoothly set a lower bound using a sigmoid
+        T1, T2 = 0.1, 0.2
+        T0 = 0.5 * (T1 + T2)
+        Trat = T / T_p
+        
+        if Trat <= 0.5 * T1:
+            
+            # Sigmoid will be about 0
+            # Set T to the lower bound
+            T = T1 * T_p
+            Trat = T1
+            
+        elif Trat <= 2 * T2:
+            
+            # Blend using the sigmoid
+            s = 1 / (1 + np.exp((T0 - Trat) / 0.01))
+            Trat = (1 - s) * T1 + s * Trat
+            T = Trat * T_p
+        
+        # Compute electron and ion sphere radii
+        a_e = (0.75 / (np.pi * Zbar * ntot))**(1/3)
+        a1 = Z1**(1/3) * a_e
+        a2 = Z2**(1/3) * a_e
+        a12 = 0.5 * (a1 + a2)
+        
+        # Coulomb coupling factor
+        Gamma = Z1 * Z2 * qe**2 / (a12 * k_B * T)
+        
+        # Chugunov 2007 eq. 3
+        zeta = (1 / (0.75 * (Trat * np.pi)**2))**(1/3)
+        
+        # Chugunov 2007 fit parameters
+        alpha = 0.022
+        beta = 0.41 - 0.6 / Gamma
+        gamma = 0.06 + 2.2 / Gamma
+        C_A1 = 2.7822
+        C_A2 = 98.34
+        C_A3 = 1.4515
+        C_B1 = -1.7476
+        C_B2 = 66.07
+        C_B3 = 1.12
+        C_B4 = 65.0
+        
+        # Compute Gamma tilde from Chugunov 2007 eq. 21
+        Gamtild = Gamma / (1 + alpha * zeta + beta * zeta**2 + gamma * zeta**3)**(1/3)
+        
+        # Fit is only accurate if Gamma tilde is <~ 600
+        # Set an upper bound using sigmoid
+        Gamma1, Gamma2 = 550, 650
+        Gamma0 = 599
+        Gamma_max = 600
+        
+        if Gamtild >= Gamma2:
+            
+            # Sigmoid will be about 1
+            # Set Gamma tilde to the upper bound
+            Gamtild = Gamma_max
+            
+        elif Gamtild >= Gamma1:
+            
+            # Blend using the sigmoid
+            s = 1 / (1 + np.exp(Gamma0 - Gamtild))
+            Gamtild = s * Gamma_max + (1 - s) * Gamtild
+        
+        # Compute screening factor
+        Gamtild2 = Gamtild**2
+        term1 = Gamtild**(1.5) * (C_A1 / (C_A2 + Gamtild)**0.5 + C_A3 / (1 + Gamtild))
+        term2 = C_B1 * Gamtild2 / (C_B2 + Gamtild)
+        term3 = C_B3 * Gamtild2 / (C_B4 + Gamtild2)
+        h0 = term1 + term2 + term3
+        fscr = np.exp(h0)
+        
+        if fscr >= 1.e300:
+            fscr = 1.e300
+            warnings.warn("Large screening factor clipped to 1.e300 for Z1, Z2 = {}, {}"
+                    .format(Z1, Z2))
+        return fscr
+        
+    def screening_factor(self, rho, T, Zbar, Abar, scrn_func=None):
+        """
+        Compute screening for this rate with the given conditions. The default screening
+        function (given by scrn_func argument) is Rate.screen_chugunov2007.
+        """
+        
+        if not self.ion_screen: return 1.0
+        
+        try:
+            ion1, ion2 = self.ion_screen
+        except ValueError:
+            return 1.0
+        
+        if scrn_func is None: scrn_func = self.screen_chugunov2007
+        return scrn_func(ion1, ion2, rho, T, Zbar, Abar)
+        
     def get_rate_exponent(self, T0):
         """
         for a rate written as a power law, r = r_0 (T/T0)**nu, return

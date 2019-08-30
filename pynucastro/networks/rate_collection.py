@@ -90,6 +90,22 @@ class Composition(object):
         xvec = np.array(xvec)
         electron_frac = np.sum(zvec*xvec/avec)/np.sum(xvec)
         return electron_frac
+        
+    def abar(self):
+        """ Compute (harmonic) mean of atomic weights of constituent nuclei. """
+        
+        abar_inv = sum(self.X[n] / n.A for n in self.X)
+        return 1 / abar_inv
+        
+    def zbar(self):
+        """ Compute mean proton number of constituent nuclei. """
+        
+        Zsum = sum(n.Z * self.X[n] / n.A for n in self.X)
+        return self.abar() * Zsum
+        
+    def zpowbar(self, pow):
+        
+        pass
 
     def __str__(self):
         ostr = ""
@@ -218,11 +234,13 @@ class RateCollection(object):
         """ get all the nuclei that are part of the network """
         return self.unique_nuclei
 
-    def evaluate_rates(self, rho, T, composition):
+    def evaluate_rates(self, rho, T, composition, with_screening=True):
         """evaluate the rates for a specific density, temperature, and
         composition"""
         rvals = OrderedDict()
         ys = composition.get_molar()
+        Zbar = composition.Zbar()
+        Abar = composition.Abar()
 
         for r in self.rates:
             val = r.prefactor * rho**r.dens_exp * r.eval(T)
@@ -230,14 +248,15 @@ class RateCollection(object):
                 val = val * composition.eval_ye()
             yfac = functools.reduce(mul, [ys[q] for q in r.reactants])
             rvals[r] = yfac * val
+            if with_screening: rvals[r] *= r.screening_factor(rho, T, Zbar, Abar)
 
         return rvals
         
-    def evaluate_ydots(self, rho, T, composition):
+    def evaluate_ydots(self, rho, T, composition, with_screening=True):
         """evaluate net rate of change of molar abundance for each nucleus
         for a specific density, temperature, and composition"""
         
-        rvals = self.evaluate_rates(rho, T, composition)
+        rvals = self.evaluate_rates(rho, T, composition, with_screening)
         ydots = dict()
         
         for nuc in self.unique_nuclei:
@@ -256,10 +275,11 @@ class RateCollection(object):
             
         return ydots
         
-    def evaluate_activity(self, rho, T, composition):
-        """sum over"""
+    def evaluate_activity(self, rho, T, composition, with_screening=True):
+        """evaluate a sum over contributions to ydot, neglecting sign,
+        at a specific density, temperature, and composition"""
         
-        rvals = self.evaluate_rates(rho, T, composition)
+        rvals = self.evaluate_rates(rho, T, composition, with_screening)
         act = dict()
         
         for nuc in self.unique_nuclei:
@@ -508,6 +528,8 @@ class RateCollection(object):
             - *outfile* -- Output file to save the plot to. The plot will be shown if
               not specified.
             - *dpi* -- DPI to save the image file at.
+            - *with_screening* -- Whether account for screening in the rate computation.
+              *True* by default. 
             - *cmap* -- Name of the matplotlib colormap to use. Default is 'magma'.
             - *edgecolor* -- Color of grid cell edges.
             - *area* -- Area of the figure without the colorbar, in square inches. 64
@@ -536,6 +558,7 @@ class RateCollection(object):
         filter_function = kwargs.pop("filter_function", None)
         dpi = kwargs.pop("dpi", 100)
         linthresh = kwargs.pop("linthresh", 1.0)
+        with_screening = kwargs.pop("with_screening", True)
         
         if kwargs: warnings.warn("Unrecognized keyword arguments: {}".format(kwargs.keys()))
         
@@ -573,7 +596,7 @@ class RateCollection(object):
             
             if rho is None or T is None:
                 raise ValueError("Need both rho and T to evaluate rates!")
-            ydots = self.evaluate_ydots(rho, T, comp)
+            ydots = self.evaluate_ydots(rho, T, comp, with_screening)
             values = np.array([ydots[nuc] for nuc in nuclei])
             if color_field == "xdot": values *= As
             
@@ -581,7 +604,7 @@ class RateCollection(object):
             
             if rho is None or T is None:
                 raise ValueError("Need both rho and T to evaluate rates!")
-            act = self.evaluate_activity(rho, T, comp)
+            act = self.evaluate_activity(rho, T, comp, with_screening)
             values = np.array([act[nuc] for nuc in nuclei])
             
         if scale == "log": values = self._safelog(values, small)
@@ -654,7 +677,7 @@ class RateCollection(object):
                     cbar_label = "symlog[{}]".format(capfield)
                 else:
                     cbar_label = capfield
-                
+            
             fig.colorbar(smap, cax=cax, orientation="vertical",
                     label=cbar_label, format=cbar_format)
         
