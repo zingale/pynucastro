@@ -97,9 +97,7 @@ class BaseFortranNetwork(ABC, RateCollection):
         self.name_rate_data = 'screened_rates'
         self.name_y         = 'Y'
         self.name_ydot      = 'ydot'
-        self.name_ydot_nuc  = 'ydot'
         self.name_jacobian  = 'jac'
-        self.name_jacobian_nuc  = 'jac'
         self.name_density   = 'state % rho'
         self.name_electron_fraction = 'state % y_e'
         self.symbol_ludict['__dens__'] = self.name_density
@@ -755,7 +753,7 @@ class BaseFortranNetwork(ABC, RateCollection):
                                                     source_format='free',
                                                     standard=95))
             of.write('{}{}(j{}) = ( &\n'.format(self.indent*n_indent,
-                                                self.name_ydot_nuc, n))
+                                                self.name_ydot, n))
             of.write("{}{} &\n".format(self.indent*(n_indent+1), sol_value))
             of.write("{}   )\n\n".format(self.indent*n_indent))
 
