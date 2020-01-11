@@ -119,7 +119,7 @@ contains
     real(rt), intent(inout) :: ydot(neqs)
 
     type(rate_eval_t) :: rate_eval
-    real(rt) :: Y(nspec), ydot_nuc(nspec)
+    real(rt) :: Y(nspec)
     integer :: i, j
     real(rt) :: rhoy, ye, enuc
     real(rt) :: sneut, dsneutdt, dsneutdd, snuda, snudz
@@ -131,11 +131,10 @@ contains
 
     call evaluate_rates(state, rate_eval)
 
-    call rhs_nuc(state, ydot_nuc, Y, rate_eval % screened_rates)
-    ydot(1:nspec) = ydot_nuc
+    call rhs_nuc(state, ydot, Y, rate_eval % screened_rates)
 
     ! ion binding energy contributions
-    call ener_gener_rate(ydot_nuc, enuc)
+    call ener_gener_rate(ydot, enuc)
 
     ! include reaction neutrino losses (non-thermal)
     <enuc_add_energy_rate>(2)
@@ -156,14 +155,16 @@ contains
   end subroutine actual_rhs
 
 
-  subroutine rhs_nuc(state, ydot_nuc, Y, screened_rates)
+  subroutine rhs_nuc(state, ydot, Y, screened_rates)
 
     !$acc routine seq
+
+    use burn_type_module, only: neqs
 
     implicit none
 
     type (burn_t), intent(in) :: state
-    real(rt), intent(out) :: ydot_nuc(nspec)
+    real(rt), intent(inout) :: ydot(neqs)
     real(rt), intent(in)  :: Y(nspec)
     real(rt), intent(in)  :: screened_rates(nrates)
 

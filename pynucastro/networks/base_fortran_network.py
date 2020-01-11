@@ -97,7 +97,7 @@ class BaseFortranNetwork(ABC, RateCollection):
         self.name_rate_data = 'screened_rates'
         self.name_y         = 'Y'
         self.name_ydot      = 'ydot'
-        self.name_ydot_nuc  = 'ydot_nuc'
+        self.name_ydot_nuc  = 'ydot'
         self.name_jacobian  = 'jac'
         self.name_jacobian_nuc  = 'jac'
         self.name_density   = 'state % rho'

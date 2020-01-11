@@ -176,15 +176,18 @@ contains
 
     !$acc routine seq
 
+    use burn_type_module, only: neqs
+
     implicit none
 
-    real(rt) :: dydt(nspec), enuc
+    real(rt), intent(in)  :: dydt(neqs)
+    real(rt), intent(out) :: enuc
 
     !$gpu
 
     ! This is basically e = m c**2
 
-    enuc = sum(dydt(:) * mion(:)) * enuc_conv2
+    enuc = sum(dydt(1:nspec_evolve) * mion(1:nspec_evolve)) * enuc_conv2
 
   end subroutine ener_gener_rate
 
