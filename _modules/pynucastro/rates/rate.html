@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pynucastro.rates.rate &mdash; pynucastro 1.6.0.post20+g79ad1d3 documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <title>pynucastro.rates.rate &mdash; pynucastro 1.6.0.post30+g582b38b documentation</title>
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -43,8 +44,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Overview of pynucastro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../pynucastro-examples.html">pynucastro usage examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../library-examples-nuclei.html">Specifying Desired Nuclei to Construct a Network</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../library-examples-filtering.html">Using RateFilter to Search Rates in a Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pynucastro-integration.html">Example of integrating a network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../library-examples.html">Selecting Rates from a Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../validate-example.html">Checking your network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../networks.html">Creating Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../modules.html">API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../sources.html">Third Party Data</a></li>
@@ -628,12 +630,16 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="Library.validate"><a class="viewcode-back" href="../../../pynucastro.rates.html#pynucastro.rates.rate.Library.validate">[docs]</a>    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_library</span><span class="p">,</span> <span class="n">forward_only</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="Library.validate"><a class="viewcode-back" href="../../../pynucastro.rates.html#pynucastro.rates.rate.Library.validate">[docs]</a>    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_library</span><span class="p">,</span> <span class="n">forward_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ostream</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;perform various checks on the library, comparing to other_library,</span>
 <span class="sd">        to ensure that we are not missing important rates.  The idea</span>
 <span class="sd">        is that self should be a reduced library where we filtered out</span>
 <span class="sd">        a few rates and then we want to compare to the larger</span>
 <span class="sd">        other_library to see if we missed something important.</span>
+
+<span class="sd">        ostream is the I/O stream to send output to (for instance, a</span>
+<span class="sd">        file object or StringIO object).  If it is None, then output</span>
+<span class="sd">        is to stdout.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
 
@@ -659,7 +665,11 @@
                         <span class="k">break</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
                     <span class="n">passed_validation</span> <span class="o">=</span> <span class="kc">False</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;validation: </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2"> produced in </span><span class="si">{</span><span class="n">rate</span><span class="si">}</span><span class="s2"> never consumed.&quot;</span><span class="p">)</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;validation: </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2"> produced in </span><span class="si">{</span><span class="n">rate</span><span class="si">}</span><span class="s2"> never consumed.&quot;</span>
+                    <span class="k">if</span> <span class="n">ostream</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">ostream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">msg</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="c1"># now check if we are missing any rates from other_library with the exact same reactants</span>
 
@@ -678,8 +688,11 @@
                     <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
 
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;validation: missing </span><span class="si">{</span><span class="n">other_rate</span><span class="si">}</span><span class="s2"> as alternative to </span><span class="si">{</span><span class="n">rate</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-
+                    <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;validation: missing </span><span class="si">{</span><span class="n">other_rate</span><span class="si">}</span><span class="s2"> as alternative to </span><span class="si">{</span><span class="n">rate</span><span class="si">}</span><span class="s2">.&quot;</span>
+                    <span class="k">if</span> <span class="n">ostream</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">ostream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">msg</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">passed_validation</span></div></div>
 
@@ -1234,6 +1247,24 @@
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nucz</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">ion_screen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nucz</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
+        <span class="c1"># if the rate is a reverse rate, via detailed balance, then we</span>
+        <span class="c1"># might actually want to compute the screening based on the</span>
+        <span class="c1"># reactants of the forward rate that was used in the detailed</span>
+        <span class="c1"># balance.  Rate.symmetric_screen is what should be used in</span>
+        <span class="c1"># the screening in this case</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">symmetric_screen</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reverse</span><span class="p">:</span>
+            <span class="n">nucz</span> <span class="o">=</span> <span class="p">[</span><span class="n">q</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">products</span> <span class="k">if</span> <span class="n">q</span><span class="o">.</span><span class="n">Z</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nucz</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">nucz</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">Z</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">symmetric_screen</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">symmetric_screen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nucz</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">symmetric_screen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nucz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nucz</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">symmetric_screen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nucz</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">symmetric_screen</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ion_screen</span>
+
     <span class="k">def</span> <span class="nf">_set_print_representation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; compose the string representations of this Rate. &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
@@ -1448,7 +1479,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Michael Zingale and Donald Willcox.</p>
+    <p>&#169; Copyright 2022, Michael Zingale and Donald Willcox.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
