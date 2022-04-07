@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pynucastro package &mdash; pynucastro 1.6.0.post30+g582b38b documentation</title>
+  <title>pynucastro package &mdash; pynucastro 1.6.0.post77+g85b027c documentation</title>
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -17,12 +17,12 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="pynucastro.networks package" href="pynucastro.networks.html" />
-    <link rel="prev" title="out" href="modules.html" /> 
+    <link rel="prev" title="pynucastro" href="modules.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,6 +50,8 @@
 <li class="toctree-l1"><a class="reference internal" href="pynucastro-integration.html">Example of integrating a network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="library-examples.html">Selecting Rates from a Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validate-example.html">Checking your network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="electron-captures.html">Combining ReacLib Rates with Electron Capture Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partition-function.html">Reverse Rates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="networks.html">Creating Networks</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">API</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">pynucastro package</a><ul>
@@ -67,7 +69,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sources.html">Third Party Data</a></li>
@@ -87,7 +88,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">out</a> &raquo;</li>
+          <li><a href="modules.html">pynucastro</a> &raquo;</li>
       <li>pynucastro package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/pynucastro.rst.txt" rel="nofollow"> View page source</a>
@@ -145,14 +146,14 @@ be in the Reaclib 1 format.</p>
 </section>
 <section id="nucdata">
 <h2>nucdata<a class="headerlink" href="#nucdata" title="Permalink to this headline">¶</a></h2>
-<p>nucdata provides tables of binding energy per nucleon in MeV for
-nuclides specified by their number of neutrons N and atomic
-number Z.</p>
+<p>nucdata provides tables of binding energy per nucleon in MeV,
+partition function and the number of spin states for nuclides specified
+by their number of neutrons N and atomic number Z.</p>
 <p>The data for these tables is derived from the Atomic Mass Evaluations
-2012 and 2016. By default, pynucastro uses Atomic Mass Evaluation
-2016. Scripts for reading the Atomic Mass Evaluation tables and
-generating binding energy tables for pynucastro are provided in
-<cite>pynucastro/nucdata/AtomicMassEvaluation</cite>.</p>
+2012, 2016 and 2020. By default, pynucastro uses Atomic Mass Evaluation
+2016, and Nucleus Spin Evaluation 2020. Scripts for reading the Atomic
+Mass Evaluation tables and generating binding energy tables for pynucastro
+are provided in <cite>pynucastro/nucdata/AtomicMassEvaluation</cite>.</p>
 </section>
 <section id="networks">
 <h2>networks<a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h2>
@@ -174,9 +175,10 @@ a network.</p></li>
 <li><p>BaseFortranNetwork : this extends the RateCollection to enable
 output of Fortran code that can be used to integrate the network
 with the included VODE package for ODE integration.</p></li>
-<li><p>StarKillerNetwork : this extends the RateCollection to enable output
-of Fortran code that can be used to add a network to the
-hydrodynamics codes Castro and Maestro via the StarKiller
+<li><p>StarKillerNetwork : this is deprecated.</p></li>
+<li><p>StarKillerCxxNetwork : this extends the RateCollection to enable
+output of C++ code that can be used to add a network to the
+hydrodynamics codes Castro and MAESTROeX via the StarKiller
 Microphysics repository.</p></li>
 </ul>
 </section>
@@ -189,6 +191,8 @@ reaction rates, including:</p>
 properties.</p></li>
 <li><p>Rate : a single Reaclib rate, with methods for plotting and
 evaluating it.</p></li>
+<li><p>RatePair : a pair of rates representing the corresponding forward
+and reverse rates</p></li>
 <li><p>Tfactors : this is a simple container class that holds the various
 temperature powers needed to evaluate a rate.</p></li>
 <li><p>RateLibrary: a container class for Reaclib rates that provides a
@@ -200,9 +204,9 @@ desired rate or group of rates from a RateLibrary.</p></li>
 </section>
 <section id="screening">
 <h2>screening<a class="headerlink" href="#screening" title="Permalink to this headline">¶</a></h2>
-<p>screening provides routines used by the BaseFortranNetwork to screen
-Reaclib reaction rates in the weak, intermediate, and strong
-regimes. Tabulated rates are not screened.</p>
+<p>screening provides routines used by the BaseFortranNetwork and
+BaseCxxNetwork to screen Reaclib reaction rates in the weak,
+intermediate, and strong regimes. Tabulated rates are not screened.</p>
 <p>The Fortran module in <cite>pynucastro/screening</cite> is only used for the
 standalone Fortran network. StarKiller Microphysics networks also use
 rate screening, but they use the screening module in the StarKiller
@@ -210,11 +214,12 @@ Microphysics repository.</p>
 </section>
 <section id="templates">
 <h2>templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
-<p>templates contains subdirectories for generating BaseFortranNetwork
-and StarKillerNetwork Fortran modules implementing the ODE right hand
-side, jacobian, and integration driver routines. pynucastro processes
-these template files by replacing tags of the form <cite>&lt;tag&gt;</cite> with
-generated code specific to a given choice of reaction rates.</p>
+<p>templates contains subdirectories for generating BaseFortranNetwork,
+StarKillerNetwork Fortran modules, and StarKillerCxxNetwork C++ files
+implementing the ODE right hand side, jacobian, and integration driver
+routines. pynucastro processes these template files by replacing tags
+of the form <cite>&lt;tag&gt;</cite> with generated code specific to a given choice of
+reaction rates.</p>
 </section>
 <section id="subpackages">
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
@@ -222,10 +227,13 @@ generated code specific to a given choice of reaction rates.</p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro.networks.html">pynucastro.networks package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks.base_cxx_network">pynucastro.networks.base_cxx_network module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks.base_fortran_network">pynucastro.networks.base_fortran_network module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks.python_network">pynucastro.networks.python_network module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks.rate_collection">pynucastro.networks.rate_collection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks.starkiller_cxx_network">pynucastro.networks.starkiller_cxx_network module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks.starkiller_network">pynucastro.networks.starkiller_network module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks.sympy_network_support">pynucastro.networks.sympy_network_support module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro.nucdata.html">pynucastro.nucdata package</a><ul>
@@ -233,10 +241,13 @@ generated code specific to a given choice of reaction rates.</p>
 <li class="toctree-l2"><a class="reference internal" href="pynucastro.nucdata.html#module-pynucastro.nucdata.binding_nuclide">pynucastro.nucdata.binding_nuclide module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pynucastro.nucdata.html#module-pynucastro.nucdata.binding_table">pynucastro.nucdata.binding_table module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pynucastro.nucdata.html#module-pynucastro.nucdata.elements">pynucastro.nucdata.elements module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.nucdata.html#module-pynucastro.nucdata.partition_function">pynucastro.nucdata.partition_function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.nucdata.html#module-pynucastro.nucdata.spin_nuclide">pynucastro.nucdata.spin_nuclide module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro.rates.html">pynucastro.rates package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pynucastro.rates.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.rates.html#module-pynucastro.rates.library">pynucastro.rates.library module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pynucastro.rates.html#module-pynucastro.rates.rate">pynucastro.rates.rate module</a></li>
 </ul>
 </li>
@@ -249,7 +260,7 @@ generated code specific to a given choice of reaction rates.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="modules.html" class="btn btn-neutral float-left" title="out" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modules.html" class="btn btn-neutral float-left" title="pynucastro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="pynucastro.networks.html" class="btn btn-neutral float-right" title="pynucastro.networks package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

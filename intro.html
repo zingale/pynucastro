@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overview of pynucastro &mdash; pynucastro 1.6.0.post30+g582b38b documentation</title>
+  <title>Overview of pynucastro &mdash; pynucastro 1.6.0.post77+g85b027c documentation</title>
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -17,7 +17,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -56,6 +56,8 @@
 <li class="toctree-l1"><a class="reference internal" href="pynucastro-integration.html">Example of integrating a network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="library-examples.html">Selecting Rates from a Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validate-example.html">Checking your network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="electron-captures.html">Combining ReacLib Rates with Electron Capture Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partition-function.html">Reverse Rates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="networks.html">Creating Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sources.html">Third Party Data</a></li>
@@ -120,15 +122,23 @@ codes.</p>
 </pre></div>
 </div>
 <p>The main classes are:</p>
-<ul class="simple">
+<ul>
 <li><p><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Nucleus" title="pynucastro.rates.rate.Nucleus"><code class="xref py py-func docutils literal notranslate"><span class="pre">Nucleus</span></code></a>: This is a single
-nucleus.  It knows its proton number, Z, neutron number, N, and
-weight, A.</p></li>
+nucleus.  It knows its proton number, <code class="docutils literal notranslate"><span class="pre">Z</span></code>, neutron number, <code class="docutils literal notranslate"><span class="pre">N</span></code>,
+weight, <code class="docutils literal notranslate"><span class="pre">A</span></code>, and binding energy, <code class="docutils literal notranslate"><span class="pre">nucbind</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">he4</span> <span class="o">=</span> <span class="n">Nucleus</span><span class="p">(</span><span class="s2">&quot;he4&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The atomic number is then <code class="docutils literal notranslate"><span class="pre">he4.Z</span></code>.</p>
+</li>
 <li><p><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Rate" title="pynucastro.rates.rate.Rate"><code class="xref py py-func docutils literal notranslate"><span class="pre">Rate</span></code></a>: This is a single rate.  It
 knows the reactants and products and has methods that allow you to
 evaluate it at a specified temperature and plot its temperature
 dependence.</p></li>
-<li><p><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Library" title="pynucastro.rates.rate.Library"><code class="xref py py-func docutils literal notranslate"><span class="pre">Library</span></code></a>: This is a collection of
+<li><p><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.RatePair" title="pynucastro.rates.rate.RatePair"><code class="xref py py-func docutils literal notranslate"><span class="pre">RatePair</span></code></a>: For a single nuclear process,
+this holds the corresponding forward and reverse rates.</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">Library</span></code>: This is a collection of
 rates (for example, the entire ReacLib library).  It provides methods
 for filtering out rates based on different sets of rules.</p></li>
 <li><p><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.Composition" title="pynucastro.networks.rate_collection.Composition"><code class="xref py py-func docutils literal notranslate"><span class="pre">Composition</span></code></a>: This is a
