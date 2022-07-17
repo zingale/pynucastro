@@ -42,10 +42,11 @@ void ener_gener_rate(T const& dydt, Real& enuc)
 }
 
 
-template <int do_T_derivatives>
 AMREX_GPU_HOST_DEVICE AMREX_INLINE
-void evaluate_rates(const burn_t& state, rate_eval_t& rate_eval) {
+void evaluate_rates(const burn_t& state, rate_t& rates) {
 
+    // we only do rates, not derivatives
+    constexpr int do_T_derivatives = 0;
 
     // create molar fractions
 
@@ -63,7 +64,7 @@ void evaluate_rates(const burn_t& state, rate_eval_t& rate_eval) {
 
     tf_t tfactors = evaluate_tfactors(state.T);
 
-    fill_reaclib_rates<do_T_derivatives>(tfactors, rate_eval);
+    fill_reaclib_rates(tfactors, rates);
 
     <rate_param_tests>(1)
 
@@ -81,6 +82,48 @@ void evaluate_rates(const burn_t& state, rate_eval_t& rate_eval) {
     Real rate, drate_dt, edot_nu;
 
     <compute_tabular_rates>(1)
+
+}
+
+AMREX_GPU_HOST_DEVICE AMREX_INLINE
+void evaluate_rates_with_derivs(const burn_t& state, rate_t& rates, rate_t& dratesdT) {
+
+    constexpr int do_T_derivatives = 1;
+
+    // create molar fractions
+
+    Array1D<Real, 1, NumSpec> Y;
+    for (int n = 1; n <= NumSpec; ++n) {
+        Y(n) = state.xn[n-1] * aion_inv[n-1];
+    }
+
+    Real rhoy = state.rho * state.y_e;
+
+    // Calculate Reaclib rates
+
+    plasma_state_t pstate;
+    fill_plasma_state(pstate, state.T, state.rho, Y);
+
+    tf_t tfactors = evaluate_tfactors(state.T);
+
+    fill_reaclib_rates_with_derivs(tfactors, rates, dratesdT);
+
+    <rate_param_tests_with_derivs>(1)
+
+
+    // Evaluate screening factors
+
+    Real ratraw, dratraw_dT;
+    Real scor, dscor_dt, dscor_dd;
+    Real scor2, dscor2_dt, dscor2_dd;
+
+    <compute_screening_factors_with_derivs>(1)
+
+    // Calculate tabular rates
+
+    Real rate, drate_dt, edot_nu;
+
+    <compute_tabular_rates_with_derivs>(1)
 
 }
 
@@ -112,12 +155,11 @@ void actual_rhs (burn_t& state, Array1D<Real, 1, neqs>& ydot)
 
     // build the rates
 
-    rate_eval_t rate_eval;
+    rate_t rates;
 
-    constexpr int do_T_derivatives = 0;
-    evaluate_rates<do_T_derivatives>(state, rate_eval);
+    evaluate_rates(state, rates);
 
-    rhs_nuc(state, ydot, Y, rate_eval.screened_rates);
+    rhs_nuc(state, ydot, Y, rates);
 
     // ion binding energy contributions
 
@@ -170,14 +212,14 @@ void actual_jac(const burn_t& state, MatrixType& jac)
 
     jac.zero();
 
-    rate_eval_t rate_eval;
+    rate_t rates;
+    rate_t dratedT;
 
-    constexpr int do_T_derivatives = 1;
-    evaluate_rates<do_T_derivatives>(state, rate_eval);
+    evaluate_rates_with_derivs(state, rates, dratesdT);
 
     // Species Jacobian elements with respect to other species
 
-    jac_nuc(state, jac, Y, rate_eval.screened_rates);
+    jac_nuc(state, jac, Y, rates);
 
     // Energy generation rate Jacobian elements with respect to species
 
@@ -203,7 +245,7 @@ void actual_jac(const burn_t& state, MatrixType& jac)
 
     Array1D<Real, 1, neqs>  yderivs;
 
-    rhs_nuc(state, yderivs, Y, rate_eval.dscreened_rates_dT);
+    rhs_nuc(state, yderivs, Y, dratesdT);
 
     for (int k = 1; k <= NumSpec; k++) {
         jac.set(k, net_ienuc, temperature_to_energy_jacobian(state, yderivs(k)));

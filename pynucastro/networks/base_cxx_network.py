@@ -53,6 +53,7 @@ class BaseCxxNetwork(ABC, RateCollection):
         self.ftags['<rate_names>'] = self._rate_names
         self.ftags['<ebind>'] = self._ebind
         self.ftags['<compute_screening_factors>'] = self._compute_screening_factors
+        self.ftags['<compute_screening_factors_with_derivs>'] = self._compute_screening_factors_with_derivs
         self.ftags['<table_num>'] = self._table_num
         self.ftags['<declare_tables>'] = self._declare_tables
         self.ftags['<table_declare_meta>'] = self._table_declare_meta
@@ -65,9 +66,11 @@ class BaseCxxNetwork(ABC, RateCollection):
         self.ftags['<initial_mass_fractions>'] = self._initial_mass_fractions
         self.ftags['<pynucastro_home>'] = self._pynucastro_home
         self.ftags['<reaclib_rate_functions>'] = self._reaclib_rate_functions
-        self.ftags['<fill_reaclib_rates>'] = self._fill_reaclib_rates
         self.ftags['<approx_rate_functions>'] = self._approx_rate_functions
         self.ftags['<fill_approx_rates>'] = self._fill_approx_rates
+        self.ftags['<fill_reaclib_rates>'] = self._fill_reaclib_rates
+        self.ftags['<fill_approx_rates_with_derivs>'] = self._fill_approx_rates_with_derivs
+        self.ftags['<fill_reaclib_rates_with_derivs>'] = self._fill_reaclib_rates_with_derivs
         self.indent = '    '
 
         self.num_screen_calls = None
@@ -187,7 +190,10 @@ class BaseCxxNetwork(ABC, RateCollection):
         self.jac_null_entries = jac_null
         self.solved_jacobian = True
 
-    def _compute_screening_factors(self, n_indent, of):
+    def _compute_screening_factors_with_derivs(self, n_indent, of):
+        self._compute_screening_factors(n_indent, of, with_derivs=True)
+
+    def _compute_screening_factors(self, n_indent, of, with_derivs=False):
         screening_map = self.get_screening_map()
         for i, scr in enumerate(screening_map):
 
@@ -231,10 +237,11 @@ class BaseCxxNetwork(ABC, RateCollection):
 
                 for rr in scr.rates:
                     of.write('\n')
-                    of.write(f'{self.indent*n_indent}ratraw = rate_eval.screened_rates(k_{rr.fname});\n')
-                    of.write(f'{self.indent*n_indent}dratraw_dT = rate_eval.dscreened_rates_dT(k_{rr.fname});\n')
-                    of.write(f'{self.indent*n_indent}rate_eval.screened_rates(k_{rr.fname}) *= scor * scor2;\n')
-                    of.write(f'{self.indent*n_indent}rate_eval.dscreened_rates_dT(k_{rr.fname}) = ratraw * (scor * dscor2_dt + dscor_dt * scor2) + dratraw_dT * scor * scor2;\n')
+                    of.write(f'{self.indent*n_indent}ratraw = rates(k_{rr.fname});\n')
+                    of.write(f'{self.indent*n_indent}rates(k_{rr.fname}) *= scor * scor2;\n')
+                    if with_derivs:
+                        of.write(f'{self.indent*n_indent}dratraw_dT = dratesdT(k_{rr.fname});\n')
+                        of.write(f'{self.indent*n_indent}dratesdT(k_{rr.fname}) = ratraw * (scor * dscor2_dt + dscor_dt * scor2) + dratraw_dT * scor * scor2;\n')
 
             else:
                 # there might be several rates that have the same
@@ -243,10 +250,11 @@ class BaseCxxNetwork(ABC, RateCollection):
 
                 for rr in scr.rates:
                     of.write('\n')
-                    of.write(f'{self.indent*n_indent}ratraw = rate_eval.screened_rates(k_{rr.fname});\n')
-                    of.write(f'{self.indent*n_indent}dratraw_dT = rate_eval.dscreened_rates_dT(k_{rr.fname});\n')
-                    of.write(f'{self.indent*n_indent}rate_eval.screened_rates(k_{rr.fname}) *= scor;\n')
-                    of.write(f'{self.indent*n_indent}rate_eval.dscreened_rates_dT(k_{rr.fname}) = ratraw * dscor_dt + dratraw_dT * scor;\n')
+                    of.write(f'{self.indent*n_indent}ratraw = rates(k_{rr.fname});\n')
+                    of.write(f'{self.indent*n_indent}rates(k_{rr.fname}) *= scor;\n')
+                    if with_derivs:
+                        of.write(f'{self.indent*n_indent}dratraw_dT = dratesdT(k_{rr.fname});\n')
+                        of.write(f'{self.indent*n_indent}dratesdT(k_{rr.fname}) = ratraw * dscor_dt + dratraw_dT * scor;\n')
 
             of.write('\n')
 
@@ -453,15 +461,26 @@ class BaseCxxNetwork(ABC, RateCollection):
         assert n_indent == 0, "function definitions must be at top level"
         for r in self.approx_rates:
             of.write(r.function_string_cxx(dtype=self.dtype, specifiers=self.function_specifier))
+            of.write(r.function_string_cxx(dtype=self.dtype, with_derivs=True, specifiers=self.function_specifier))
 
     def _fill_reaclib_rates(self, n_indent, of):
         for r in self.reaclib_rates:
             of.write(f"{self.indent*n_indent}rate_{r.fname}<do_T_derivatives>(tfactors, rate, drate_dT);\n")
-            of.write(f"{self.indent*n_indent}rate_eval.screened_rates(k_{r.fname}) = rate;\n")
-            of.write(f"{self.indent*n_indent}rate_eval.dscreened_rates_dT(k_{r.fname}) = drate_dT;\n\n")
+            of.write(f"{self.indent*n_indent}rates(k_{r.fname}) = rate;\n")
 
     def _fill_approx_rates(self, n_indent, of):
         for r in self.approx_rates:
-            of.write(f"{self.indent*n_indent}rate_{r.fname}<do_T_derivatives>(rate_eval, rate, drate_dT);\n")
-            of.write(f"{self.indent*n_indent}rate_eval.screened_rates(k_{r.fname}) = rate;\n")
-            of.write(f"{self.indent*n_indent}rate_eval.dscreened_rates_dT(k_{r.fname}) = drate_dT;\n\n")
+            of.write(f"{self.indent*n_indent}rate_{r.fname}(rates, rate);\n")
+            of.write(f"{self.indent*n_indent}rates(k_{r.fname}) = rate;\n")
+
+    def _fill_reaclib_rates_with_derivs(self, n_indent, of):
+        for r in self.reaclib_rates:
+            of.write(f"{self.indent*n_indent}rate_{r.fname}<do_T_derivatives>(tfactors, rate, drate_dT);\n")
+            of.write(f"{self.indent*n_indent}rates(k_{r.fname}) = rate;\n")
+            of.write(f"{self.indent*n_indent}dratesdT(k_{r.fname}) = drate_dT;\n\n")
+
+    def _fill_approx_rates_with_derivs(self, n_indent, of):
+        for r in self.approx_rates:
+            of.write(f"{self.indent*n_indent}rate_{r.fname}(rates, dratesdT, rate, drate_dT);\n")
+            of.write(f"{self.indent*n_indent}rates(k_{r.fname}) = rate;\n")
+            of.write(f"{self.indent*n_indent}dratesdT(k_{r.fname}) = drate_dT;\n\n")

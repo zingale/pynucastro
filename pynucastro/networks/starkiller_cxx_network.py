@@ -22,6 +22,7 @@ class StarKillerCxxNetwork(BaseCxxNetwork):
         super().__init__(*args, **kwargs)
 
         self.ftags['<rate_param_tests>'] = self._rate_param_tests
+        self.ftags['<rate_param_tests_with_derivs>'] = self._rate_param_tests_with_derivs
 
         self.disable_rate_params = disable_rate_params
         self.function_specifier = "AMREX_GPU_HOST_DEVICE AMREX_INLINE"
@@ -41,14 +42,28 @@ class StarKillerCxxNetwork(BaseCxxNetwork):
         for _, r in enumerate(self.rates):
             if r in self.disable_rate_params:
                 of.write(f"{self.indent*n_indent}if (disable_{r.fname}) {{\n")
-                of.write(f"{self.indent*n_indent}    rate_eval.screened_rates(k_{r.fname}) = 0.0;\n")
-                of.write(f"{self.indent*n_indent}    rate_eval.dscreened_rates_dT(k_{r.fname}) = 0.0;\n")
+                of.write(f"{self.indent*n_indent}    rates(k_{r.fname}) = 0.0;\n")
 
                 # check for the reverse too -- we disable it with the same parameter
                 rr = self.find_reverse(r)
                 if rr is not None:
-                    of.write(f"{self.indent*n_indent}    rate_eval.screened_rates(k_{rr.fname}) = 0.0;\n")
-                    of.write(f"{self.indent*n_indent}    rate_eval.dscreened_rates_dT(k_{rr.fname}) = 0.0;\n")
+                    of.write(f"{self.indent*n_indent}    rates(k_{rr.fname}) = 0.0;\n")
+
+                of.write(f"{self.indent*n_indent}}}\n\n")
+
+    def _rate_param_tests_with_derivs(self, n_indent, of):
+
+        for _, r in enumerate(self.rates):
+            if r in self.disable_rate_params:
+                of.write(f"{self.indent*n_indent}if (disable_{r.fname}) {{\n")
+                of.write(f"{self.indent*n_indent}    rates(k_{r.fname}) = 0.0;\n")
+                of.write(f"{self.indent*n_indent}    dratesdT(k_{r.fname}) = 0.0;\n")
+
+                # check for the reverse too -- we disable it with the same parameter
+                rr = self.find_reverse(r)
+                if rr is not None:
+                    of.write(f"{self.indent*n_indent}    rates(k_{rr.fname}) = 0.0;\n")
+                    of.write(f"{self.indent*n_indent}    dratesdT(k_{rr.fname}) = 0.0;\n")
 
                 of.write(f"{self.indent*n_indent}}}\n\n")
 
