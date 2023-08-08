@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Combining ReacLib Rates with Electron Capture Tables &mdash; pynucastro 1.6.0.post77+g85b027c documentation</title>
-      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Combining ReacLib Rates with Electron Capture Tables &mdash; pynucastro 1.7.0.post202+g9fa753c documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Reverse Rates" href="partition-function.html" />
+    <link rel="next" title="Screening Rates" href="screening-examples.html" />
     <link rel="prev" title="Checking your network" href="validate-example.html" /> 
 </head>
 
@@ -32,29 +37,60 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> pynucastro
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pynucastro
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.6
+                1.7
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Overview of pynucastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources and Rate Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Exploring Networks in Python</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro-examples.html">pynucastro usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot-types.html">Plotting Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro-integration.html">Example of integrating a network</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Selecting Rates</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="library-examples.html">Selecting Rates from a Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validate-example.html">Checking your network</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Combining ReacLib Rates with Electron Capture Tables</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="screening-examples.html">Screening Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modify-example.html">Modifying Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="approx-rates-examples.html">Approximate Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unimportant-rates.html">Removing Unimportant Rates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="partition-function.html">Reverse Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NSE-example.html">Nuclear Statistical Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="julia.html">Integrating using DifferentialEquations.jl</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Writing Networks</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="networks.html">Creating Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-networks.html">AMReX Astro Microphysics Networks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing pynucastro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sources.html">Third Party Data</a></li>
 </ul>
@@ -72,10 +108,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Combining ReacLib Rates with Electron Capture Tables</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Combining ReacLib Rates with Electron Capture Tables</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/electron-captures.ipynb.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/pynucastro/pynucastro/blob/main/docs/source/electron-captures.ipynb" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -83,278 +119,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-div.rendered_html th {
-  font-weight: bold;
-}
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="Combining-ReacLib-Rates-with-Electron-Capture-Tables">
-<h1>Combining ReacLib Rates with Electron Capture Tables<a class="headerlink" href="#Combining-ReacLib-Rates-with-Electron-Capture-Tables" title="Permalink to this headline">¶</a></h1>
+  <section id="Combining-ReacLib-Rates-with-Electron-Capture-Tables">
+<h1>Combining ReacLib Rates with Electron Capture Tables<a class="headerlink" href="#Combining-ReacLib-Rates-with-Electron-Capture-Tables" title="Permalink to this heading"></a></h1>
 <p>Here’s an example of using tabulated weak rates from Suzuki et a. (2016) together with rates from the ReacLib database.</p>
 <p>We’ll build a network suitable for e-capture supernovae.</p>
 <div class="nbinput nblast docutils container">
@@ -370,9 +136,12 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reaclib_library</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">Library</span><span class="p">(</span><span class="s2">&quot;20180319default2&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reaclib_library</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">ReacLibLibrary</span><span class="p">()</span>
 
-<span class="n">all_nuclei</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span><span class="s2">&quot;he4&quot;</span><span class="p">,</span><span class="s2">&quot;ne20&quot;</span><span class="p">,</span><span class="s2">&quot;o20&quot;</span><span class="p">,</span><span class="s2">&quot;f20&quot;</span><span class="p">,</span><span class="s2">&quot;mg24&quot;</span><span class="p">,</span><span class="s2">&quot;al27&quot;</span><span class="p">,</span><span class="s2">&quot;o16&quot;</span><span class="p">,</span><span class="s2">&quot;si28&quot;</span><span class="p">,</span><span class="s2">&quot;s32&quot;</span><span class="p">,</span><span class="s2">&quot;p31&quot;</span><span class="p">]</span>
+<span class="n">all_nuclei</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="s2">&quot;he4&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;ne20&quot;</span><span class="p">,</span> <span class="s2">&quot;o20&quot;</span><span class="p">,</span> <span class="s2">&quot;f20&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;mg24&quot;</span><span class="p">,</span> <span class="s2">&quot;al27&quot;</span><span class="p">,</span> <span class="s2">&quot;o16&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;si28&quot;</span><span class="p">,</span> <span class="s2">&quot;s32&quot;</span><span class="p">,</span> <span class="s2">&quot;p31&quot;</span><span class="p">]</span>
 <span class="n">ecsn_library</span> <span class="o">=</span> <span class="n">reaclib_library</span><span class="o">.</span><span class="n">linking_nuclei</span><span class="p">(</span><span class="n">all_nuclei</span><span class="p">,</span><span class="n">with_reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -391,48 +160,77 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-o16 + he4 --&gt; ne20             [Q =   4.73 MeV] (o16 + he4 --&gt; ne20 &lt;co10_reaclib__&gt;)
-o16 + o16 --&gt; p + p31          [Q =   7.68 MeV] (o16 + o16 --&gt; p + p31 &lt;cf88_reaclib__&gt;)
-o16 + o16 --&gt; he4 + si28       [Q =   9.59 MeV] (o16 + o16 --&gt; he4 + si28 &lt;cf88_reaclib__&gt;)
-ne20 + he4 --&gt; mg24            [Q =   9.32 MeV] (ne20 + he4 --&gt; mg24 &lt;il10_reaclib__&gt;)
-f20 --&gt; ne20                   [Q =   7.02 MeV] (f20 --&gt; ne20 &lt;wc12_reaclib_weak_&gt;)
-o20 --&gt; f20                    [Q =   3.81 MeV] (o20 --&gt; f20 &lt;wc12_reaclib_weak_&gt;)
-mg24 + he4 --&gt; si28            [Q =   9.98 MeV] (mg24 + he4 --&gt; si28 &lt;st08_reaclib__&gt;)
-al27 + p --&gt; si28              [Q =  11.59 MeV] (al27 + p --&gt; si28 &lt;il10_reaclib__&gt;)
-al27 + p --&gt; he4 + mg24        [Q =   1.60 MeV] (al27 + p --&gt; he4 + mg24 &lt;il10_reaclib__&gt;)
-al27 + he4 --&gt; p31             [Q =   9.67 MeV] (al27 + he4 --&gt; p31 &lt;ths8_reaclib__&gt;)
-si28 + he4 --&gt; s32             [Q =   6.95 MeV] (si28 + he4 --&gt; s32 &lt;ths8_reaclib__&gt;)
-p31 + p --&gt; s32                [Q =   8.86 MeV] (p31 + p --&gt; s32 &lt;il10_reaclib__&gt;)
-p31 + p --&gt; he4 + si28         [Q =   1.92 MeV] (p31 + p --&gt; he4 + si28 &lt;il10_reaclib__&gt;)
-ne20 --&gt; he4 + o16             [Q =  -4.73 MeV] (ne20 --&gt; he4 + o16 &lt;co10_reaclib__reverse&gt;)
-mg24 + he4 --&gt; p + al27        [Q =  -1.60 MeV] (mg24 + he4 --&gt; p + al27 &lt;il10_reaclib__reverse&gt;)
-mg24 --&gt; he4 + ne20            [Q =  -9.32 MeV] (mg24 --&gt; he4 + ne20 &lt;il10_reaclib__reverse&gt;)
-si28 + he4 --&gt; p + p31         [Q =  -1.92 MeV] (si28 + he4 --&gt; p + p31 &lt;il10_reaclib__reverse&gt;)
-si28 + he4 --&gt; o16 + o16       [Q =  -9.59 MeV] (si28 + he4 --&gt; o16 + o16 &lt;cf88_reaclib__reverse&gt;)
-si28 --&gt; he4 + mg24            [Q =  -9.98 MeV] (si28 --&gt; he4 + mg24 &lt;st08_reaclib__reverse&gt;)
-si28 --&gt; p + al27              [Q = -11.59 MeV] (si28 --&gt; p + al27 &lt;il10_reaclib__reverse&gt;)
-p31 + p --&gt; o16 + o16          [Q =  -7.68 MeV] (p31 + p --&gt; o16 + o16 &lt;cf88_reaclib__reverse&gt;)
-p31 --&gt; he4 + al27             [Q =  -9.67 MeV] (p31 --&gt; he4 + al27 &lt;ths8_reaclib__reverse&gt;)
-s32 --&gt; he4 + si28             [Q =  -6.95 MeV] (s32 --&gt; he4 + si28 &lt;ths8_reaclib__reverse&gt;)
-s32 --&gt; p + p31                [Q =  -8.86 MeV] (s32 --&gt; p + p31 &lt;il10_reaclib__reverse&gt;)
+O16 + He4 ⟶ Ne20 + 𝛾           [Q =   4.73 MeV] (o16 + he4 --&gt; ne20 &lt;co10_reaclib__&gt;)
+O16 + O16 ⟶ He4 + Si28         [Q =   9.59 MeV] (o16 + o16 --&gt; he4 + si28 &lt;cf88_reaclib__&gt;)
+O16 + O16 ⟶ p + P31            [Q =   7.68 MeV] (o16 + o16 --&gt; p + p31 &lt;cf88_reaclib__&gt;)
+O20 ⟶ F20 + e⁻ + 𝜈             [Q =   3.81 MeV] (o20 --&gt; f20 &lt;wc12_reaclib_weak_&gt;)
+F20 ⟶ Ne20 + e⁻ + 𝜈            [Q =   7.02 MeV] (f20 --&gt; ne20 &lt;wc12_reaclib_weak_&gt;)
+Ne20 + He4 ⟶ Mg24 + 𝛾          [Q =   9.32 MeV] (ne20 + he4 --&gt; mg24 &lt;il10_reaclib__&gt;)
+Mg24 + He4 ⟶ Si28 + 𝛾          [Q =   9.98 MeV] (mg24 + he4 --&gt; si28 &lt;st08_reaclib__&gt;)
+Al27 + p ⟶ He4 + Mg24          [Q =   1.60 MeV] (al27 + p --&gt; he4 + mg24 &lt;il10_reaclib__&gt;)
+Al27 + p ⟶ Si28 + 𝛾            [Q =  11.59 MeV] (al27 + p --&gt; si28 &lt;il10_reaclib__&gt;)
+Al27 + He4 ⟶ P31 + 𝛾           [Q =   9.67 MeV] (al27 + he4 --&gt; p31 &lt;ths8_reaclib__&gt;)
+Si28 + He4 ⟶ S32 + 𝛾           [Q =   6.95 MeV] (si28 + he4 --&gt; s32 &lt;ths8_reaclib__&gt;)
+P31 + p ⟶ He4 + Si28           [Q =   1.92 MeV] (p31 + p --&gt; he4 + si28 &lt;il10_reaclib__&gt;)
+P31 + p ⟶ S32 + 𝛾              [Q =   8.86 MeV] (p31 + p --&gt; s32 &lt;il10_reaclib__&gt;)
+Ne20 ⟶ He4 + O16               [Q =  -4.73 MeV] (ne20 --&gt; he4 + o16 &lt;co10_reaclib__reverse&gt;)
+Mg24 + He4 ⟶ p + Al27          [Q =  -1.60 MeV] (mg24 + he4 --&gt; p + al27 &lt;il10_reaclib__reverse&gt;)
+Mg24 ⟶ He4 + Ne20              [Q =  -9.32 MeV] (mg24 --&gt; he4 + ne20 &lt;il10_reaclib__reverse&gt;)
+Si28 + He4 ⟶ O16 + O16         [Q =  -9.59 MeV] (si28 + he4 --&gt; o16 + o16 &lt;cf88_reaclib__reverse&gt;)
+Si28 + He4 ⟶ p + P31           [Q =  -1.92 MeV] (si28 + he4 --&gt; p + p31 &lt;il10_reaclib__reverse&gt;)
+Si28 ⟶ He4 + Mg24              [Q =  -9.98 MeV] (si28 --&gt; he4 + mg24 &lt;st08_reaclib__reverse&gt;)
+Si28 ⟶ p + Al27                [Q = -11.59 MeV] (si28 --&gt; p + al27 &lt;il10_reaclib__reverse&gt;)
+P31 + p ⟶ O16 + O16            [Q =  -7.68 MeV] (p31 + p --&gt; o16 + o16 &lt;cf88_reaclib__reverse&gt;)
+P31 ⟶ He4 + Al27               [Q =  -9.67 MeV] (p31 --&gt; he4 + al27 &lt;ths8_reaclib__reverse&gt;)
+S32 ⟶ He4 + Si28               [Q =  -6.95 MeV] (s32 --&gt; he4 + si28 &lt;ths8_reaclib__reverse&gt;)
+S32 ⟶ p + P31                  [Q =  -8.86 MeV] (s32 --&gt; p + p31 &lt;il10_reaclib__reverse&gt;)
 </pre></div></div>
 </div>
-<p>Now let’s specify the weak rates we want from Suzuki et al. – these tables are included with pynucastro:</p>
+<p>Now let’s specify the weak rates we want from Suzuki et al. – these tables are included with pynucastro:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ecsn_tabular</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;f20--o20-toki&quot;</span><span class="p">,</span><span class="s2">&quot;ne20--f20-toki&quot;</span><span class="p">,</span><span class="s2">&quot;o20--f20-toki&quot;</span><span class="p">,</span><span class="s2">&quot;f20--ne20-toki&quot;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabular_lib</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">TabularLibrary</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<p>These tables are in terms of <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(\rho Y_e\)</span>. We can easily plot the tabulated electron capture rates just like ReacLib rates:</p>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">Rate</span><span class="p">(</span><span class="s2">&quot;o20--f20-toki&quot;</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ecsn_tabular</span> <span class="o">=</span> <span class="n">tabular_lib</span><span class="o">.</span><span class="n">linking_nuclei</span><span class="p">([</span><span class="s2">&quot;f20&quot;</span><span class="p">,</span> <span class="s2">&quot;o20&quot;</span><span class="p">,</span> <span class="s2">&quot;ne20&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<p>Let’s look at the rates</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tr</span> <span class="o">=</span> <span class="n">ecsn_tabular</span><span class="o">.</span><span class="n">get_rates</span><span class="p">()</span>
+<span class="n">tr</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[O20 ⟶ F20 + e⁻ + 𝜈,
+ F20 ⟶ Ne20 + e⁻ + 𝜈,
+ Ne20 + e⁻ ⟶ F20 + 𝜈,
+ F20 + e⁻ ⟶ O20 + 𝜈]
+</pre></div></div>
+</div>
+<p>These tables are in terms of <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(\rho Y_e\)</span>. We can easily plot the tabulated electron capture rates just like ReacLib rates:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">tr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -441,20 +239,22 @@ s32 --&gt; p + p31                [Q =  -8.86 MeV] (s32 --&gt; p + p31 &lt;il10_
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/home/zingale/development/pynucastro/pynucastro/rates/rate.py:1368: RuntimeWarning: divide by zero encountered in log10
-  pivot_table[row_pos, col_pos] = np.log10(data_heatmap[:, 5])
+/opt/hostedtoolcache/Python/3.10.12/x64/lib/python3.10/site-packages/pynucastro-1.7.0.post202+g9fa753c-py3.10.egg/pynucastro/rates/rate.py:1573: UserWarning: Attempting to set identical low and high xlims makes transformation singular; automatically expanding.
+  im = ax.imshow(pivot_table, cmap=cmap)
+/opt/hostedtoolcache/Python/3.10.12/x64/lib/python3.10/site-packages/pynucastro-1.7.0.post202+g9fa753c-py3.10.egg/pynucastro/rates/rate.py:1573: UserWarning: Attempting to set identical low and high ylims makes transformation singular; automatically expanding.
+  im = ax.imshow(pivot_table, cmap=cmap)
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/electron-captures_9_1.png" src="_images/electron-captures_9_1.png" />
+<img alt="_images/electron-captures_12_1.png" src="_images/electron-captures_12_1.png" />
 </div>
 </div>
-<p>Let’s create a rate collection from the ReacLib rates and look to see which are actually important</p>
+<p>Let’s create a rate collection from just the ReacLib rates and look to see which are actually important</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">RateCollection</span><span class="p">(</span><span class="n">libraries</span><span class="o">=</span><span class="p">[</span><span class="n">ecsn_library</span><span class="p">])</span>
@@ -463,7 +263,7 @@ s32 --&gt; p + p31                [Q =  -8.86 MeV] (s32 --&gt; p + p31 &lt;il10_
 </div>
 <p>Here we’ll pick thermodynamic conditions appropriate to the oxygen burning shell in a white dwarf</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comp</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">Composition</span><span class="p">(</span><span class="n">rc</span><span class="o">.</span><span class="n">get_nuclei</span><span class="p">())</span>
@@ -483,10 +283,10 @@ s32 --&gt; p + p31                [Q =  -8.86 MeV] (s32 --&gt; p + p31 &lt;il10_
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="mf">7.e9</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">1.e9</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">,</span> <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-20</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="mf">7.e9</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">1.e9</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">,</span> <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -494,12 +294,13 @@ s32 --&gt; p + p31                [Q =  -8.86 MeV] (s32 --&gt; p + p31 &lt;il10_
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/electron-captures_14_0.png" src="_images/electron-captures_14_0.png" />
+<img alt="_images/electron-captures_17_0.png" src="_images/electron-captures_17_0.png" />
 </div>
 </div>
-<p>Now, this rate collection already includes some weak rates from ReacLib – we want to remove those. We’ll also take the opportunity to remove any rates that are not important, by looking for a <span class="math notranslate nohighlight">\(|\dot{Y}| &gt; 10^{-20}~s^{-1}\)</span>.</p>
+<p>Note, this rate collection already includes some weak rates from ReacLib – we want to remove those.</p>
+<p>We’ll also take the opportunity to remove any rates that are not important, by looking for a <span class="math notranslate nohighlight">\(|\dot{Y}| &gt; 10^{-20}~s^{-1}\)</span>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_rate_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -510,20 +311,29 @@ s32 --&gt; p + p31                [Q =  -8.86 MeV] (s32 --&gt; p + p31 &lt;il10_
 </pre></div>
 </div>
 </div>
-<p>Finally, we’ll create a new rate collection by combining this new list of rates with the list of tables:</p>
+<p>Now let’s add the tabular rates to this pruned down rate list</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_new</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">RateCollection</span><span class="p">(</span><span class="n">rates</span><span class="o">=</span><span class="n">new_rate_list</span><span class="p">,</span> <span class="n">rate_files</span><span class="o">=</span><span class="n">ecsn_tabular</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_rate_list</span> <span class="o">+=</span> <span class="n">tr</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, we’ll create a new rate collection by combining this new list of rates with the list of tables:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_new</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">RateCollection</span><span class="p">(</span><span class="n">rates</span><span class="o">=</span><span class="n">new_rate_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_new</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="mf">7.e9</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">1.e9</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">rc_new</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="mf">7.e9</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">1.e9</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">,</span> <span class="n">curved_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rotated</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -531,12 +341,12 @@ s32 --&gt; p + p31                [Q =  -8.86 MeV] (s32 --&gt; p + p31 &lt;il10_
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/electron-captures_19_0.png" src="_images/electron-captures_19_0.png" />
+<img alt="_images/electron-captures_24_0.png" src="_images/electron-captures_24_0.png" />
 </div>
 </div>
 <p>We can see the values of the rates at our thermodynamic conditions easily:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_new</span><span class="o">.</span><span class="n">evaluate_rates</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="mf">7.e9</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">1.e9</span><span class="p">,</span> <span class="n">composition</span><span class="o">=</span><span class="n">comp</span><span class="p">)</span>
@@ -544,30 +354,56 @@ s32 --&gt; p + p31                [Q =  -8.86 MeV] (s32 --&gt; p + p31 &lt;il10_
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-OrderedDict([(ne20 --&gt; he4 + o16, 4.631669519815501e-18),
-             (o16 + he4 --&gt; ne20, 2163.4896055892013),
-             (ne20 + he4 --&gt; mg24, 470.4657166295948),
-             (mg24 + he4 --&gt; si28, 65.33425925449087),
-             (al27 + p --&gt; si28, 3786.5889540808494),
-             (al27 + he4 --&gt; p31, 0.057635811259143355),
-             (si28 + he4 --&gt; s32, 0.08322738610569617),
-             (p31 + p --&gt; s32, 2375.130496403913),
-             (o16 + o16 --&gt; p + p31, 7.154939895463953e-17),
-             (o16 + o16 --&gt; he4 + si28, 2.5949312230335836e-17),
-             (mg24 + he4 --&gt; p + al27, 0.2543862399303774),
-             (al27 + p --&gt; he4 + mg24, 5920.818449985262),
-             (si28 + he4 --&gt; p + p31, 0.00019528201299493395),
-             (p31 + p --&gt; he4 + si28, 5491.96044267561),
-             (f20 --&gt; o20, 4.033041588160375e-09),
-             (ne20 --&gt; f20, 3.580914286917256e-11),
-             (o20 --&gt; f20, 3.4692267612601718e-28),
-             (f20 --&gt; ne20, 1.216193699146343e-14)])
+{Ne20 ⟶ He4 + O16: 4.631669519815501e-18,
+ O16 + He4 ⟶ Ne20 + 𝛾: 2163.4896055892013,
+ Ne20 + He4 ⟶ Mg24 + 𝛾: 470.4657166295948,
+ Mg24 + He4 ⟶ Si28 + 𝛾: 65.33425925449087,
+ Al27 + p ⟶ Si28 + 𝛾: 3786.5889540808494,
+ Al27 + He4 ⟶ P31 + 𝛾: 0.05763581125914335,
+ Si28 + He4 ⟶ S32 + 𝛾: 0.08322738610569617,
+ P31 + p ⟶ S32 + 𝛾: 2375.1304964039136,
+ O16 + O16 ⟶ p + P31: 7.154939895463953e-17,
+ O16 + O16 ⟶ He4 + Si28: 2.5949312230335842e-17,
+ Mg24 + He4 ⟶ p + Al27: 0.2543862399303774,
+ Al27 + p ⟶ He4 + Mg24: 5920.818449985262,
+ Si28 + He4 ⟶ p + P31: 0.00019528201299493395,
+ P31 + p ⟶ He4 + Si28: 5491.96044267561,
+ O20 ⟶ F20 + e⁻ + 𝜈: 3.4692267362310674e-28,
+ F20 ⟶ Ne20 + e⁻ + 𝜈: 1.2161935188308098e-14,
+ Ne20 + e⁻ ⟶ F20 + 𝜈: 3.5809143990195726e-11,
+ F20 + e⁻ ⟶ O20 + 𝜈: 4.033041442238242e-09}
 </pre></div></div>
+</div>
+<p>Additionally, we can see the specific energy generation rate for these conditions</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_new</span><span class="o">.</span><span class="n">evaluate_energy_generation</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="mf">7.e9</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">1.e9</span><span class="p">,</span> <span class="n">composition</span><span class="o">=</span><span class="n">comp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1.1552835397960039e+23
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </section>
 
@@ -576,13 +412,13 @@ OrderedDict([(ne20 --&gt; he4 + o16, 4.631669519815501e-18),
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="validate-example.html" class="btn btn-neutral float-left" title="Checking your network" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="partition-function.html" class="btn btn-neutral float-right" title="Reverse Rates" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="screening-examples.html" class="btn btn-neutral float-right" title="Screening Rates" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Michael Zingale and Donald Willcox.</p>
+    <p>&#169; Copyright 2023, pynucastro development team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

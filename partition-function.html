@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reverse Rates &mdash; pynucastro 1.6.0.post77+g85b027c documentation</title>
-      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Reverse Rates &mdash; pynucastro 1.7.0.post202+g9fa753c documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Creating Networks" href="networks.html" />
-    <link rel="prev" title="Combining ReacLib Rates with Electron Capture Tables" href="electron-captures.html" /> 
+    <link rel="next" title="Nuclear Statistical Equilibrium" href="NSE-example.html" />
+    <link rel="prev" title="Removing Unimportant Rates" href="unimportant-rates.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -32,27 +36,48 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> pynucastro
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pynucastro
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.6
+                1.7
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Overview of pynucastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources and Rate Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Exploring Networks in Python</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro-examples.html">pynucastro usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot-types.html">Plotting Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro-integration.html">Example of integrating a network</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Selecting Rates</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="library-examples.html">Selecting Rates from a Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validate-example.html">Checking your network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="electron-captures.html">Combining ReacLib Rates with Electron Capture Tables</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="screening-examples.html">Screening Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modify-example.html">Modifying Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="approx-rates-examples.html">Approximate Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unimportant-rates.html">Removing Unimportant Rates</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Reverse Rates</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#the-semi-relativistic-ideal-gas-model">The Semi-Relativistic Ideal Gas Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#the-reverse-rates-definition">The Reverse Rates Definition</a></li>
@@ -60,7 +85,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#implementing-partition-functions">Implementing Partition Functions</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="NSE-example.html">Nuclear Statistical Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="julia.html">Integrating using DifferentialEquations.jl</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Writing Networks</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="networks.html">Creating Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-networks.html">AMReX Astro Microphysics Networks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing pynucastro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sources.html">Third Party Data</a></li>
 </ul>
@@ -78,10 +113,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Reverse Rates</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Reverse Rates</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/partition-function.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/pynucastro/pynucastro/blob/main/docs/source/partition-function.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -89,32 +124,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="reverse-rates">
-<h1>Reverse Rates<a class="headerlink" href="#reverse-rates" title="Permalink to this headline">¶</a></h1>
+  <section id="reverse-rates">
+<h1>Reverse Rates<a class="headerlink" href="#reverse-rates" title="Permalink to this heading"></a></h1>
 <p>In this section we will implement the partition functions discussed in:</p>
 <ul class="simple">
 <li><p>[1] T.Rauscher and F.-K.Thielemann, ADNDT 75, 1-2 (2000)</p></li>
@@ -122,7 +133,7 @@
 </ul>
 <p>with the purpose to compute inverse rates at extreme temperatures and heavy nuclide conditions.</p>
 <section id="the-semi-relativistic-ideal-gas-model">
-<h2>The Semi-Relativistic Ideal Gas Model<a class="headerlink" href="#the-semi-relativistic-ideal-gas-model" title="Permalink to this headline">¶</a></h2>
+<h2>The Semi-Relativistic Ideal Gas Model<a class="headerlink" href="#the-semi-relativistic-ideal-gas-model" title="Permalink to this heading"></a></h2>
 <p>In order to illustrate our implementation, we will start first by computing the number density of reaction specie in terms of its chemical potential. Let us start our discussion by introducing the 1-particle <em>canonical partition function</em> by</p>
 <div class="math notranslate nohighlight">
 \[Z_{1-p} = \dfrac{g}{(2\pi \hbar)^3} \int \, d^3q \,d^3p \, \exp(-E/(kT))\]</div>
@@ -157,7 +168,7 @@ semi-relativistic ideal gas by:</p>
 <p>as summarized in [1].</p>
 </section>
 <section id="the-reverse-rates-definition">
-<h2>The Reverse Rates Definition<a class="headerlink" href="#the-reverse-rates-definition" title="Permalink to this headline">¶</a></h2>
+<h2>The Reverse Rates Definition<a class="headerlink" href="#the-reverse-rates-definition" title="Permalink to this heading"></a></h2>
 <p>The forward and reverse reactions are entangled due to thermodynamical and nuclear equilibrium aspects. In this section we will see how this connection is introduced
 and explore its consequences in the nuclear rates computation, as discussed in [1]. Starting with the reaction:</p>
 <div class="math notranslate nohighlight">
@@ -199,8 +210,8 @@ and explore its consequences in the nuclear rates computation, as discussed in [
 \[\dfrac{N_a\langle \sigma v \rangle_{CD}}{N_a\langle \sigma v \rangle_{AB}} = \left(\dfrac{A_AA_B}{A_CA_D} \right)^{3/2}\dfrac{g_Ag_B}{g_Cg_D}  \times e^{-Q/(kT)}\]</div>
 </section>
 <section id="the-role-of-partition-functions">
-<h2>The Role of Partition Functions<a class="headerlink" href="#the-role-of-partition-functions" title="Permalink to this headline">¶</a></h2>
-<p>Until now, we have not discussed the role of <span class="math notranslate nohighlight">\(g\)</span>, which encompasses the number of spin states that a particle may adopt. In reactions <span class="math notranslate nohighlight">\(i(j,o)m\)</span>  the target <span class="math notranslate nohighlight">\(i\)</span> and residual nucleus <span class="math notranslate nohighlight">\(m\)</span> contributes significantly more in the calculation of the rates than the incident and outgoing particles due to their complexity and the number of quantum levels they may assume. Therefore we may consider <span class="math notranslate nohighlight">\(\langle \sigma v \rangle_{ij} \rightarrow \langle \sigma v \rangle_i\)</span>  and  <span class="math notranslate nohighlight">\(\langle \sigma v \rangle_{om} \rightarrow \langle \sigma v \rangle_m\)</span>, which symbolize the nucleous <span class="math notranslate nohighlight">\(i\)</span>, or <span class="math notranslate nohighlight">\(m\)</span>, and all the remaining particles in their channels.</p>
+<h2>The Role of Partition Functions<a class="headerlink" href="#the-role-of-partition-functions" title="Permalink to this heading"></a></h2>
+<p>Until now, we have not discussed the role of <span class="math notranslate nohighlight">\(g\)</span>, which encompasses the number of spin states that a particle may adopt. In reactions <span class="math notranslate nohighlight">\(i(j,o)m\)</span>  the target <span class="math notranslate nohighlight">\(i\)</span> and residual nucleus <span class="math notranslate nohighlight">\(m\)</span> contributes significantly more in the calculation of the rates than the incident and outgoing particles due to their complexity and the number of quantum levels they may assume. Therefore we may consider <span class="math notranslate nohighlight">\(\langle \sigma v \rangle_{ij} \rightarrow \langle \sigma v \rangle_i\)</span>  and  <span class="math notranslate nohighlight">\(\langle \sigma v \rangle_{om} \rightarrow \langle \sigma v \rangle_m\)</span>, which symbolize the nucleus <span class="math notranslate nohighlight">\(i\)</span>, or <span class="math notranslate nohighlight">\(m\)</span>, and all the remaining particles in their channels.</p>
 <p>Using this notation, capture reactions rates of the type <span class="math notranslate nohighlight">\((p,\gamma)\)</span>, <span class="math notranslate nohighlight">\((n,\gamma)\)</span>, <span class="math notranslate nohighlight">\((\alpha,\gamma)\)</span>, and their reverse photodisintegration decay rates, are then related by:</p>
 <div class="math notranslate nohighlight">
 \[\dfrac{\lambda_{\gamma}}{N_a\langle \sigma v \rangle_i} = \left(\dfrac{A_iA_j}{A_m} \right)^{3/2}\dfrac{g_ig_j}{g_m} T^{3/2}F \times e^{-Q/(kT)}\]</div>
@@ -226,14 +237,14 @@ N_a\langle \sigma v \rangle_m &amp;=&amp; N_a\langle \sigma v \rangle_m' \dfrac{
 \end{eqnarray}</div><p>where the quantites <span class="math notranslate nohighlight">\(\lambda_{\gamma}'\)</span> and <span class="math notranslate nohighlight">\(N_a\langle \sigma v \rangle_m'\)</span> are provided by REACLIB, under the <code class="docutils literal notranslate"><span class="pre">-v</span></code> flag.</p>
 </section>
 <section id="implementing-partition-functions">
-<h2>Implementing Partition Functions<a class="headerlink" href="#implementing-partition-functions" title="Permalink to this headline">¶</a></h2>
+<h2>Implementing Partition Functions<a class="headerlink" href="#implementing-partition-functions" title="Permalink to this heading"></a></h2>
 <p>The partition function information is contained in three main classes:</p>
 <ul class="simple">
-<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">PartitionFunction</span></code> materialize the temperature and the partition function values into an object, interpolating across all the defined points using a cubic spline interpolation. If a temperature value is outside the temperature range, we keep its value constant to the nearest boundary value.</p></li>
-<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">PartitionFunctionTable</span></code>  reads a table and construct a dictionary between each nucleus and their partition function class object.</p></li>
-<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">PartitionFunctionCollection</span></code> collects all the formatted table information, inside <code class="docutils literal notranslate"><span class="pre">/nucdata/PartitionFunction/</span></code>. It allow us to include the high temperature tables in [2] and to select the model used to compute the partition functions, respectively. By default, we include high temperatures, and our partition function model to be the <em>finite range droplet model (FRDM)</em>. If a nucleus is not in the collection, we set the partition function values to 1.0 by default.</p></li>
+<li><p><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunction" title="pynucastro.nucdata.partition_function.PartitionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">PartitionFunction</span></code></a> materialize the temperature and the partition function values into an object, interpolating across all the defined points using a cubic spline interpolation. If a temperature value is outside the temperature range, we keep its value constant to the nearest boundary value.</p></li>
+<li><p><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunctionTable" title="pynucastro.nucdata.partition_function.PartitionFunctionTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">PartitionFunctionTable</span></code></a>  reads a table and construct a dictionary between each nucleus and their partition function class object.</p></li>
+<li><p><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunctionCollection" title="pynucastro.nucdata.partition_function.PartitionFunctionCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">PartitionFunctionCollection</span></code></a> collects all the formatted table information, inside <code class="docutils literal notranslate"><span class="pre">/nucdata/PartitionFunction/</span></code>. It allow us to include the high temperature tables in [2] and to select the model used to compute the partition functions, respectively. By default, we include high temperatures, and our partition function model to be the <em>finite range droplet model (FRDM)</em>. If a nucleus is not in the collection, we set the partition function values to 1.0 by default.</p></li>
 </ul>
-<p>Inside the <code class="docutils literal notranslate"><span class="pre">Nucleus</span></code> class, we have defined <code class="xref py py-func docutils literal notranslate"><span class="pre">set_partition_function()</span></code> which setup our partition function collection, our high temperatures consideration, and the model used to compute the partition function data. On the other hand, <code class="xref py py-func docutils literal notranslate"><span class="pre">get_partition_function()</span></code> assigns a partition function class object to the defined nucleus. Let us illustrate how it work:</p>
+<p>Inside the <a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.nucleus.Nucleus" title="pynucastro.nucdata.nucleus.Nucleus"><code class="xref py py-class docutils literal notranslate"><span class="pre">Nucleus</span></code></a> class, we have defined <code class="docutils literal notranslate"><span class="pre">set_partition_function()</span></code> which setup our partition function collection, our high temperatures consideration, and the model used to compute the partition function data. On the other hand, <code class="docutils literal notranslate"><span class="pre">get_partition_function()</span></code> assigns a partition function class object to the defined nucleus. Let us illustrate how it work:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pynucastro</span>
 
 <span class="n">co46</span> <span class="o">=</span> <span class="n">pynucastro</span><span class="o">.</span><span class="n">rates</span><span class="o">.</span><span class="n">Nucleus</span><span class="p">(</span><span class="s1">&#39;co46&#39;</span><span class="p">)</span>
@@ -243,7 +254,7 @@ N_a\langle \sigma v \rangle_m &amp;=&amp; N_a\langle \sigma v \rangle_m' \dfrac{
 <span class="n">pf_co46</span> <span class="o">=</span> <span class="n">co46</span><span class="o">.</span><span class="n">get_partition_function</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Now, from this point we define a method inside a <code class="xref py py-func docutils literal notranslate"><span class="pre">Rate</span></code> named <code class="xref py py-func docutils literal notranslate"><span class="pre">set_partition_function()</span></code> which reads a partition function collection
+<p>Now, from this point we define a method inside a <a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Rate" title="pynucastro.rates.rate.Rate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Rate</span></code></a> named <code class="docutils literal notranslate"><span class="pre">set_partition_function()</span></code> which reads a partition function collection
 and setup all the nucleus inside the reaction rate. Let us illustrate now, how it works:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pynucastro</span>
 
@@ -268,14 +279,14 @@ and setup all the nucleus inside the reaction rate. Let us illustrate now, how i
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="electron-captures.html" class="btn btn-neutral float-left" title="Combining ReacLib Rates with Electron Capture Tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="networks.html" class="btn btn-neutral float-right" title="Creating Networks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="unimportant-rates.html" class="btn btn-neutral float-left" title="Removing Unimportant Rates" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NSE-example.html" class="btn btn-neutral float-right" title="Nuclear Statistical Equilibrium" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Michael Zingale and Donald Willcox.</p>
+    <p>&#169; Copyright 2023, pynucastro development team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

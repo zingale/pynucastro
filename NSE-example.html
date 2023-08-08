@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuclear Statistical Equilibrium &mdash; pynucastro 1.7.0.post202+g9fa753c documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Integrating using DifferentialEquations.jl" href="julia.html" />
+    <link rel="prev" title="Reverse Rates" href="partition-function.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pynucastro
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.7
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Overview of pynucastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources and Rate Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Exploring Networks in Python</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro-examples.html">pynucastro usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot-types.html">Plotting Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro-integration.html">Example of integrating a network</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Selecting Rates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="library-examples.html">Selecting Rates from a Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate-example.html">Checking your network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="electron-captures.html">Combining ReacLib Rates with Electron Capture Tables</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="screening-examples.html">Screening Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modify-example.html">Modifying Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="approx-rates-examples.html">Approximate Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unimportant-rates.html">Removing Unimportant Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partition-function.html">Reverse Rates</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Nuclear Statistical Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="julia.html">Integrating using DifferentialEquations.jl</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Writing Networks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="networks.html">Creating Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-networks.html">AMReX Astro Microphysics Networks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing pynucastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.html">Third Party Data</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pynucastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Nuclear Statistical Equilibrium</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/pynucastro/pynucastro/blob/main/docs/source/NSE-example.ipynb" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Nuclear-Statistical-Equilibrium">
+<h1>Nuclear Statistical Equilibrium<a class="headerlink" href="#Nuclear-Statistical-Equilibrium" title="Permalink to this heading"></a></h1>
+<p>pynucastro is able to calculate the abundances at nuclear statistical equilibrium of a given reaction network.</p>
+<p>The constrained equations are setup following: * Calder et al. (2007): <a class="reference external" href="https://iopscience.iop.org/article/10.1086/510709/pdf">https://iopscience.iop.org/article/10.1086/510709/pdf</a> * Seitenzahl et al. (2009): <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0092640X0800051X">https://www.sciencedirect.com/science/article/pii/S0092640X0800051X</a></p>
+<p>and solved using <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fsolve()</span></code></p>
+<p>Here we show how to find the NSE state of a set of nuclei.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pynucastro</span> <span class="k">as</span> <span class="nn">pyna</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<p>We start by creating a <code class="docutils literal notranslate"><span class="pre">Library</span></code> object that reads all the ReacLib rates and link different nuclei of choice. Then initialize <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> by using the the rates created by the <code class="docutils literal notranslate"><span class="pre">Library</span></code> object.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">library</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">ReacLibLibrary</span><span class="p">()</span>
+
+<span class="n">subch_full</span> <span class="o">=</span> <span class="n">library</span><span class="o">.</span><span class="n">linking_nuclei</span><span class="p">([</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="s2">&quot;he4&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;c12&quot;</span><span class="p">,</span> <span class="s2">&quot;n13&quot;</span><span class="p">,</span> <span class="s2">&quot;n14&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;o16&quot;</span><span class="p">,</span> <span class="s2">&quot;f18&quot;</span><span class="p">,</span> <span class="s2">&quot;ne20&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;ne21&quot;</span><span class="p">,</span> <span class="s2">&quot;na22&quot;</span><span class="p">,</span> <span class="s2">&quot;na23&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;mg24&quot;</span><span class="p">,</span> <span class="s2">&quot;al27&quot;</span><span class="p">,</span> <span class="s2">&quot;si28&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;p31&quot;</span><span class="p">,</span> <span class="s2">&quot;s32&quot;</span><span class="p">,</span> <span class="s2">&quot;cl35&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;ar36&quot;</span><span class="p">,</span> <span class="s2">&quot;k39&quot;</span><span class="p">,</span> <span class="s2">&quot;ca40&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;sc43&quot;</span><span class="p">,</span> <span class="s2">&quot;ti44&quot;</span><span class="p">,</span> <span class="s2">&quot;v47&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;cr48&quot;</span><span class="p">,</span> <span class="s2">&quot;mn51&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;fe52&quot;</span><span class="p">,</span><span class="s2">&quot;co55&quot;</span><span class="p">,</span><span class="s2">&quot;ni56&quot;</span><span class="p">])</span>
+
+<span class="n">rc</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">RateCollection</span><span class="p">(</span><span class="n">libraries</span><span class="o">=</span><span class="n">subch_full</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">get_comp_nse(rho,T,ye)</span></code> is a method of <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> that returns composition at NSE as an object <code class="docutils literal notranslate"><span class="pre">Composition</span></code> by providing density, temperature, and a presribed electron fraction. There is pre-set initial guess, however one should adjust the initial guess, accordingly if no solutions are found or taking a long time as the algorithm is searching for the correct initial guess.</p>
+<p>It has options of incorporating coulomb correction terms by let <code class="docutils literal notranslate"><span class="pre">use_coulomb_corr=True</span></code>, and return the solution of proton and neutron chemical potentials by <code class="docutils literal notranslate"><span class="pre">return_sol=True</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comp</span><span class="p">,</span> <span class="n">sol</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">get_comp_nse</span><span class="p">(</span><span class="mf">1e7</span><span class="p">,</span> <span class="mf">6e9</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">,</span> <span class="n">use_coulomb_corr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_sol</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/NSE-example_5_0.png" src="_images/NSE-example_5_0.png" />
+</div>
+</div>
+<p>We can also explicitly print the composition</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">comp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;After solving, the chemical potential for proton and neutron are </span><span class="si">{</span><span class="n">sol</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">sol</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  X(p) : 0.009350257557755646
+  X(he4) : 0.43364326483374666
+  X(c12) : 7.728730855864089e-06
+  X(n13) : 2.5920445720725907e-10
+  X(n14) : 1.3663329800438218e-09
+  X(o16) : 1.5697551606924802e-05
+  X(f18) : 2.4114063406242442e-11
+  X(ne20) : 3.018748620023454e-07
+  X(ne21) : 3.956328637889247e-09
+  X(na22) : 9.687083066114455e-10
+  X(na23) : 7.29692276661749e-08
+  X(mg24) : 3.470177345436031e-05
+  X(al27) : 3.352641831042769e-05
+  X(si28) : 0.010439571315309643
+  X(p31) : 0.00213499350058423
+  X(s32) : 0.009160645411759392
+  X(cl35) : 0.004000874822062623
+  X(ar36) : 0.004879636200529764
+  X(k39) : 0.005552717409028616
+  X(ca40) : 0.004769863357480988
+  X(sc43) : 0.000372684690344959
+  X(ti44) : 0.00022925810669629148
+  X(v47) : 0.004900622959186554
+  X(cr48) : 0.001148865973038766
+  X(mn51) : 0.0690476133641174
+  X(fe52) : 0.005746868745454951
+  X(co55) : 0.4156153776231819
+  X(ni56) : 0.018914848236757317
+
+After solving, the chemical potential for proton and neutron are -7.738610218875152 and -9.999064522280307
+</pre></div></div>
+</div>
+<p>For <span class="math notranslate nohighlight">\(\rho = 10^7~\mathrm{g~cm^{-3}}\)</span> and electron fraction, <span class="math notranslate nohighlight">\(Y_e = 0.5\)</span>, we can explore how the NSE state changes with temperature.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="mf">1e7</span>
+<span class="n">ye</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">temps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">X_s</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">guess</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">6.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">11.5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">temp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">temps</span><span class="p">):</span>
+    <span class="n">nse_comp</span><span class="p">,</span> <span class="n">sol</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">get_comp_nse</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">temp</span><span class="o">*</span><span class="mf">1.0e9</span><span class="p">,</span> <span class="n">ye</span><span class="p">,</span> <span class="n">init_guess</span><span class="o">=</span><span class="n">guess</span><span class="p">,</span>
+                                    <span class="n">use_coulomb_corr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_sol</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="n">sol</span>
+    <span class="n">nse_X_s</span> <span class="o">=</span> <span class="p">[</span><span class="n">nse_comp</span><span class="o">.</span><span class="n">X</span><span class="p">[</span><span class="n">nuc</span><span class="p">]</span> <span class="k">for</span> <span class="n">nuc</span> <span class="ow">in</span> <span class="n">nse_comp</span><span class="o">.</span><span class="n">X</span><span class="p">]</span>
+    <span class="n">X_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nse_X_s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X_s</span><span class="p">)</span>
+<span class="n">nuc_names</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">get_nuclei</span><span class="p">()</span>
+
+<span class="n">low_limit</span> <span class="o">=</span> <span class="mf">1e-2</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nuc_names</span><span class="p">)):</span>
+    <span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">X_s</span><span class="p">[:,</span><span class="n">k</span><span class="p">])</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">X_s</span><span class="p">[:,</span><span class="n">k</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">low_limit</span><span class="p">):</span>
+        <span class="n">line</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nuc_names</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;upper right&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Temp $[\times 10^9 K]$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Mass Fraction&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="n">low_limit</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">rf</span><span class="s2">&quot;$Y_e = </span><span class="si">{</span><span class="n">ye</span><span class="si">}</span><span class="s2">$, $\rho = </span><span class="si">{</span><span class="n">rho</span><span class="si">:</span><span class="s2">6.3g</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Text(0.5, 1.0, &#39;$Y_e = 0.5$, $\\rho =  1e+07$&#39;)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/NSE-example_10_1.png" src="_images/NSE-example_10_1.png" />
+</div>
+</div>
+<p>For <span class="math notranslate nohighlight">\(\rho = 10^7~\mathrm{g~cm^{-3}}\)</span> and a relatively high temperature of $ T = 6 <span class="math">\times 10`^9~:nbsphinx-math:</span>mathrm{K}`$, we can look at how the NSE state changes with varying <span class="math notranslate nohighlight">\(Y_e\)</span>.</p>
+<p>Note: there will be a lowest <span class="math notranslate nohighlight">\(Y_e\)</span> that is attainable by the network, depending on what species are represented. As long as protons are in the network, we can reach a <span class="math notranslate nohighlight">\(Y_e\)</span> of <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ye_low</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">nuc</span><span class="o">.</span><span class="n">Z</span><span class="o">/</span><span class="n">nuc</span><span class="o">.</span><span class="n">A</span> <span class="k">for</span> <span class="n">nuc</span> <span class="ow">in</span> <span class="n">rc</span><span class="o">.</span><span class="n">unique_nuclei</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="mf">1e7</span>
+<span class="n">ye_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">ye_low</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="mf">6.0e9</span>
+<span class="n">X_s_1</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">guess</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">6.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">11.5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ye</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ye_s</span><span class="p">):</span>
+    <span class="n">nse_comp_1</span><span class="p">,</span> <span class="n">sol</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">get_comp_nse</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">ye</span><span class="p">,</span> <span class="n">init_guess</span><span class="o">=</span><span class="n">guess</span><span class="p">,</span>
+                                      <span class="n">use_coulomb_corr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_sol</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="n">sol</span>
+    <span class="n">nse_X_s_1</span> <span class="o">=</span> <span class="p">[</span><span class="n">nse_comp_1</span><span class="o">.</span><span class="n">X</span><span class="p">[</span><span class="n">nuc</span><span class="p">]</span> <span class="k">for</span> <span class="n">nuc</span> <span class="ow">in</span> <span class="n">nse_comp_1</span><span class="o">.</span><span class="n">X</span><span class="p">]</span>
+    <span class="n">X_s_1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nse_X_s_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_s_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X_s_1</span><span class="p">)</span>
+<span class="n">nuc_names</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">get_nuclei</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nuc_names</span><span class="p">)):</span>
+    <span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ye_s</span><span class="p">,</span> <span class="n">X_s_1</span><span class="p">[:,</span><span class="n">k</span><span class="p">])</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">X_s_1</span><span class="p">[:,</span><span class="n">k</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mf">0.01</span><span class="p">):</span>
+        <span class="n">line</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nuc_names</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;ye&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Mass Fraction&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">rf</span><span class="s2">&quot;$\rho = </span><span class="si">{</span><span class="n">rho</span><span class="si">:</span><span class="s2">6.3g</span><span class="si">}</span><span class="s2">$ and $T=</span><span class="si">{</span><span class="n">temp</span><span class="si">:</span><span class="s2">6.3g</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Text(0.5, 1.0, &#39;$\\rho =  1e+07$ and $T= 6e+09$&#39;)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/NSE-example_14_1.png" src="_images/NSE-example_14_1.png" />
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="partition-function.html" class="btn btn-neutral float-left" title="Reverse Rates" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="julia.html" class="btn btn-neutral float-right" title="Integrating using DifferentialEquations.jl" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, pynucastro development team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

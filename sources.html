@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Third Party Data &mdash; pynucastro 1.6.0.post77+g85b027c documentation</title>
-      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Third Party Data &mdash; pynucastro 1.7.0.post202+g9fa753c documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="pynucastro.rates package" href="pynucastro.rates.html" /> 
+    <link rel="prev" title="pynucastro.screening package" href="pynucastro.screening.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,29 +33,60 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> pynucastro
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pynucastro
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.6
+                1.7
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Overview of pynucastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources and Rate Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Exploring Networks in Python</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro-examples.html">pynucastro usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot-types.html">Plotting Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro-integration.html">Example of integrating a network</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Selecting Rates</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="library-examples.html">Selecting Rates from a Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validate-example.html">Checking your network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="electron-captures.html">Combining ReacLib Rates with Electron Capture Tables</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="screening-examples.html">Screening Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modify-example.html">Modifying Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="approx-rates-examples.html">Approximate Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unimportant-rates.html">Removing Unimportant Rates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="partition-function.html">Reverse Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NSE-example.html">Nuclear Statistical Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="julia.html">Integrating using DifferentialEquations.jl</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Writing Networks</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="networks.html">Creating Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-networks.html">AMReX Astro Microphysics Networks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing pynucastro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">API</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Third Party Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#nuclear-reaction-rates-from-jina-reaclib">Nuclear reaction rates from JINA Reaclib</a></li>
@@ -75,10 +110,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Third Party Data</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Third Party Data</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/sources.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/pynucastro/pynucastro/blob/main/docs/source/sources.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -86,73 +121,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="third-party-data">
-<h1>Third Party Data<a class="headerlink" href="#third-party-data" title="Permalink to this headline">¶</a></h1>
+  <section id="third-party-data">
+<h1>Third Party Data<a class="headerlink" href="#third-party-data" title="Permalink to this heading"></a></h1>
 <p>pynucastro incorporates the following publicly-available
 third-party data. Links to this data as well as citations to the
 relevant publications are as follows.</p>
 <section id="nuclear-reaction-rates-from-jina-reaclib">
-<h2>Nuclear reaction rates from JINA Reaclib<a class="headerlink" href="#nuclear-reaction-rates-from-jina-reaclib" title="Permalink to this headline">¶</a></h2>
+<h2>Nuclear reaction rates from JINA Reaclib<a class="headerlink" href="#nuclear-reaction-rates-from-jina-reaclib" title="Permalink to this heading"></a></h2>
 <p>The reaction rate parameterizations in <a class="reference external" href="https://github.com/pynucastro/pynucastro/tree/main/pynucastro/library">pynucastro/library</a>
-were obtained from the <a class="reference external" href="https://groups.nscl.msu.edu/jina/reaclib/db/">JINA Reaclib database</a>.</p>
-<p><a class="reference external" href="http://iopscience.iop.org/article/10.1088/0067-0049/189/1/240">Cyburt et al., ApJS 189 (2010) 240</a></p>
+were obtained from the <a class="reference external" href="https://reaclib.jinaweb.org/">JINA Reaclib database</a>.</p>
+<p><a class="reference external" href="https://iopscience.iop.org/article/10.1088/0067-0049/189/1/240">Cyburt et al., ApJS 189 (2010) 240</a></p>
 </section>
 <section id="tabulated-weak-nuclear-reaction-rates">
-<h2>Tabulated weak nuclear reaction rates<a class="headerlink" href="#tabulated-weak-nuclear-reaction-rates" title="Permalink to this headline">¶</a></h2>
-<p>The weak reaction rate tables <a class="reference external" href="https://github.com/pynucastro/pynucastro/blob/main/pynucastro/library/tabular/23Na-23Ne_electroncapture.dat">23Na-23Ne_electroncapture.dat</a>
-and <a class="reference external" href="https://github.com/pynucastro/pynucastro/blob/main/pynucastro/library/tabular/23Ne-23Na_betadecay.dat">23Ne-23Na_betadecay.dat</a>
+<h2>Tabulated weak nuclear reaction rates<a class="headerlink" href="#tabulated-weak-nuclear-reaction-rates" title="Permalink to this heading"></a></h2>
+<p>The weak reaction rate tables in <a class="reference external" href="https://github.com/pynucastro/pynucastro/tree/main/pynucastro/library/tabular/suzuki">pynucastro/library/tabular/suzuki</a>
 were obtained from:</p>
-<p><a class="reference external" href="http://www.phys.chs.nihon-u.ac.jp/suzuki/data2/link.html">http://www.phys.chs.nihon-u.ac.jp/suzuki/data2/link.html</a></p>
-<p><a class="reference external" href="http://iopscience.iop.org/article/10.3847/0004-637X/817/2/163">Suzuki et al., ApJ 817 (2016) 163</a></p>
+<p><a class="reference external" href="https://www.phys.chs.nihon-u.ac.jp/suzuki/data2/link.html">https://www.phys.chs.nihon-u.ac.jp/suzuki/data2/link.html</a></p>
+<p><a class="reference external" href="https://iopscience.iop.org/article/10.3847/0004-637X/817/2/163">Suzuki et al., ApJ 817 (2016) 163</a></p>
 </section>
 <section id="physical-constants-from-codata">
-<h2>Physical constants from CODATA<a class="headerlink" href="#physical-constants-from-codata" title="Permalink to this headline">¶</a></h2>
-<p>The standalone Fortran networks and the StarKiller Microphysics
+<h2>Physical constants from CODATA<a class="headerlink" href="#physical-constants-from-codata" title="Permalink to this heading"></a></h2>
+<p>The standalone AMReX-Astro Microphysics
 networks rely on physical constants sourced from the 2014 CODATA
 recommended values.</p>
-<p><a class="reference external" href="http://physics.nist.gov/constants">P.J. Mohr, D.B. Newell, and B.N. Taylor (2016), “The 2014 CODATA Recommended Values of the Fundamental Physical Constants”</a></p>
+<p><a class="reference external" href="https://physics.nist.gov/cuu/Constants/index.html">P.J. Mohr, D.B. Newell, and B.N. Taylor (2016), “The 2014 CODATA Recommended Values of the Fundamental Physical Constants”</a></p>
 <p><a class="reference external" href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.88.035009">Mohr et al., Rev. Mod. Phys. 88, 035009</a></p>
 </section>
 <section id="nuclear-binding-energies-from-the-atomic-mass-data-center">
-<h2>Nuclear binding energies from the Atomic Mass Data Center<a class="headerlink" href="#nuclear-binding-energies-from-the-atomic-mass-data-center" title="Permalink to this headline">¶</a></h2>
-<p>The standalone Fortran networks and the StarKiller Microphysics
+<h2>Nuclear binding energies from the Atomic Mass Data Center<a class="headerlink" href="#nuclear-binding-energies-from-the-atomic-mass-data-center" title="Permalink to this heading"></a></h2>
+<p>The standalone AMReX-Astro Microphysics
 networks rely on binding energy per nucleon sourced from the Atomic
 Mass Evaluation 2016 (default) and 2012 of the Atomic Mass Data
 Center.</p>
 <p>The Atomic Mass Evaluation 2016 and 2012 are available <a class="reference external" href="https://www-nds.iaea.org/amdc/">online</a>.</p>
 <p>Atomic Mass Evaluation 2016:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="http://iopscience.iop.org/article/10.1088/1674-1137/41/3/030002">Huang et al., Chinese Physics C 41, 030002</a></p></li>
-<li><p><a class="reference external" href="http://iopscience.iop.org/article/10.1088/1674-1137/41/3/030003">Wang et al., Chinese Physics C 41, 030003</a></p></li>
+<li><p><a class="reference external" href="https://iopscience.iop.org/article/10.1088/1674-1137/41/3/030002">Huang et al., Chinese Physics C 41, 030002</a></p></li>
+<li><p><a class="reference external" href="https://iopscience.iop.org/article/10.1088/1674-1137/41/3/030003">Wang et al., Chinese Physics C 41, 030003</a></p></li>
 </ul>
 <p>Atomic Mass Evaluation 2012:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="http://iopscience.iop.org/article/10.1088/1674-1137/36/12/002">Audi et al., Chinese Physics C 36, 1287-1602</a></p></li>
-<li><p><a class="reference external" href="http://iopscience.iop.org/article/10.1088/1674-1137/36/12/003">Wang et al., Chinese Physics C 36, 1603-2014</a></p></li>
+<li><p><a class="reference external" href="https://iopscience.iop.org/article/10.1088/1674-1137/36/12/002">Audi et al., Chinese Physics C 36, 1287-1602</a></p></li>
+<li><p><a class="reference external" href="https://iopscience.iop.org/article/10.1088/1674-1137/36/12/003">Wang et al., Chinese Physics C 36, 1603-2014</a></p></li>
 </ul>
 </section>
 </section>
@@ -161,13 +171,13 @@ Center.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pynucastro.rates.html" class="btn btn-neutral float-left" title="pynucastro.rates package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pynucastro.screening.html" class="btn btn-neutral float-left" title="pynucastro.screening package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Michael Zingale and Donald Willcox.</p>
+    <p>&#169; Copyright 2023, pynucastro development team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pynucastro &mdash; pynucastro 1.6.0.post77+g85b027c documentation</title>
-      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>pynucastro &mdash; pynucastro 1.7.0.post202+g9fa753c documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -29,29 +33,60 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="#" class="icon icon-home"> pynucastro
+
+          
+          
+          <a href="#" class="icon icon-home">
+            pynucastro
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.6
+                1.7
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Overview of pynucastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources and Rate Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Exploring Networks in Python</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro-examples.html">pynucastro usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot-types.html">Plotting Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro-integration.html">Example of integrating a network</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Selecting Rates</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="library-examples.html">Selecting Rates from a Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validate-example.html">Checking your network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="electron-captures.html">Combining ReacLib Rates with Electron Capture Tables</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="screening-examples.html">Screening Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modify-example.html">Modifying Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="approx-rates-examples.html">Approximate Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unimportant-rates.html">Removing Unimportant Rates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="partition-function.html">Reverse Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NSE-example.html">Nuclear Statistical Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="julia.html">Integrating using DifferentialEquations.jl</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Writing Networks</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="networks.html">Creating Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-networks.html">AMReX Astro Microphysics Networks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing pynucastro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sources.html">Third Party Data</a></li>
 </ul>
@@ -69,10 +104,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>pynucastro</li>
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">pynucastro</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/pynucastro/pynucastro/blob/main/docs/source/index.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -80,105 +115,68 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="pynucastro">
-<h1>pynucastro<a class="headerlink" href="#pynucastro" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="http://github.com/pynucastro/pynucastro">http://github.com/pynucastro/pynucastro</a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>pynucastro does not yet calculate nuclear partition functions to
-correct reverse rates in the Reaclib library. Work is ongoing to
-implement this functionality. We recommend you consider what
-problem you wish to study using pynucastro to determine whether
-reverse rates and partition function corrections are significant at
-the temperatures of interest.</p>
-</div>
+  <section id="pynucastro">
+<h1>pynucastro<a class="headerlink" href="#pynucastro" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="https://github.com/pynucastro/pynucastro">https://github.com/pynucastro/pynucastro</a></p>
 <p>pynucastro is a set of python interfaces to nuclear reaction rate
 databases (including the JINA reaclib nuclear reaction rate database).
 It is meant for both interactive exploration of rates (through Jupyter
 notebooks) and to create reaction networks for use in simulation
 codes.</p>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Overview of pynucastro</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#data-sources">Data sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Overview of pynucastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources and Rate Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pynucastro-examples.html">pynucastro usage examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro-examples.html#Loading-a-single-rate">Loading a single rate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro-examples.html#Working-with-a-group-of-rates">Working with a group of rates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro-examples.html#Explore-the-network’s-rates">Explore the network’s rates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro-examples.html#Plot-nuclides-on-a-grid">Plot nuclides on a grid</a></li>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Exploring Networks in Python</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro-examples.html">pynucastro usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot-types.html">Plotting Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro-integration.html">Example of integrating a network</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pynucastro-integration.html">Example of integrating a network</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro-integration.html#Integrating-the-network">Integrating the network</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="library-examples.html">Selecting Rates from a Library</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="library-examples.html#Reading-a-rate-snapshot">Reading a rate snapshot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="library-examples.html#Specifying-Desired-Nuclei">Specifying Desired Nuclei</a></li>
-<li class="toctree-l2"><a class="reference internal" href="library-examples.html#Filtering-the-Library">Filtering the Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="library-examples.html#Example:-Building-an-Alpha-Capture-Network">Example: Building an Alpha Capture Network</a></li>
-</ul>
-</li>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Selecting Rates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="library-examples.html">Selecting Rates from a Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validate-example.html">Checking your network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="electron-captures.html">Combining ReacLib Rates with Electron Capture Tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="partition-function.html">Reverse Rates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="partition-function.html#the-semi-relativistic-ideal-gas-model">The Semi-Relativistic Ideal Gas Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="partition-function.html#the-reverse-rates-definition">The Reverse Rates Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="partition-function.html#the-role-of-partition-functions">The Role of Partition Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="partition-function.html#implementing-partition-functions">Implementing Partition Functions</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="networks.html">Creating Networks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="networks.html#all-networks">All networks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="networks.html#python-network">Python network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="networks.html#amrex-astro-microphysics-network">AMReX-Astro Microphysics network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="networks.html#tabular-rates">Tabular Rates</a></li>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="screening-examples.html">Screening Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modify-example.html">Modifying Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="approx-rates-examples.html">Approximate Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unimportant-rates.html">Removing Unimportant Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partition-function.html">Reverse Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NSE-example.html">Nuclear Statistical Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="julia.html">Integrating using DifferentialEquations.jl</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.html">pynucastro package</a></li>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Writing Networks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="networks.html">Creating Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-networks.html">AMReX Astro Microphysics Networks</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="sources.html">Third Party Data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sources.html#nuclear-reaction-rates-from-jina-reaclib">Nuclear reaction rates from JINA Reaclib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sources.html#tabulated-weak-nuclear-reaction-rates">Tabulated weak nuclear reaction rates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sources.html#physical-constants-from-codata">Physical constants from CODATA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sources.html#nuclear-binding-energies-from-the-atomic-mass-data-center">Nuclear binding energies from the Atomic Mass Data Center</a></li>
-</ul>
-</li>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing pynucastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.html">Third Party Data</a></li>
 </ul>
 </div>
 </section>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
@@ -196,7 +194,7 @@ codes.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Michael Zingale and Donald Willcox.</p>
+    <p>&#169; Copyright 2023, pynucastro development team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
