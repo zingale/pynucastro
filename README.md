@@ -118,7 +118,7 @@ the default location python searches for packages.
 
 This package requires Python 3 (release 3.6 or later) and the following Python packages:
 
-* `numpy`
+* `numpy` (including numpy 2.0)
 
 * `sympy`
 
