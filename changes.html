@@ -1,0 +1,1383 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Changelog &#8212; pynucastro 1.7.0.post726+g90e398717 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=15ab05d9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=15e5edec"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=eaa7b67c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'changes';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pynucastro" href="modules.html" />
+    <link rel="prev" title="Citing pynucastro" href="citing.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.7" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">pynucastro 1.7</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Overview of pynucastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rate_types.html">Reaction Rate Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nuclear Properties</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sources.html">Third Party Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nucleus.html">Nuclear Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lodders_composition.html">Solar Composition</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">pynucastro Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pynucastro-examples.html">pynucastro Usage Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot-types.html">Plotting Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_network.html">Basic Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro-integration.html">Integrating a Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="starlib.html">Network Integration with StarLib rates</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Working with Libraries</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="finding-rates.html">Finding Available Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabulated-weak-rates.html">Tabulated Weak Rate Sources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="duplicate-rates.html">Dealing with Duplicate Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate-example.html">Checking Your Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="electron-capture-example.html">Tabulated Weak Rate Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="electron-captures.html">Combining ReacLib Rates with Electron Capture Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alternate-rates.html"><code class="docutils literal notranslate"><span class="pre">alternate_rates</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="inert-nuclei.html">Inert Nuclei</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Rate Operations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="screening-examples.html">Screening Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modify-example.html">Modifying Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom-rates.html">Creating a Custom Rate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derived-rates.html">Derived Rates</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Network Operations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="approximate-rates.html">Approximate and Modified Rates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="alpha-gamma-approx.html">Approximating alpha-capture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="double-n-capture.html">Approximating double n-capture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modified-rates.html">Modified Rates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="nse-protons.html">Using NSE Protons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unimportant-rates.html">Removing Unimportant Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network-cycles.html">Finding Cycles (with NetworkX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stiffness.html">Assessing the Stiffness of a Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reduction.html">Network Reduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sens_analysis_example.html">Sensitivity Analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nuclear Statistical Equilibrium</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nse-intro.html">NSE Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NSE-example.html">NSE Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NSE-direct-integration.html">NSE vs. Direct Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nse_table.html">Creating an NSE table</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fermi-integrals.html">Fermi-Dirac Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="electron-eos.html">The Electron-Positron EOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stellar-eos.html">Stellar EOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="temperature-evolution.html">Integrating Networks with Temperature Evolution</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Plasma Neutrinos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="neutrino-cooling.html">Neutrino Cooling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exporting Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="networks.html">Exporting Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-network.html">Python network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple-cxx-network.html">Simple C++ network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fortran-network.html">Fortran Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amrex-astro-cxx-networks.html">AMReX Astro Microphysics Networks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="julia.html">Integrating using DifferentialEquations.jl</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="installing-diffeqpy-julia.html">Installing <code class="docutils literal notranslate"><span class="pre">diffeqpy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example-Integrating-Network-diffeqpy.html">Example of Integrating a Network</a></li>
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Useful Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="he-burning-example.html">A He-burning Network</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples in Nuclear Astrophysics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="examples/binding-energy.html">Binding Energy per Nucleon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/pp-cno.html">p-p chain vs. CNO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/hot-CNO-breakout-example.html">hot-CNO and breakout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/triple_alpha_eval.html">Computing the Screened Triple-alpha rate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/he-burning.html">Ratio of C/O from He burning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/supernova-lightcurve.html">A Supernova Lightcurve</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing pynucastro</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Changelog</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pynucastro.html">pynucastro package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.constants.html">pynucastro.constants package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html">pynucastro.constants.constants module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.eos.html">pynucastro.eos package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.degeneracy_parameter_bounds.html">pynucastro.eos.degeneracy_parameter_bounds module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.difference_utils.html">pynucastro.eos.difference_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.electron_eos.html">pynucastro.eos.electron_eos module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.eos_components.html">pynucastro.eos.eos_components module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.fermi_integrals.html">pynucastro.eos.fermi_integrals module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.quadrature_weights.html">pynucastro.eos.quadrature_weights module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.stellar_eos.html">pynucastro.eos.stellar_eos module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.networks.html">pynucastro.networks package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.amrexastro_cxx_network.html">pynucastro.networks.amrexastro_cxx_network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.base_cxx_network.html">pynucastro.networks.base_cxx_network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.fortran_network.html">pynucastro.networks.fortran_network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.helper.html">pynucastro.networks.helper module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.nse_network.html">pynucastro.networks.nse_network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.python_network.html">pynucastro.networks.python_network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.rate_collection.html">pynucastro.networks.rate_collection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.simple_cxx_network.html">pynucastro.networks.simple_cxx_network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.sympy_network_support.html">pynucastro.networks.sympy_network_support module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.neutrino_cooling.html">pynucastro.neutrino_cooling package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.neutrino_cooling.neutrino_cooling.html">pynucastro.neutrino_cooling.neutrino_cooling module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.neutrino_cooling.sneut5_mod.html">pynucastro.neutrino_cooling.sneut5_mod module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.nucdata.html">pynucastro.nucdata package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.elements.html">pynucastro.nucdata.elements module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.halflife_table.html">pynucastro.nucdata.halflife_table module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.mass_table.html">pynucastro.nucdata.mass_table module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.nucleus.html">pynucastro.nucdata.nucleus module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.partition_function.html">pynucastro.nucdata.partition_function module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.spin_table.html">pynucastro.nucdata.spin_table module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.rates.html">pynucastro.rates package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.alternate_rates.html">pynucastro.rates.alternate_rates module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.approximate_rates.html">pynucastro.rates.approximate_rates module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.derived_rate.html">pynucastro.rates.derived_rate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.files.html">pynucastro.rates.files module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.known_duplicates.html">pynucastro.rates.known_duplicates module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html">pynucastro.rates.library module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.modified_rate.html">pynucastro.rates.modified_rate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.rate.html">pynucastro.rates.rate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.reaclib_rate.html">pynucastro.rates.reaclib_rate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.starlib_rate.html">pynucastro.rates.starlib_rate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.tabular_rate.html">pynucastro.rates.tabular_rate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.temperature_tabular_rate.html">pynucastro.rates.temperature_tabular_rate module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.reduction.html">pynucastro.reduction package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.reduction.drgep_module.html">pynucastro.reduction.drgep_module module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.reduction.sensitivity_analysis.html">pynucastro.reduction.sensitivity_analysis module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.screening.html">pynucastro.screening package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html">pynucastro.screening.screen module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screening_util.html">pynucastro.screening.screening_util module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.mpi_utils.html">pynucastro.mpi_utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.numba_util.html">pynucastro.numba_util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.utils.html">pynucastro.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.yt_utils.html">pynucastro.yt_utils module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="zreferences.html">References</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="py-modindex.html">Module Index</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pynucastro/pynucastro" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pynucastro/pynucastro/blob/main/docs/source/changes.rst?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pynucastro/pynucastro/edit/main/docs/source/changes.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pynucastro/pynucastro/issues/new?title=Issue%20on%20page%20%2Fchanges.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/changes.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Changelog</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.9.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id51">2.8.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id115">2.7.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id118">2.7.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id188">2.6.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id253">2.5.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id319">2.4.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id336">2.3.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id354">2.2.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id371">2.2.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id394">2.1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id411">2.1.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id444">2.0.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id458">2.0.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id461">2.0.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id466">2.0.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id503">1.7.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id556">1.6.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id562">1.5.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id563">1.4.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id564">1.4.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id565">1.3.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id567">1.2.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id568">1.1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id569">1.1.0</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.9.0">2.9.0</a><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>complete a stellar EOS with ideal gas and radiation (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1201">#1201</a>)</p></li>
+<li><p><cite>AmrexAstroCxxNetwork</cite>: check weak label in <cite>ydot_weak</cite> ([#1216](<a class="github reference external" href="https://github.com/pynucastro/pynucastro/pull/1216">pynucastro/pynucastro#1216</a>))</p></li>
+<li><p>change how <code class="docutils literal notranslate"><span class="pre">DerivedRate</span></code> works so it can apply to any strong rate
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1207">#1207</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1217">#1217</a>)</p></li>
+<li><p>pin nbclient to fix doc build issues (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1214">#1214</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1220">#1220</a>)</p></li>
+<li><p>standardize <code class="docutils literal notranslate"><span class="pre">Rate.fname</span></code> and <code class="docutils literal notranslate"><span class="pre">Rate.id</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1209">#1209</a>)</p></li>
+<li><p>optimize <code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code> <code class="docutils literal notranslate"><span class="pre">ener_gener_rate</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1210">#1210</a>) and use
+<code class="docutils literal notranslate"><span class="pre">exp10</span></code> for performance (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1215">#1215</a>)</p></li>
+<li><p>remove <code class="docutils literal notranslate"><span class="pre">Rate.cname</span></code> and change <code class="docutils literal notranslate"><span class="pre">Rate.fname</span></code> to be more descriptive
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1206">#1206</a>)</p></li>
+<li><p>add a <code class="docutils literal notranslate"><span class="pre">TemperatureTabularRate</span></code> that works with (T, N_A&lt;σv&gt;) pairs
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1175">#1175</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1191">#1191</a>)</p></li>
+<li><p>update CI to python 3.14 (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1089">#1089</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1205">#1205</a>)</p></li>
+<li><p>clean up the <code class="docutils literal notranslate"><span class="pre">EOSState</span></code> classes (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1200">#1200</a>)</p></li>
+<li><p>update Zenodo authors (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1204">#1204</a>)</p></li>
+<li><p>add a <code class="docutils literal notranslate"><span class="pre">full_library</span></code> that contains all the rates in pynucastro
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1193">#1193</a>)</p></li>
+<li><p>add a unit test on rate IDs (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1199">#1199</a>)</p></li>
+<li><p>add a solar composition from Lodders et al. 2020 (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1187">#1187</a>)</p></li>
+<li><p>remove <code class="docutils literal notranslate"><span class="pre">Rate.chapter</span></code> outside of <code class="docutils literal notranslate"><span class="pre">ReacLibRate</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1203">#1203</a>)</p></li>
+<li><p>make tabular rates distinguishable (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1196">#1196</a>)</p></li>
+<li><p>remove <code class="docutils literal notranslate"><span class="pre">libfile</span></code> from the <code class="docutils literal notranslate"><span class="pre">Library</span></code> class – it only makes sense
+for <code class="docutils literal notranslate"><span class="pre">ReacLibLibrary</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1185">#1185</a>)</p></li>
+<li><p>docstring updates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1198">#1198</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1208">#1208</a>)</p></li>
+<li><p>remove <code class="docutils literal notranslate"><span class="pre">list_known_rates</span></code> – it only works for single rate files
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1192">#1192</a>)</p></li>
+<li><p>centralize the AMReX C++ interpolation routines (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1190">#1190</a>)</p></li>
+<li><p>AMReX C++ networks optimizations: use the smallest int type for
+<code class="docutils literal notranslate"><span class="pre">rate_indices</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1189">#1189</a>), eliminate multiple logs in the table rate
+eval (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1180">#1180</a>), remove unneeded parameters (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1183">#1183</a>), cache partition
+function indices and only compute partition function if it is &gt; 1
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1165">#1165</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1167">#1167</a>), optimize table lookup for weak rates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1164">#1164</a>)</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">SECURITY.md</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1188">#1188</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">network_helper</span></code> updates: add <code class="docutils literal notranslate"><span class="pre">with_reverse</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1168">#1168</a>), add
+<code class="docutils literal notranslate"><span class="pre">inert_nuclei</span></code> support (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1184">#1184</a>)</p></li>
+<li><p>update CI actions (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1181">#1181</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1212">#1212</a>)</p></li>
+<li><p>update CI benchmarks to reflect AMReX-Astro Microphysics changes
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1179">#1179</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1222">#1222</a>)</p></li>
+<li><p>add more screening test coverage (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1172">#1172</a>)</p></li>
+<li><p>docs / API link updates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1170">#1170</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1174">#1174</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1218">#1218</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1221">#1221</a>)</p></li>
+<li><p>add Windows CI test (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1163">#1163</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1177">#1177</a>)</p></li>
+<li><p>disable CPU features when regenerating nets in CI comparisons (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1173">#1173</a>)</p></li>
+<li><p>add the ability to plot partition functions (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1166">#1166</a>)</p></li>
+</ul>
+</section>
+<section id="id51">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.8.0">2.8.0</a><a class="headerlink" href="#id51" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>update CI artifact action version (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1160">#1160</a>)</p></li>
+<li><p>update zenodo authors (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1155">#1155</a>)</p></li>
+<li><p>some optimization of <code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code> C++ code (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1150">#1150</a>)</p></li>
+<li><p>allow <code class="docutils literal notranslate"><span class="pre">NSENetwork</span></code> and <code class="docutils literal notranslate"><span class="pre">DerivedRate</span></code> control over spin reliability
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1118">#1118</a>)</p></li>
+<li><p>add an error if <code class="docutils literal notranslate"><span class="pre">ydot_cutoff_value</span></code> is too high (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1154">#1154</a>)</p></li>
+<li><p>DRGEP reduction now supports screening (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1148">#1148</a>)</p></li>
+<li><p>symmetric screening support (using the same screening factor for
+forward and reverse rate) has been removed (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1147">#1147</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1158">#1158</a>)</p></li>
+<li><p>add the ability to convert a network into a different type (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1140">#1140</a>)</p></li>
+<li><p>add the ability to plot the net rate (forward - reverse) (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1135">#1135</a>)</p></li>
+<li><p>screening when evaluating rates in python is now handled by the
+<code class="docutils literal notranslate"><span class="pre">Rate</span></code> class instead of the <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> class.  This fixes an
+issue where <code class="docutils literal notranslate"><span class="pre">ApproximateRate</span></code> child rates were not being screened
+(C++ and <code class="docutils literal notranslate"><span class="pre">PythonNetwork</span></code> were unaffected). (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1144">#1144</a>)</p></li>
+<li><p>fix pylint 4.0 compatibility (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1138">#1138</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">network_helper</span></code> now takes a <code class="docutils literal notranslate"><span class="pre">verbose</span></code> flag (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1134">#1134</a>)</p></li>
+<li><p>numerous redundant examples (from the <code class="docutils literal notranslate"><span class="pre">examples/</span></code> directory)
+were removed (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1131">#1131</a>)</p></li>
+<li><p>He burning example has been updated (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1129">#1129</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1139">#1139</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RateCollection.plot</span></code> can now use screening and take a
+matplotlib <code class="docutils literal notranslate"><span class="pre">GridSpec</span></code> that defines the axes (instead of
+creating them internally. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1126">#1126</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> now takes a <code class="docutils literal notranslate"><span class="pre">verbose</span></code> option, and most
+informational prints are disabled by default (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1130">#1130</a>)</p></li>
+<li><p>Fix LaTeX rate rendering (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1128">#1128</a>)</p></li>
+<li><p>fix a mutability issue in <code class="docutils literal notranslate"><span class="pre">Library</span></code> addition (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1112">#1112</a>)</p></li>
+<li><p>add a method to <code class="docutils literal notranslate"><span class="pre">Library</span></code> to eliminate duplicate rates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1111">#1111</a>)</p></li>
+<li><p>load all nuclear spins by default, even those that are
+“unreliable” (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1115">#1115</a>)</p></li>
+<li><p>fix a CI issue on <code class="docutils literal notranslate"><span class="pre">DerivedRate</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1124">#1124</a>)</p></li>
+<li><p>for <code class="docutils literal notranslate"><span class="pre">ReacLibRate</span></code>, use <code class="docutils literal notranslate"><span class="pre">r.derived_from_inverse</span></code> instead of
+<code class="docutils literal notranslate"><span class="pre">r.reverse</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/938">#938</a>)</p></li>
+<li><p>an electron-positron EOS was added.  This directly integrates the
+Fermi-Dirac integrals and constructs n, p, and e. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1076">#1076</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NumpyNetwork</span></code> has been removed – it did not give much of a
+performance boost (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1109">#1109</a>)</p></li>
+<li><p>MPI utils have been moved from <code class="docutils literal notranslate"><span class="pre">reduction/</span></code> to a higher-level
+for reuse (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1104">#1104</a>)</p></li>
+<li><p>Clean-up of the reduction code and new example documentation
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1098">#1098</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1103">#1103</a>)</p></li>
+<li><p>update links docs CI block list (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1113">#1113</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Composition</span></code> can now zero out short-lived species (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1107">#1107</a>)</p></li>
+<li><p>Weak rates from Pruet &amp; Fuller for A = 65 to 80 have been added
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1091">#1091</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1093">#1093</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RateFilter</span></code> can now filter on an endpoint (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1106">#1106</a>)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">write_to_file</span></code> method has been moved from <code class="docutils literal notranslate"><span class="pre">Library</span></code> to
+<code class="docutils literal notranslate"><span class="pre">ReacLibLibrary</span></code> since it only works with those rates. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1105">#1105</a>)</p></li>
+<li><p>A bounds issue has been fixed in the partition function C++ code
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1100">#1100</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1159">#1159</a>)</p></li>
+<li><p>CI fixes due to python or Microphysics library changes (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1086">#1086</a>,
+<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1092">#1092</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1094">#1094</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1099">#1099</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1102">#1102</a>)</p></li>
+<li><p>added an adaptived-difference method for differencing (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1075">#1075</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code> templates now use the new neutrino cooling
+method (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1069">#1069</a>)</p></li>
+<li><p>Binding energy example has been updated with a better example
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1087">#1087</a>)</p></li>
+<li><p>Doc and API docstring improvements (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1079">#1079</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1082">#1082</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1083">#1083</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1084">#1084</a>,
+<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1116">#1116</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1117">#1117</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1127">#1127</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1132">#1132</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1139">#1139</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1141">#1141</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1143">#1143</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1146">#1146</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1149">#1149</a>,
+<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1152">#1152</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1157">#1157</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> updated with license info (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1081">#1081</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plot_network_chart</span></code> now uses a <code class="docutils literal notranslate"><span class="pre">GridSpec</span></code> for a better layout
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1060">#1060</a>)</p></li>
+</ul>
+</section>
+<section id="id115">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.7.1">2.7.1</a><a class="headerlink" href="#id115" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>fix a numba import for conda-forge (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1078">#1078</a>)</p></li>
+</ul>
+</section>
+<section id="id118">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.7.0">2.7.0</a><a class="headerlink" href="#id118" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>add a <code class="docutils literal notranslate"><span class="pre">color_nodes_by_abundance</span></code> option to <code class="docutils literal notranslate"><span class="pre">RateCollection.plot()</span></code>
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1058">#1058</a>)</p></li>
+<li><p>Sort the edges before drawing network plots (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1045">#1045</a>)</p></li>
+<li><p>Include the pynucastro version information in
+<code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code> output (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1028">#1028</a>)</p></li>
+<li><p>Updated <code class="docutils literal notranslate"><span class="pre">README.md</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1065">#1065</a>)</p></li>
+<li><p>Improved error messages for <code class="docutils literal notranslate"><span class="pre">DerivedRate</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1064">#1064</a>)</p></li>
+<li><p>Removed <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1056">#1056</a>)</p></li>
+<li><p>Added pydocstyle CI (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1052">#1052</a>)</p></li>
+<li><p>Make library warnings more informative (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1049">#1049</a>)</p></li>
+<li><p>add a class that computes the Fermi-Dirac integrals (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1039">#1039</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1040">#1040</a>,
+<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1041">#1041</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1046">#1046</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1047">#1047</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1057">#1057</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1068">#1068</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1070">#1070</a>)</p></li>
+<li><p>added a new <code class="docutils literal notranslate"><span class="pre">network_helper</span></code> function to make simple networks
+more easily (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1025">#1025</a>)</p></li>
+<li><p>fix some Sphinx issues (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1017">#1017</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1024">#1024</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code> C++ cleaning and syncing with Microphysics
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/993">#993</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1003">#1003</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1009">#1009</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1010">#1010</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1020">#1020</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1022">#1022</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1036">#1036</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1038">#1038</a>)</p></li>
+<li><p>update CI due to Microphysics changes (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1021">#1021</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1023">#1023</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1029">#1029</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1050">#1050</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DerivedRate</span></code> now works on a <code class="docutils literal notranslate"><span class="pre">ModifiedRate</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1011">#1011</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1012">#1012</a>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DerivedRate</span></code> is now consistent with NSE to machine precision
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1007">#1007</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_nuclei_in_range</span></code> is now more flexible in inputs (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1004">#1004</a>)</p></li>
+<li><p>The weak rates from Oda et al. have been added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1005">#1005</a>)</p></li>
+<li><p>Creating a <code class="docutils literal notranslate"><span class="pre">Nucleus</span></code> now works with strings of the form “56ni”,
+and also fixes some regex issues (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/998">#998</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1016">#1016</a>)</p></li>
+<li><p>A new method for evaluating the stiffness in a network was added
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1006">#1006</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1008">#1008</a>)</p></li>
+<li><p>docstring updates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/978">#978</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/989">#989</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/994">#994</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1042">#1042</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1067">#1067</a>)</p></li>
+<li><p>a new method for exporting a NetworkX graph from a network was
+added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/990">#990</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/991">#991</a>)</p></li>
+<li><p>general documentation fixes and API links (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/980">#980</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/982">#982</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/984">#984</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/985">#985</a>,
+<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/987">#987</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/988">#988</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1026">#1026</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1030">#1030</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1031">#1031</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1032">#1032</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1033">#1033</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1034">#1034</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1044">#1044</a>,
+<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1061">#1061</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1062">#1062</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1063">#1063</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1071">#1071</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1072">#1072</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1073">#1073</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1074">#1074</a>)</p></li>
+<li><p>add CI testing on MacOS (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/1035">#1035</a>)</p></li>
+</ul>
+</section>
+<section id="id188">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.6.0">2.6.0</a><a class="headerlink" href="#id188" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Added a <code class="docutils literal notranslate"><span class="pre">summary()</span></code> method to <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> that gives details
+about the number of rates and nuclei (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/954">#954</a>)</p></li>
+<li><p>Added a new <code class="docutils literal notranslate"><span class="pre">ModifiedRate</span></code> class that allows for altering
+reactants, products, and stoichiometry while using an existing
+underlying rate (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/950">#950</a>)</p></li>
+<li><p>Drop requirement for <code class="docutils literal notranslate"><span class="pre">sphinx_rtd_theme</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/969">#969</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SimpleCxxNetwork</span></code> now stores and computes Y_e so it can work with
+weak rates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/965">#965</a>), and it also can take commandline arguments for
+rho and T (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/970">#970</a>)</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">README.md</span></code> logo for PyPI (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/973">#973</a>)</p></li>
+<li><p>Add a new <code class="docutils literal notranslate"><span class="pre">BaryonConservationError</span></code> exception to <code class="docutils literal notranslate"><span class="pre">Rate</span></code> that
+ensures a rate is balanced with respect to baryons. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/975">#975</a>)</p></li>
+<li><p>Added a new CI test that directly compares a <code class="docutils literal notranslate"><span class="pre">PythonNetwork</span></code> and
+<code class="docutils literal notranslate"><span class="pre">SimpleCxxNetwork</span></code>  evaluation of dY/dt (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/964">#964</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SimpleCxxNetwork</span></code> now allows for screening to be disabled
+(compile with <code class="docutils literal notranslate"><span class="pre">DISABLE_SCREENING=TRUE</span></code>).  It also prints more
+precision in the test (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/963">#963</a>)</p></li>
+<li><p>Node colors in the <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> <code class="docutils literal notranslate"><span class="pre">plot()</span></code> can now be customized
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/962">#962</a>)</p></li>
+<li><p>Some helper functions for working with yt datasets have been added
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/961">#961</a>)</p></li>
+<li><p>update to the latest ReacLib database (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/917">#917</a>)</p></li>
+<li><p>don’t use <code class="docutils literal notranslate"><span class="pre">std::pow</span></code> in constexpr in a <code class="docutils literal notranslate"><span class="pre">SimpleCxxNetwork</span></code> as that is
+C++23 and not yet widely supported.  (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/953">#953</a>)</p></li>
+<li><p>allow the nodes in a network plot to have custom names (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/946">#946</a>)</p></li>
+<li><p>create a <code class="docutils literal notranslate"><span class="pre">Nucleus</span></code> <code class="docutils literal notranslate"><span class="pre">.summary()</span></code> method to display the information
+we know about a nucleus. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/949">#949</a>)</p></li>
+<li><p>allow rates to support their own stoichiometry, instead of simply
+relying on the number of nuclei in the reactants or products
+list. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/947">#947</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/952">#952</a>)</p></li>
+<li><p>Added a new network method, <code class="docutils literal notranslate"><span class="pre">get_hidden_rates()</span></code> that returns the
+rates that are not explicitly linked in the network but instead
+are used internally by <code class="docutils literal notranslate"><span class="pre">ApproximateRate</span></code> rates. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/943">#943</a>)</p></li>
+<li><p>Clean up <code class="docutils literal notranslate"><span class="pre">Library</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/932">#932</a>)</p></li>
+<li><p>Fix the binding energy notebook example – we don’t want to show
+negative binding energies (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/939">#939</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TabularLibrary()</span></code> now takes a keyword argument <code class="docutils literal notranslate"><span class="pre">ordering</span></code> that
+can specify which sources to use and the order to read
+them. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/922">#922</a>)</p></li>
+<li><p>Docstring updates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/892">#892</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/899">#899</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/926">#926</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/927">#927</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/928">#928</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/931">#931</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/933">#933</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/934">#934</a>,
+<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/935">#935</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/937">#937</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/956">#956</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/957">#957</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/960">#960</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/966">#966</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/967">#967</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/972">#972</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/977">#977</a>) and more API
+coverage (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/929">#929</a>) and reorganization of the API docs (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/955">#955</a>)</p></li>
+<li><p>New codespell github action (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/930">#930</a>)</p></li>
+<li><p>mailmap updates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/924">#924</a>)</p></li>
+<li><p>Add ruff settings to <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/923">#923</a>)</p></li>
+<li><p>Added the Fuller, Fowler, &amp; Newman weak rates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/910">#910</a>)</p></li>
+<li><p>Updated the colors used for <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> plots (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/921">#921</a>)</p></li>
+<li><p>Added the ability to show a legend on a <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> network
+plot (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/817">#817</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/942">#942</a>)</p></li>
+<li><p>Documentation updates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/901">#901</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/902">#902</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/907">#907</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/913">#913</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/919">#919</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/920">#920</a>) and
+fixes (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/941">#941</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/976">#976</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PythonNetwork</span></code> now pairs the forward and reverse rates when
+summing the ydot term, mirroring what we do in C++ (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/784">#784</a>)</p></li>
+<li><p>Highlighting of edges now uses better colors in <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code>
+network plots (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/904">#904</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code> code cleaning (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/909">#909</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DerivedRate</span></code> now sets <code class="docutils literal notranslate"><span class="pre">reverse=True</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/915">#915</a>)</p></li>
+<li><p>Weak rate tables have been renamed to include the source in the
+filename (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/912">#912</a>)</p></li>
+<li><p>CI fixes (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/905">#905</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/906">#906</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RateCoillection</span></code> class cleaning (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/900">#900</a>)</p></li>
+</ul>
+</section>
+<section id="id253">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.5.0">2.5.0</a><a class="headerlink" href="#id253" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>fix the zenodo authors (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/898">#898</a>) and automate the zenodo bibtex in
+the docs (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/880">#880</a>)</p></li>
+<li><p>codespell fixes (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/897">#897</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code> now ifdefs out neutrinos (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/884">#884</a>)</p></li>
+<li><p>officially support python 3.13 (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/860">#860</a>)</p></li>
+<li><p>update package requirements (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/896">#896</a>)</p></li>
+<li><p>Implement Debye-Huckel screening (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/870">#870</a>)</p></li>
+<li><p>Fix a CODATA constants inconsistency between Nubase and SciPy
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/877">#877</a>) and compatibility with SciPy &lt; 1.15.0 (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/889">#889</a>)</p></li>
+<li><p>Address a new warning in matplotlib 3.10.0 (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/879">#879</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/885">#885</a>)</p></li>
+<li><p>Bump up jinja2 version (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/871">#871</a>)</p></li>
+<li><p>Added the ability to approximate A(n,gamma)X(n,gamma)B into an
+effective rate A(nn,gamma)B (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/818">#818</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SimpleCxxNetwork</span></code> now includes electron screening using the
+prescription in Chugunov 2007 (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/844">#844</a>)</p></li>
+<li><p>added “NSE protons” that evaluate the same as a proton but can be
+used to decouple light and heavy reactions (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/853">#853</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/854">#854</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/862">#862</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/863">#863</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">modify_products</span></code> was moved to the base <code class="docutils literal notranslate"><span class="pre">Rate</span></code> class all rate classes
+can use it (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/851">#851</a>)</p></li>
+<li><p>Fix an issue with AMD HIP/ROCm memory access on the GPU in the
+partition functions (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/859">#859</a>)</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">FortranNetwork</span></code> is now available that provides a wrapper around
+<code class="docutils literal notranslate"><span class="pre">SimpleCxxNetwork</span></code> with Fortran interfaces. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/841">#841</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/847">#847</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nucleus</span></code> objects can now be added and subtracted (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/835">#835</a>)</p></li>
+<li><p>Fix a compiler issue with <code class="docutils literal notranslate"><span class="pre">SimpleCxxNetwork</span></code> and ReacLib weak rates
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/846">#846</a>)</p></li>
+<li><p>Documentation improvements (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/782">#782</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/831">#831</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/832">#832</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/843">#843</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/848">#848</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/852">#852</a>,
+<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/855">#855</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/858">#858</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/861">#861</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/864">#864</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/866">#866</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/867">#867</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/874">#874</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/881">#881</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/887">#887</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/888">#888</a>),
+including new examples (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/783">#783</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/800">#800</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/826">#826</a>) and build enhancements
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/893">#893</a>)</p></li>
+<li><p>Clean-up unused class data in <code class="docutils literal notranslate"><span class="pre">SimpleCxxNetwork</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/845">#845</a>)</p></li>
+<li><p>Clean up the <code class="docutils literal notranslate"><span class="pre">rate</span></code> module by separating it into submodules (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/840">#840</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/842">#842</a>)</p></li>
+<li><p>Add the ability to label edges in network plots (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/837">#837</a>)</p></li>
+<li><p>Clean-up the <code class="docutils literal notranslate"><span class="pre">make_ap_pg_approx</span></code> code (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/830">#830</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/850">#850</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PartitionFunction.eval</span></code> now returns a python float instead of a
+numpy float (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/839">#839</a>)</p></li>
+<li><p>Rates now store their source from publications (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/822">#822</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/834">#834</a>)</p></li>
+<li><p>Change some methods to properties in <code class="docutils literal notranslate"><span class="pre">Composition</span></code>, <code class="docutils literal notranslate"><span class="pre">Library</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">Rate</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/829">#829</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PythonNetwork</span></code> rates now can take rho and Y. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/828">#828</a>)</p></li>
+<li><p>CI fixes and updates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/827">#827</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/890">#890</a>)</p></li>
+<li><p>Child rates in <code class="docutils literal notranslate"><span class="pre">ApproximateRate</span></code> are now stored as a dictionary
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/824">#824</a>) + additional cleaning (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/812">#812</a>)</p></li>
+<li><p>Allow the identical particle factor in <code class="docutils literal notranslate"><span class="pre">Rate</span></code> to be disabled (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/821">#821</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rate.eval()</span></code> now take rho and comp (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/820">#820</a>)</p></li>
+<li><p>Update Zenodo authors (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/815">#815</a>)</p></li>
+<li><p>Use python’s <code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code> throughout (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/811">#811</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nucleus</span></code> now stores the halflife (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/801">#801</a>)</p></li>
+</ul>
+</section>
+<section id="id319">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.4.0">2.4.0</a><a class="headerlink" href="#id319" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>expanded documentation on exporting networks (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/805">#805</a>) and physical
+constants (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/793">#793</a>)</p></li>
+<li><p>some doc test fixes (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/806">#806</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/807">#807</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/809">#809</a>)</p></li>
+<li><p>expanded unit testing (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/802">#802</a>)</p></li>
+<li><p>update pylint disabled features (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/794">#794</a>)</p></li>
+<li><p>dropped support for python 3.9 (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/787">#787</a>)</p></li>
+<li><p>we now compute the Q value for rates from masses instead of
+binding energies if it is not available (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/797">#797</a>)</p></li>
+<li><p>updated the nuclear properties to all be based on Nubase 2020,
+with the mass excesses being the primary quantity used and binding
+energies now derived from the mass excesses. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/788">#788</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/792">#792</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/796">#796</a>)</p></li>
+<li><p>added a <code class="docutils literal notranslate"><span class="pre">get_all_nuclei()</span></code> method that returns every nucleus for
+which we have a mass (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/798">#798</a>)</p></li>
+<li><p>removed unused scripts in the nucdata module (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/789">#789</a>)</p></li>
+<li><p>fixed the labels for trace nuclei in a <code class="docutils literal notranslate"><span class="pre">Composition</span></code> pie chart
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/781">#781</a>)</p></li>
+</ul>
+</section>
+<section id="id336">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.3.0">2.3.0</a><a class="headerlink" href="#id336" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>added a warning if we use the ReacLib n decay rate (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/778">#778</a>)</p></li>
+<li><p>doc updates, including an example of dealing with duplicate rates
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/777">#777</a>), new theme (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/775">#775</a>), axis label fixes (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/774">#774</a>), some examples
+of nuclear astrophysics concepts (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/762">#762</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/766">#766</a>)</p></li>
+<li><p>fix the limits for <code class="docutils literal notranslate"><span class="pre">TabularRate</span></code> plots (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/779">#779</a>)</p></li>
+<li><p>created a new <code class="docutils literal notranslate"><span class="pre">alternate_rates</span></code> module and added the de Boer et
+al. 2017 C12(a,g)O16 rate (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/769">#769</a>)</p></li>
+<li><p>the minimum version of python supported is now 3.8 (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/768">#768</a>)</p></li>
+<li><p>some test fixes (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/755">#755</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/757">#757</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/760">#760</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/763">#763</a>)</p></li>
+<li><p>C++ autodiff changes / cleanups (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/752">#752</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/759">#759</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code> now create a ydot_weak function that
+evaluates the weak rate contributions to compute dYe/dt (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/739">#739</a>)</p></li>
+</ul>
+</section>
+<section id="id354">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.2.1">2.2.1</a><a class="headerlink" href="#id354" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>numpy 2.0 support added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/748">#748</a>)</p></li>
+<li><p>new logo! (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/744">#744</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/746">#746</a>)</p></li>
+<li><p>pynucastro can now be installed by conda (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/741">#741</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/743">#743</a>)</p></li>
+<li><p>minor test fixes (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/729">#729</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/735">#735</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/740">#740</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/745">#745</a>)</p></li>
+<li><p>doc fixes (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/737">#737</a>)</p></li>
+<li><p>pylint fixes (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/733">#733</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Composition</span></code> now allows for direct key-value indexing (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/731">#731</a>),
+and has a new <code class="docutils literal notranslate"><span class="pre">set_random()</span></code> method (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/728">#728</a>)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">screen5</span></code> screening routine has been added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/730">#730</a>)</p></li>
+<li><p>C++ partition function interpolation is now cached (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/726">#726</a>)</p></li>
+</ul>
+</section>
+<section id="id371">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.2.0">2.2.0</a><a class="headerlink" href="#id371" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Switch to using <code class="docutils literal notranslate"><span class="pre">math.fsum()</span></code> instead of <code class="docutils literal notranslate"><span class="pre">sum()</span></code> for better python
+3.12 compatibility (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/720">#720</a>)</p></li>
+<li><p>Some modernization of the AMReX-Astro C++ code output (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/709">#709</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/714">#714</a>,
+<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/717">#717</a>)</p></li>
+<li><p>Documentation improvements, including references and contributing
+instructions, and NSE table (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/669">#669</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/679">#679</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/695">#695</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/697">#697</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/706">#706</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/707">#707</a>)</p></li>
+<li><p>Clean-up up some plot interfaces to always take rho, T, comp in
+that order (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/693">#693</a>)</p></li>
+<li><p>Performance improvements (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/680">#680</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/685">#685</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/692">#692</a>)</p></li>
+<li><p>A new <code class="docutils literal notranslate"><span class="pre">constants</span></code> module was added to provide fundamental constants
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/688">#688</a>)</p></li>
+<li><p>A new <code class="docutils literal notranslate"><span class="pre">NumpyNetwork</span></code> was added for use with the rate reduction
+algorithm (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/684">#684</a>)</p></li>
+<li><p>Neutrino cooling routines based on Itoh et al. 1996 were added
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/628">#628</a>)</p></li>
+<li><p>A new method for generating an NSE table was added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/676">#676</a>)</p></li>
+<li><p>A new <code class="docutils literal notranslate"><span class="pre">NSENetwork</span></code> class was added for dealing with NSE (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/675">#675</a>)</p></li>
+<li><p>Moved some screening utilities out of <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/666">#666</a>)</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">PythonNetwork</span></code> now write out a function to compute the energy
+release (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/640">#640</a>)</p></li>
+</ul>
+</section>
+<section id="id394">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.1.1">2.1.1</a><a class="headerlink" href="#id394" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RateCollection.evaluate_energy_generation()</span></code> can now return the
+neutrino losses from weak rates separately. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/665">#665</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code> now capitalizes the species names to be
+consistent with other AMReX-Astro Microphysics networks (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/652">#652</a>)</p></li>
+<li><p>The pynucastro project configuration was updated and reorganized
+to <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/657">#657</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/660">#660</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/661">#661</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Library.get_rate_by_name</span></code> no longer returns None if one of
+the input rate names is not found (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/659">#659</a>)</p></li>
+<li><p>A C++ indexing error at the boundary of a weak rate table was
+fixed. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/654">#654</a>)</p></li>
+<li><p>The C++ <code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code> for evaluating weak rate neutrino
+losses was cleaned up to fix a bounds error (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/655">#655</a>)</p></li>
+<li><p>We now explicitly check in the C++ code if a weak rate table
+if found and contains data (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/654">#654</a>)</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> now enforces that there are no duplicate rates.  A
+<code class="docutils literal notranslate"><span class="pre">find_duplicate_links()</span></code> method has been added to <code class="docutils literal notranslate"><span class="pre">Library</span></code> to allow
+one to construct a <code class="docutils literal notranslate"><span class="pre">Library</span></code> without duplicates and then create a
+<code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> or other network from that. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/651">#651</a>)</p></li>
+<li><p>Some documentation updates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/643">#643</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/650">#650</a>)</p></li>
+<li><p>The positron rates in the Langanke weak rate tables have been
+merged with the corresponding electron rates and the n &lt;-&gt; p rate
+was added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/648">#648</a>)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Composition.bin_as()</span></code> method now takes a list of nuclei
+to exclude from being binned into (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/642">#642</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RateCollection.evaluate_ydots()</span></code> now can take a filter to
+only evaluate a subset of the rates. (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/641">#641</a>)</p></li>
+</ul>
+</section>
+<section id="id411">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.1.0">2.1.0</a><a class="headerlink" href="#id411" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>add <code class="docutils literal notranslate"><span class="pre">eval_zbar()</span></code> to Composition (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/632">#632</a>)</p></li>
+<li><p>fix <code class="docutils literal notranslate"><span class="pre">get_rate_by_name</span></code> to work with “pp” reactions (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/632">#632</a>)</p></li>
+<li><p>created a method to reduce a <code class="docutils literal notranslate"><span class="pre">Composition</span></code> from one set
+of nuclei to another based on the nuclei masses and
+charge number (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/625">#625</a>)</p></li>
+<li><p>switch <code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code> to do bilinear interpolation
+in terms of log(T) and log(rhoY) (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/592">#592</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/611">#611</a>)</p></li>
+<li><p>tabular rates in python now do linear interpolation (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/602">#602</a>)</p></li>
+<li><p>added an example of creating a custom rate (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/615">#615</a>)</p></li>
+<li><p>Rate now calls <code class="docutils literal notranslate"><span class="pre">_set_q()</span></code> to set the Q value if it is not
+passed in (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/617">#617</a>)</p></li>
+<li><p>added a <code class="docutils literal notranslate"><span class="pre">TableInterpolator</span></code> that works both for interactive
+python and <code class="docutils literal notranslate"><span class="pre">PythonNetwork</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/612">#612</a>, 610, 609)</p></li>
+<li><p>added a <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> method to find duplicate links (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/601">#601</a>)</p></li>
+<li><p>python networks with tabular rates now copy the table files (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/605">#605</a>)</p></li>
+<li><p>added a <code class="docutils literal notranslate"><span class="pre">get_nuclei_in_range</span></code> method to return a range of
+nuclei (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/593">#593</a>)</p></li>
+<li><p>we now do a binary search in the C++ partition function
+interpolation (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/581">#581</a>)</p></li>
+<li><p>added a simple C++ network (<code class="docutils literal notranslate"><span class="pre">SimpleCxxNetwork</span></code>) (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/591">#591</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/585">#585</a>)</p></li>
+<li><p>added the weak rates from Langanke 2001 (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/536">#536</a>)</p></li>
+<li><p>cleaned up partition functions in C++ (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/578">#578</a>, 573, 569, 565)</p></li>
+<li><p>converted the Suzuki tabular rates to be in terms of log (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/550">#550</a>)</p></li>
+<li><p>fixed a bounds issue in C++ table interpolation (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/566">#566</a>)</p></li>
+<li><p>eliminated a variable length array in the C++ table interpolation
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/567">#567</a>)</p></li>
+<li><p>added rate indices to the C++ networks (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/563">#563</a>)</p></li>
+<li><p>added a network reduction algorithm (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/529">#529</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/528">#528</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/527">#527</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/526">#526</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/525">#525</a>,
+<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/523">#523</a>)</p></li>
+<li><p>added a molar fraction method to <code class="docutils literal notranslate"><span class="pre">Composition</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/546">#546</a>)</p></li>
+<li><p>added examples of interfacing with Julia (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/539">#539</a>)</p></li>
+<li><p>added a code of conduct (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/504">#504</a>)</p></li>
+<li><p>added gamma heating to tabular weak rates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/502">#502</a>)</p></li>
+</ul>
+</section>
+<section id="id444">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.0.3">2.0.3</a><a class="headerlink" href="#id444" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>add functions to numerically evaluate the Jacobian (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/467">#467</a>)</p></li>
+<li><p>Fix C++ compilation with partition functions and approximate
+rates and derived rates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/407">#407</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/494">#494</a>)</p></li>
+<li><p>The Explorer class now takes all of the options as
+<code class="docutils literal notranslate"><span class="pre">RateCollection.plot()</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/496">#496</a>)</p></li>
+<li><p>Rates edges can be highlighted via a user-defined function in the
+<code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> plot (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/486">#486</a>)</p></li>
+<li><p>All of the plot routines in <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> now return a
+matplotlib <code class="docutils literal notranslate"><span class="pre">Figure</span></code> object (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/490">#490</a>)</p></li>
+<li><p>add <code class="docutils literal notranslate"><span class="pre">get_rate_by_nuclei</span></code> and <code class="docutils literal notranslate"><span class="pre">add_rate</span></code> to <code class="docutils literal notranslate"><span class="pre">Library()</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/484">#484</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RateCollection.remove_rates()</span></code> can now act on a single rate and a
+new method, <code class="docutils literal notranslate"><span class="pre">add_rates()</span></code>, will add a rate directly to the
+collection.</p></li>
+<li><p>Fixed printing of <code class="docutils literal notranslate"><span class="pre">TabularLibrary</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/479">#479</a>)</p></li>
+<li><p>Documentation updates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/473">#473</a>)</p></li>
+<li><p>added <code class="docutils literal notranslate"><span class="pre">get_rate_by_name</span></code> to <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/468">#468</a>)</p></li>
+<li><p>added tabular rates to <code class="docutils literal notranslate"><span class="pre">PythonNetwork</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/451">#451</a>)</p></li>
+<li><p>fixed NSE state for network without protons (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/463">#463</a>)</p></li>
+</ul>
+</section>
+<section id="id458">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.0.2">2.0.2</a><a class="headerlink" href="#id458" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fix the installation of the C++ templates via <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/460">#460</a>)</p></li>
+</ul>
+</section>
+<section id="id461">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.0.1">2.0.1</a><a class="headerlink" href="#id461" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fix some <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> metadata for PyPI (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/453">#453</a>)</p></li>
+<li><p>Change how tabular rate tables are stored and read (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/450">#450</a>)</p></li>
+<li><p>Support historical ReacLib format (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/449">#449</a>)</p></li>
+</ul>
+</section>
+<section id="id466">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/2.0.0">2.0.0</a><a class="headerlink" href="#id466" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Added a method to get a rate by short name: A(x,y)B (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/438">#438</a>)</p></li>
+<li><p>Added the option to show rate links hidden by ydot &lt;
+<code class="docutils literal notranslate"><span class="pre">ydot_cutoff_value</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/436">#436</a>)</p></li>
+<li><p>Added a <code class="docutils literal notranslate"><span class="pre">TabularLibrary</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/429">#429</a>)</p></li>
+<li><p>Moved <code class="docutils literal notranslate"><span class="pre">validate</span></code> into <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/433">#433</a>)</p></li>
+<li><p>renamed <code class="docutils literal notranslate"><span class="pre">StarKillerCxxNetwork</span></code> to <code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/426">#426</a>)</p></li>
+<li><p>Fixed formatting of tabular rate strings (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/421">#421</a>)</p></li>
+<li><p>Fixed normalization of colorbar in <code class="docutils literal notranslate"><span class="pre">grid_plot</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/424">#424</a>)</p></li>
+<li><p>Added the ability to plot neutrino loss for tabular rates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/422">#422</a>)</p></li>
+<li><p>Added support for partition functions in C++ networks (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/404">#404</a>)</p></li>
+<li><p>NSE solver now can return chemical potentials (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/415">#415</a>)</p></li>
+<li><p>Add spins to NSE calculations (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/405">#405</a>)</p></li>
+<li><p>Separate the Coulomb calculation from the NSE screening, make it
+switchable (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/398">#398</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/380">#380</a>)</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">StarKillerCxxNetwork</span></code> output directory (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/400">#400</a>)</p></li>
+<li><p>Added Potekhin screening (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/385">#385</a>)</p></li>
+<li><p>Added screening to python networks (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/383">#383</a>)</p></li>
+<li><p>Numba accelerated screening (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/373">#373</a>)</p></li>
+<li><p>Fixed C++ approximate rate screening (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/384">#384</a>)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> <code class="docutils literal notranslate"><span class="pre">remove_rates()</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/368">#368</a>), and allow
+<code class="docutils literal notranslate"><span class="pre">remove_rates</span></code> to operate on dictionary keys (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/375">#375</a>)</p></li>
+<li><p>Added NSE solver (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/339">#339</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/364">#364</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/377">#377</a>)</p></li>
+<li><p>added <code class="docutils literal notranslate"><span class="pre">find_unimportant_rates</span></code> method (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/367">#367</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/369">#369</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/374">#374</a>)</p></li>
+<li><p>added spins to partition functions (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/371">#371</a>)</p></li>
+<li><p>Split rate up into several classes, including <code class="docutils literal notranslate"><span class="pre">ReacLibRate</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/362">#362</a>)
+and <code class="docutils literal notranslate"><span class="pre">TabularRate</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/360">#360</a>)</p></li>
+<li><p>added partition function support to python networks (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/358">#358</a>)</p></li>
+<li><p>fixed definition of inverse rate for symmetric screening (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/363">#363</a>)</p></li>
+<li><p>Moved <code class="docutils literal notranslate"><span class="pre">Nucleus</span></code> into <code class="docutils literal notranslate"><span class="pre">nucdata</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/346">#346</a>)</p></li>
+<li><p>Added screening to <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/344">#344</a>)</p></li>
+<li><p>Added approximate rate support to C++ (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/333">#333</a>)</p></li>
+<li><p>C++ networks now hardcode the coefficients in a function to
+compute the rates instead of storing a metadata table that is
+read at runtime (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/329">#329</a>)</p></li>
+</ul>
+</section>
+<section id="id503">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/1.7.0">1.7.0</a><a class="headerlink" href="#id503" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>the <code class="docutils literal notranslate"><span class="pre">Rate</span></code> class now knows how to make its function string in
+python and C++ (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/328">#328</a>)</p></li>
+<li><p>C++ networks now have a <code class="docutils literal notranslate"><span class="pre">std::vector&lt;std::string&gt;</span></code> of rate names
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/326">#326</a>)</p></li>
+<li><p>support for Fortran networks was removed (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/324">#324</a>)</p></li>
+<li><p>numerous optimizations (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/263">#263</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/264">#264</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/321">#321</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/331">#331</a>)</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">DerivedRate</span></code> class was added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/272">#272</a>)</p></li>
+<li><p>approximate rate support was added to python networks (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/316">#316</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/315">#315</a>,
+<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/313">#313</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/271">#271</a>)</p></li>
+<li><p>energy generation was added to python networks (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/301">#301</a>)</p></li>
+<li><p>support for inert nuclei was added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/307">#307</a>)</p></li>
+<li><p>the ability to disable rates in C++ networks was added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/304">#304</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/290">#290</a>)</p></li>
+<li><p>methods for finding reverse rates were added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/303">#303</a>)</p></li>
+<li><p>a method to find neutrino loss energy from tabulated rates was
+added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/302">#302</a>)</p></li>
+<li><p>the ability to run without Numba was added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/300">#300</a>)</p></li>
+<li><p>weak rate table units in the header were fixed (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/297">#297</a>)</p></li>
+<li><p>python nuclei variable indices now begin with ‘j’ (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/296">#296</a>)</p></li>
+<li><p>python implementations of screening were added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/281">#281</a>)</p></li>
+<li><p>the network chart plot was added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/202">#202</a>)</p></li>
+<li><p>a rate filter for the network plot was added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/187">#187</a>)</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">Explorer</span></code> class was expanded to have more options (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/251">#251</a>)</p></li>
+<li><p>the rate plot now returns a matplotlib <code class="docutils literal notranslate"><span class="pre">Figure</span></code> object (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/231">#231</a>)</p></li>
+<li><p>added the ability to modify rate products (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/252">#252</a>)</p></li>
+<li><p>allow for the edges between nodes to be curved (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/257">#257</a>)</p></li>
+<li><p>add a <code class="docutils literal notranslate"><span class="pre">RatePair</span></code> object that groups forward and reverse rates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/212">#212</a>)</p></li>
+<li><p>updated the ReacLib rate library (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/248">#248</a>)</p></li>
+<li><p>added nuclear spin tables (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/238">#238</a>)</p></li>
+<li><p>added partition function tables (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/241">#241</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/204">#204</a>)</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">Nucleus</span></code> now knows its binding energy (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/220">#220</a>)</p></li>
+<li><p>many improvements to C++ output (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/246">#246</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/214">#214</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/185">#185</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/183">#183</a>)</p></li>
+<li><p>added a diff method to a <code class="docutils literal notranslate"><span class="pre">Library</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/194">#194</a>)</p></li>
+<li><p>fixed rate sorting so it is more deterministic (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/216">#216</a>)</p></li>
+<li><p>added <code class="docutils literal notranslate"><span class="pre">forward()</span></code> and <code class="docutils literal notranslate"><span class="pre">backward()</span></code> methods to <code class="docutils literal notranslate"><span class="pre">Library</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/207">#207</a>)</p></li>
+<li><p>added a default <code class="docutils literal notranslate"><span class="pre">ReacLibLibrary</span></code> function (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/206">#206</a>)</p></li>
+<li><p>added a <code class="docutils literal notranslate"><span class="pre">validate()</span></code> method for a library to find potentially
+important missing rates (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/188">#188</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/172">#172</a>)</p></li>
+<li><p>added a method to get the number of rates in a library (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/173">#173</a>)</p></li>
+<li><p>add a method to remove a rate from a library (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/199">#199</a>)</p></li>
+<li><p>libraries are now sorted when printed, with more information
+shown (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/195">#195</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/168">#168</a>)</p></li>
+<li><p>added a symmetric screening option (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/178">#178</a>)</p></li>
+<li><p>a “rotated” plot type for the network structure was added (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/161">#161</a>)</p></li>
+<li><p>versioning is now managed by <code class="docutils literal notranslate"><span class="pre">setuptools_scm</span></code> (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/158">#158</a>)</p></li>
+</ul>
+</section>
+<section id="id556">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/1.6.0">1.6.0</a><a class="headerlink" href="#id556" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>added support for C++ StarKiller / AMReX Microphysics networks
+(<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/152">#152</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/151">#151</a>, <a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/149">#149</a>)</p></li>
+<li><p>centralized sympy code generation and removed common
+subexpression support from network generation (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/145">#145</a>)</p></li>
+<li><p>added an example on integrating a python network</p></li>
+</ul>
+</section>
+<section id="id562">
+<h2><a class="reference external" href="https://github.com/pynucastro/pynucastro/releases/tag/1.5.0">1.5.0</a><a class="headerlink" href="#id562" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">gridplot</span></code> function for plotting nuclides on a grid and
+coloring the cells by X, Y, Xdot, Ydot or activity</p></li>
+<li><p>Created a notebook and a script for generating rp-process
+networks. The script allows an arbitrary endpoint to be
+specified.</p></li>
+<li><p>Added a <code class="docutils literal notranslate"><span class="pre">filter_function</span></code> option to <code class="docutils literal notranslate"><span class="pre">RateFilter</span></code> and to the plotting
+functions that allows for filtering rates or nuclei using a
+user-defined Boolean map.</p></li>
+<li><p>Fixed a <code class="docutils literal notranslate"><span class="pre">write_network</span></code> crash if the <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> contains
+multiple rates with the same name.</p></li>
+<li><p>Deleted unused BLAS and VODE files previously used for the
+standalone Fortran outputs. These have been deprecated in favor
+of the StarKiller Microphysics network output as of v1.3.0.</p></li>
+<li><p>fixed screening for the 3-alpha rate</p></li>
+</ul>
+</section>
+<section id="id563">
+<h2>1.4.1<a class="headerlink" href="#id563" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Improvements for locating rate files in directories also
+containing python scripts or Jupyter notebooks</p></li>
+<li><p>Fixed a warning when using Numba</p></li>
+<li><p>Updates to the StarKiller Microphysics format for compile time
+variables</p></li>
+<li><p>Enhancements for the <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> <code class="docutils literal notranslate"><span class="pre">Explorer</span></code> to use NetworkX 2.5</p></li>
+<li><p>Updated the requirements</p></li>
+</ul>
+</section>
+<section id="id564">
+<h2>1.4.0<a class="headerlink" href="#id564" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Added general support for tabulated weak rates from Suzuki, et
+al. 2016</p></li>
+<li><p>Added a simple pp network example</p></li>
+<li><p>Updated StarKiller Microphysics output to track latest changes in
+Microphysics network API</p></li>
+<li><p>Added a core developers policy in the Readme</p></li>
+</ul>
+</section>
+<section id="id565">
+<h2>1.3.0<a class="headerlink" href="#id565" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Replace double precision reals in StarKiller networks with custom
+real type <code class="docutils literal notranslate"><span class="pre">_rt</span></code></p></li>
+<li><p>Incorporate modifications to thermal neutrino Jacobian
+contributions from Microphysics (<a class="reference external" href="https://github.com/pynucastro/pynucastro/pull/210">#210</a>) in StarKiller networks</p></li>
+<li><p>Simplify rate evaluation code in StarKiller networks</p></li>
+<li><p>Deprecated standalone Fortran output with VODE integration.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BaseFortranNetwork</span></code> is now an abstract class to require users to
+either use StarKillerNetwork or provide templates</p></li>
+</ul>
+</section>
+<section id="id567">
+<h2>1.2.0<a class="headerlink" href="#id567" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fix tabular rate bug where electron chemical potential
+contributions were not included</p></li>
+<li><p>Update documentation and code comments</p></li>
+<li><p>Add Numba support for Python networks</p></li>
+<li><p>Enable sparse Jacobian (CSR) for StarKiller networks</p></li>
+<li><p>Incorporate CUDA Fortran port for StarKiller networks including
+tabulated rates</p></li>
+<li><p>Optimize rate screening evaluation for StarKiller networks</p></li>
+<li><p>Fix bug to include the electron fraction and correct density
+dependence for Reaclib electron capture rates</p></li>
+<li><p>Allow a nuclide to be both reactant and product</p></li>
+<li><p>Updates an error message for multiple degenerate rates</p></li>
+<li><p>Add example code generating a 160-isotope network</p></li>
+<li><p>Fix table compilation issue for StarKiller networks</p></li>
+<li><p>Moved energy generation subroutine into RHS module for StarKiller
+networks</p></li>
+</ul>
+</section>
+<section id="id568">
+<h2>1.1.1<a class="headerlink" href="#id568" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>pynucastro published on JOSS is archived to Zenodo</p></li>
+</ul>
+</section>
+<section id="id569">
+<h2>1.1.0<a class="headerlink" href="#id569" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>JOSS reviewer changes merged and pynucastro accepted to JOSS</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="citing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Citing pynucastro</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="modules.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pynucastro</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.9.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id51">2.8.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id115">2.7.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id118">2.7.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id188">2.6.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id253">2.5.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id319">2.4.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id336">2.3.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id354">2.2.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id371">2.2.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id394">2.1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id411">2.1.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id444">2.0.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id458">2.0.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id461">2.0.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id466">2.0.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id503">1.7.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id556">1.6.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id562">1.5.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id563">1.4.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id564">1.4.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id565">1.3.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id567">1.2.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id568">1.1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id569">1.1.0</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By pynucastro development team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024-2026, pynucastro development team.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

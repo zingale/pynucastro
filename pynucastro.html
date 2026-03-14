@@ -1,344 +1,865 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pynucastro package &mdash; pynucastro 1.7.0.post202+g9fa753c documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pynucastro package &#8212; pynucastro 1.7.0.post726+g90e398717 documentation</title>
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/clipboard.min.js"></script>
-        <script src="_static/copybutton.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script src="_static/js/theme.js"></script>
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=15ab05d9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=15e5edec"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=eaa7b67c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pynucastro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="pynucastro.networks package" href="pynucastro.networks.html" />
-    <link rel="prev" title="pynucastro" href="modules.html" /> 
-</head>
+    <link rel="next" title="pynucastro.constants package" href="pynucastro.constants.html" />
+    <link rel="prev" title="pynucastro" href="modules.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.7" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-          
-          
-          <a href="index.html" class="icon icon-home">
-            pynucastro
-              <img src="_static/logo.png" class="logo" alt="Logo"/>
-          </a>
-              <div class="version">
-                1.7
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">pynucastro 1.7</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Overview of pynucastro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources and Rate Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rate_types.html">Reaction Rate Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Exploring Networks in Python</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="pynucastro-examples.html">pynucastro usage examples</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nuclear Properties</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sources.html">Third Party Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nucleus.html">Nuclear Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lodders_composition.html">Solar Composition</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">pynucastro Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pynucastro-examples.html">pynucastro Usage Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plot-types.html">Plotting Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pynucastro-integration.html">Example of integrating a network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_network.html">Basic Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro-integration.html">Integrating a Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="starlib.html">Network Integration with StarLib rates</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Selecting Rates</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="library-examples.html">Selecting Rates from a Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="validate-example.html">Checking your network</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Working with Libraries</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="finding-rates.html">Finding Available Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabulated-weak-rates.html">Tabulated Weak Rate Sources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="duplicate-rates.html">Dealing with Duplicate Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate-example.html">Checking Your Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="electron-capture-example.html">Tabulated Weak Rate Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="electron-captures.html">Combining ReacLib Rates with Electron Capture Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alternate-rates.html"><code class="docutils literal notranslate"><span class="pre">alternate_rates</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="inert-nuclei.html">Inert Nuclei</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
-<ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Rate Operations</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="screening-examples.html">Screening Rates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modify-example.html">Modifying Rates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="approx-rates-examples.html">Approximate Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom-rates.html">Creating a Custom Rate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derived-rates.html">Derived Rates</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Network Operations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="approximate-rates.html">Approximate and Modified Rates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="alpha-gamma-approx.html">Approximating alpha-capture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="double-n-capture.html">Approximating double n-capture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modified-rates.html">Modified Rates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="nse-protons.html">Using NSE Protons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="unimportant-rates.html">Removing Unimportant Rates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="partition-function.html">Reverse Rates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NSE-example.html">Nuclear Statistical Equilibrium</a></li>
-<li class="toctree-l1"><a class="reference internal" href="julia.html">Integrating using DifferentialEquations.jl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network-cycles.html">Finding Cycles (with NetworkX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stiffness.html">Assessing the Stiffness of a Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reduction.html">Network Reduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sens_analysis_example.html">Sensitivity Analysis</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Writing Networks</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="networks.html">Creating Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-networks.html">AMReX Astro Microphysics Networks</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nuclear Statistical Equilibrium</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nse-intro.html">NSE Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NSE-example.html">NSE Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NSE-direct-integration.html">NSE vs. Direct Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nse_table.html">Creating an NSE table</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
-<ul class="current">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fermi-integrals.html">Fermi-Dirac Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="electron-eos.html">The Electron-Positron EOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stellar-eos.html">Stellar EOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="temperature-evolution.html">Integrating Networks with Temperature Evolution</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Plasma Neutrinos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="neutrino-cooling.html">Neutrino Cooling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exporting Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="networks.html">Exporting Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-network.html">Python network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple-cxx-network.html">Simple C++ network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fortran-network.html">Fortran Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amrex-astro-cxx-networks.html">AMReX Astro Microphysics Networks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="julia.html">Integrating using DifferentialEquations.jl</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="installing-diffeqpy-julia.html">Installing <code class="docutils literal notranslate"><span class="pre">diffeqpy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example-Integrating-Network-diffeqpy.html">Example of Integrating a Network</a></li>
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Useful Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="he-burning-example.html">A He-burning Network</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples in Nuclear Astrophysics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="examples/binding-energy.html">Binding Energy per Nucleon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/pp-cno.html">p-p chain vs. CNO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/hot-CNO-breakout-example.html">hot-CNO and breakout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/triple_alpha_eval.html">Computing the Screened Triple-alpha rate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/he-burning.html">Ratio of C/O from He burning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/supernova-lightcurve.html">A Supernova Lightcurve</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="citing.html">Citing pynucastro</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">pynucastro package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#library">library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nucdata">nucdata</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#networks">networks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rates">rates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#screening">screening</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#templates">templates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html">pynucastro.networks package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html">pynucastro.nucdata package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html">pynucastro.rates package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.html">pynucastro.screening package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">Changelog</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">pynucastro package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.constants.html">pynucastro.constants package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html">pynucastro.constants.constants module</a></li>
 </ul>
-</li>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.eos.html">pynucastro.eos package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.degeneracy_parameter_bounds.html">pynucastro.eos.degeneracy_parameter_bounds module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.difference_utils.html">pynucastro.eos.difference_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.electron_eos.html">pynucastro.eos.electron_eos module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.eos_components.html">pynucastro.eos.eos_components module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.fermi_integrals.html">pynucastro.eos.fermi_integrals module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.quadrature_weights.html">pynucastro.eos.quadrature_weights module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.stellar_eos.html">pynucastro.eos.stellar_eos module</a></li>
 </ul>
-</li>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.networks.html">pynucastro.networks package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.amrexastro_cxx_network.html">pynucastro.networks.amrexastro_cxx_network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.base_cxx_network.html">pynucastro.networks.base_cxx_network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.fortran_network.html">pynucastro.networks.fortran_network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.helper.html">pynucastro.networks.helper module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.nse_network.html">pynucastro.networks.nse_network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.python_network.html">pynucastro.networks.python_network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.rate_collection.html">pynucastro.networks.rate_collection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.simple_cxx_network.html">pynucastro.networks.simple_cxx_network module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.sympy_network_support.html">pynucastro.networks.sympy_network_support module</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="sources.html">Third Party Data</a></li>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.neutrino_cooling.html">pynucastro.neutrino_cooling package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.neutrino_cooling.neutrino_cooling.html">pynucastro.neutrino_cooling.neutrino_cooling module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.neutrino_cooling.sneut5_mod.html">pynucastro.neutrino_cooling.sneut5_mod module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.nucdata.html">pynucastro.nucdata package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.elements.html">pynucastro.nucdata.elements module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.halflife_table.html">pynucastro.nucdata.halflife_table module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.mass_table.html">pynucastro.nucdata.mass_table module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.nucleus.html">pynucastro.nucdata.nucleus module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.partition_function.html">pynucastro.nucdata.partition_function module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.spin_table.html">pynucastro.nucdata.spin_table module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.rates.html">pynucastro.rates package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.alternate_rates.html">pynucastro.rates.alternate_rates module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.approximate_rates.html">pynucastro.rates.approximate_rates module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.derived_rate.html">pynucastro.rates.derived_rate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.files.html">pynucastro.rates.files module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.known_duplicates.html">pynucastro.rates.known_duplicates module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html">pynucastro.rates.library module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.modified_rate.html">pynucastro.rates.modified_rate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.rate.html">pynucastro.rates.rate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.reaclib_rate.html">pynucastro.rates.reaclib_rate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.starlib_rate.html">pynucastro.rates.starlib_rate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.tabular_rate.html">pynucastro.rates.tabular_rate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.temperature_tabular_rate.html">pynucastro.rates.temperature_tabular_rate module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.reduction.html">pynucastro.reduction package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.reduction.drgep_module.html">pynucastro.reduction.drgep_module module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.reduction.sensitivity_analysis.html">pynucastro.reduction.sensitivity_analysis module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="pynucastro.screening.html">pynucastro.screening package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html">pynucastro.screening.screen module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screening_util.html">pynucastro.screening.screening_util module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.mpi_utils.html">pynucastro.mpi_utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.numba_util.html">pynucastro.numba_util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.utils.html">pynucastro.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.yt_utils.html">pynucastro.yt_utils module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="zreferences.html">References</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="py-modindex.html">Module Index</a></li>
 </ul>
 
-        </div>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
       </div>
-    </nav>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">pynucastro</a>
-      </nav>
+<div class="sbt-scroll-pixel-helper"></div>
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">pynucastro</a></li>
-      <li class="breadcrumb-item active">pynucastro package</li>
-      <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/pynucastro/pynucastro/blob/main/docs/source/pynucastro.rst" class="fa fa-github"> Edit on GitHub</a>
-      </li>
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pynucastro/pynucastro" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pynucastro/pynucastro/blob/main/docs/source/pynucastro.rst?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pynucastro/pynucastro/edit/main/docs/source/pynucastro.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pynucastro/pynucastro/issues/new?title=Issue%20on%20page%20%2Fpynucastro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
   </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section id="module-pynucastro">
-<span id="pynucastro-package"></span><h1>pynucastro package<a class="headerlink" href="#module-pynucastro" title="Permalink to this heading"></a></h1>
-<p>pynucastro is a python module that interprets the nuclear reaction rates,
-including those cataloged by the JINA ReacLib project:</p>
-<p><a class="reference external" href="https://reaclib.jinaweb.org/">https://reaclib.jinaweb.org/</a></p>
-<p>It provides both interactive access to the rates, for use in Jupyter
-notebooks as well as methods for writing python and C++ nuclear
-reaction networks, including the the righthand side and Jacobian
-routines.</p>
-<p>Several different packages provide the data structures needed to
-interpret rates and build networks.</p>
-<section id="library">
-<h2>library<a class="headerlink" href="#library" title="Permalink to this heading"></a></h2>
-<p>library stores Reaclib rate files in Reaclib 1 or 2 formats as well as the
-directory <cite>library/tabular</cite> containing tabulated rates. pynucastro
-will search these directories for rate files as well as the current
-working directory.</p>
-<p>Adding Reaclib rate files simply requires downloading them from the
-JINA ReacLib project and placing them in the library folder. They must
-be in the Reaclib 1 format.</p>
-</section>
-<section id="nucdata">
-<h2>nucdata<a class="headerlink" href="#nucdata" title="Permalink to this heading"></a></h2>
-<p>nucdata provides:</p>
-<ul class="simple">
-<li><p>Nucleus : a single nucleus, with a descriptive name and its
-properties.</p></li>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/pynucastro.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>pynucastro package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constants"><code class="docutils literal notranslate"><span class="pre">constants</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eos"><code class="docutils literal notranslate"><span class="pre">eos</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#networks"><code class="docutils literal notranslate"><span class="pre">networks</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neutrino-cooling"><code class="docutils literal notranslate"><span class="pre">neutrino_cooling</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nucdata"><code class="docutils literal notranslate"><span class="pre">nucdata</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rates"><code class="docutils literal notranslate"><span class="pre">rates</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction"><code class="docutils literal notranslate"><span class="pre">reduction</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#screening"><code class="docutils literal notranslate"><span class="pre">screening</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
 </ul>
-<p>nucdata provides tables of binding energy per nucleon in MeV,
-partition function and the number of spin states for nuclides specified
-by their number of neutrons N and atomic number Z.</p>
-<p>The data for these tables is derived from the Atomic Mass Evaluations
-2012, 2016 and 2020. By default, pynucastro uses Atomic Mass Evaluation
-2016, and Nucleus Spin Evaluation 2020. Scripts for reading the Atomic
-Mass Evaluation tables and generating binding energy tables for pynucastro
-are provided in <cite>pynucastro/nucdata/AtomicMassEvaluation</cite>.</p>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-pynucastro">
+<span id="pynucastro-package"></span><h1>pynucastro package<a class="headerlink" href="#module-pynucastro" title="Link to this heading">#</a></h1>
+<p>pynucastro is a python library that allows for the creation and
+interactive exploration of nuclear reaction networks for astrophysical
+environments.  It has methods for selecting rates from various
+sources, approximating rates, solving for nuclear statistical
+equilibrium, and exporting networks for simulation codes.</p>
+<p>Several different submodules provide the data structures needed to
+interpret rates and build networks.</p>
+<section id="constants">
+<h2><code class="docutils literal notranslate"><span class="pre">constants</span></code><a class="headerlink" href="#constants" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="pynucastro.constants.html#module-pynucastro.constants" title="pynucastro.constants"><code class="xref py py-mod docutils literal notranslate"><span class="pre">constants</span></code></a> provides the physical
+constants used throughout pynucastro.</p>
+</section>
+<section id="eos">
+<h2><code class="docutils literal notranslate"><span class="pre">eos</span></code><a class="headerlink" href="#eos" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="pynucastro.eos.html#module-pynucastro.eos" title="pynucastro.eos"><code class="xref py py-mod docutils literal notranslate"><span class="pre">eos</span></code></a> provides core routines needed to build
+an equation of state describing stellar matter.</p>
 </section>
 <section id="networks">
-<h2>networks<a class="headerlink" href="#networks" title="Permalink to this heading"></a></h2>
-<p>networks provides classes and functions for organizing collection of
-rates, including:</p>
+<h2><code class="docutils literal notranslate"><span class="pre">networks</span></code><a class="headerlink" href="#networks" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks" title="pynucastro.networks"><code class="xref py py-mod docutils literal notranslate"><span class="pre">networks</span></code></a> provides classes and
+functions for organizing collection of rates, including:</p>
 <ul class="simple">
-<li><p>Composition : this is a container of Nucleus objects along with
-associated mass fractions.  This is used for evaluating rates
-when doing interactive exploration with pynucastro.</p></li>
-<li><p>RateCollection : this is simply a collection of rates.  It will
-determine all of the links between the rates and allow you to
-visualize the dependencies.</p></li>
-<li><p>Explorer : an explorer takes a rate composition and composition
-and produces an interactive visualization that can be explored
-in Jupyter notebooks.</p></li>
-<li><p>PythonNetwork : this extends the RateCollection to enable output
-of python code that can be used with ODE integrators to solve
-a network.</p></li>
-<li><p>BaseCxxNetwork : this extends the RateCollection to enable
-output of C++ code.</p></li>
-<li><p>AmrexAstroCxxNetwork : this extends the RateCollection to enable
-output of C++ code that can be used to add a network to the
-hydrodynamics codes Castro and MAESTROeX via the AMReX-Astro
-Microphysics repository.</p></li>
-<li><p>SimpleCxxNetwork : this extends the RateCollection to enable
-output of basic C++ code that can be as the starting point
-for incorporating a pynucastro network into a non-AMReX
-simulation code.</p></li>
+<li><p><a class="reference internal" href="pynucastro.networks.rate_collection.html#pynucastro.networks.rate_collection.Composition" title="pynucastro.networks.rate_collection.Composition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Composition</span></code></a> : this is a
+container of <a class="reference internal" href="pynucastro.nucdata.nucleus.html#pynucastro.nucdata.nucleus.Nucleus" title="pynucastro.nucdata.nucleus.Nucleus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nucleus</span></code></a>
+objects along with associated mass fractions.  This is used for
+evaluating rates when doing interactive exploration with pynucastro.</p></li>
+<li><p><a class="reference internal" href="pynucastro.networks.rate_collection.html#pynucastro.networks.rate_collection.RateCollection" title="pynucastro.networks.rate_collection.RateCollection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RateCollection</span></code></a> : this is
+a collection of nuclei and the reaction rates that link them
+together.  It serves as the most basic network and provides
+methods to evaluate and visualize the rates and more.</p></li>
+<li><p><a class="reference internal" href="pynucastro.networks.rate_collection.html#pynucastro.networks.rate_collection.Explorer" title="pynucastro.networks.rate_collection.Explorer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Explorer</span></code></a> :
+this an explorer takes a <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> and <code class="docutils literal notranslate"><span class="pre">Composition</span></code> and
+produces an interactive visualization that can be explored in
+Jupyter notebooks.</p></li>
+<li><p><a class="reference internal" href="pynucastro.networks.nse_network.html#pynucastro.networks.nse_network.NSENetwork" title="pynucastro.networks.nse_network.NSENetwork"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NSENetwork</span></code></a> :
+this extends the <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> to allow for solving for the
+nuclear statistical equilibrium state of a collection of nuclei.</p></li>
 </ul>
+<p>and the network classes intended for outputting the righthand side
+of the ODE system for use in python or other applications:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="pynucastro.networks.python_network.html#pynucastro.networks.python_network.PythonNetwork" title="pynucastro.networks.python_network.PythonNetwork"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PythonNetwork</span></code></a> : this extends
+the <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> to enable output of python code that can be used
+with ODE integrators to solve a network.</p></li>
+<li><p><a class="reference internal" href="pynucastro.networks.base_cxx_network.html#pynucastro.networks.base_cxx_network.BaseCxxNetwork" title="pynucastro.networks.base_cxx_network.BaseCxxNetwork"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseCxxNetwork</span></code></a> : this extends
+the <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> to enable output of C++ code.  It is not
+intended to be used directly, but rather serves as the base class for
+the other C++ network types.</p></li>
+<li><p><a class="reference internal" href="pynucastro.networks.amrexastro_cxx_network.html#pynucastro.networks.amrexastro_cxx_network.AmrexAstroCxxNetwork" title="pynucastro.networks.amrexastro_cxx_network.AmrexAstroCxxNetwork"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code></a> :
+this extends the <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> to enable output of C++ code
+that can be used to add a network to the hydrodynamics codes Castro
+and MAESTROeX via the <a class="reference external" href="https://amrex-astro.github.io/Microphysics">AMReX-Astro Microphysics</a> repository.</p></li>
+<li><p><a class="reference internal" href="pynucastro.networks.simple_cxx_network.html#pynucastro.networks.simple_cxx_network.SimpleCxxNetwork" title="pynucastro.networks.simple_cxx_network.SimpleCxxNetwork"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SimpleCxxNetwork</span></code></a> : this
+extends the <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code> to enable output of basic C++ code that
+can be as the starting point for incorporating a pynucastro network
+into a non-AMReX simulation code.</p></li>
+<li><p><a class="reference internal" href="pynucastro.networks.fortran_network.html#pynucastro.networks.fortran_network.FortranNetwork" title="pynucastro.networks.fortran_network.FortranNetwork"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FortranNetwork</span></code></a> : this is a
+set of wrappers around <code class="docutils literal notranslate"><span class="pre">SimpleCxxNetwork</span></code> that provide a Fortran
+interface.</p></li>
+</ul>
+</section>
+<section id="neutrino-cooling">
+<h2><code class="docutils literal notranslate"><span class="pre">neutrino_cooling</span></code><a class="headerlink" href="#neutrino-cooling" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="pynucastro.neutrino_cooling.html#module-pynucastro.neutrino_cooling" title="pynucastro.neutrino_cooling"><code class="xref py py-mod docutils literal notranslate"><span class="pre">neutrino_cooling</span></code></a> provides
+functions for modeling thermal neutrino losses (photo-, plasma-,
+pair-, and Bremsstralung neutrinos).  Included are:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="pynucastro.neutrino_cooling.neutrino_cooling.html#pynucastro.neutrino_cooling.neutrino_cooling.NeutrinoCooling" title="pynucastro.neutrino_cooling.neutrino_cooling.NeutrinoCooling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NeutrinoCooling</span></code></a> : a
+simply wrapper class that allows for the visualization of the
+neutrino cooling terms.</p></li>
+</ul>
+</section>
+<section id="nucdata">
+<h2><code class="docutils literal notranslate"><span class="pre">nucdata</span></code><a class="headerlink" href="#nucdata" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="pynucastro.nucdata.html#module-pynucastro.nucdata" title="pynucastro.nucdata"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nucdata</span></code></a> provides nuclear properties.
+While there are a large number of classes here, most interaction
+is done through <a class="reference internal" href="pynucastro.nucdata.nucleus.html#pynucastro.nucdata.nucleus.Nucleus" title="pynucastro.nucdata.nucleus.Nucleus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Nucleus</span></code></a>.
+The nuclear data is derived from the Atomic Mass Evaluations
+2020</p>
 </section>
 <section id="rates">
-<h2>rates<a class="headerlink" href="#rates" title="Permalink to this heading"></a></h2>
-<p>rates provides classes and functions for interpreting individual
-reaction rates, including:</p>
+<h2><code class="docutils literal notranslate"><span class="pre">rates</span></code><a class="headerlink" href="#rates" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="pynucastro.rates.html#module-pynucastro.rates" title="pynucastro.rates"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rates</span></code></a> provides classes and functions for interpreting individual
+reaction rates.  The main core rate classes are:</p>
 <ul class="simple">
-<li><p>Rate : a single Reaclib rate, with methods for plotting and
-evaluating it.</p></li>
-<li><p>RatePair : a pair of rates representing the corresponding forward
-and reverse rates</p></li>
-<li><p>Tfactors : this is a simple container class that holds the various
-temperature powers needed to evaluate a rate.</p></li>
-<li><p>RateLibrary: a container class for Reaclib rates that provides a
-high level interface for reading Reaclib-formatted files containing
-one or more rates.</p></li>
-<li><p>RateFilter: a class implementing search constraints to look up a
-desired rate or group of rates from a RateLibrary.</p></li>
+<li><p><a class="reference internal" href="pynucastro.rates.rate.html#pynucastro.rates.rate.Rate" title="pynucastro.rates.rate.Rate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Rate</span></code></a> : the base class for all rates.</p></li>
+<li><p><a class="reference internal" href="pynucastro.rates.reaclib_rate.html#pynucastro.rates.reaclib_rate.ReacLibRate" title="pynucastro.rates.reaclib_rate.ReacLibRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReacLibRate</span></code></a> : a
+temperature-depended rate from the ReacLib library, including
+methods to visualize and evaluate it.</p></li>
+<li><p><a class="reference internal" href="pynucastro.rates.tabular_rate.html#pynucastro.rates.tabular_rate.TabularRate" title="pynucastro.rates.tabular_rate.TabularRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TabularRate</span></code></a> :
+a tabulated (temperature and electron density) weak reaction rate),
+with methods to visualize and evaluate it.</p></li>
+<li><p><a class="reference internal" href="pynucastro.rates.temperature_tabular_rate.html#pynucastro.rates.temperature_tabular_rate.TemperatureTabularRate" title="pynucastro.rates.temperature_tabular_rate.TemperatureTabularRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TemperatureTabularRate</span></code></a>
+: a tabulated temperature dependent rate (T vs. N_A &lt;σv&gt;), with
+methods to visualize and evaluate it.</p></li>
+<li><p><a class="reference internal" href="pynucastro.rates.derived_rate.html#pynucastro.rates.derived_rate.DerivedRate" title="pynucastro.rates.derived_rate.DerivedRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DerivedRate</span></code></a> :
+a rate computed via detailed balance from a forward rate.</p></li>
+<li><p><a class="reference internal" href="pynucastro.rates.approximate_rates.html#pynucastro.rates.approximate_rates.ApproximateRate" title="pynucastro.rates.approximate_rates.ApproximateRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ApproximateRate</span></code></a> :
+an approximation to a rate that uses multiple “hidden rates” to
+compute an effective rate.</p></li>
 </ul>
+<p>For some temperature-dependent rates, we have a class to hold
+temperature factors:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="pynucastro.rates.rate.html#pynucastro.rates.rate.Tfactors" title="pynucastro.rates.rate.Tfactors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Tfactors</span></code></a> : a container
+class that holds common temperature factors.</p></li>
+</ul>
+<p>and collections of rates are a library, described in the following
+classes:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.Library" title="pynucastro.rates.library.Library"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Library</span></code></a> : a container
+that stores multiple rates and allows for filtering based on a set
+of rules.</p></li>
+<li><p><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.RateFilter" title="pynucastro.rates.library.RateFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RateFilter</span></code></a> : a class
+implementing search constraints to look up a desired rate or group
+of rates from a <code class="docutils literal notranslate"><span class="pre">Library</span></code>.</p></li>
+</ul>
+<p>with some specialized library collections available as:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.ReacLibLibrary" title="pynucastro.rates.library.ReacLibLibrary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReacLibLibrary</span></code></a> :
+read in the entire collection of ReacLib rates.</p></li>
+<li><p><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.TabularLibrary" title="pynucastro.rates.library.TabularLibrary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TabularLibrary</span></code></a> :
+read in all known tabular reaction rates.</p></li>
+</ul>
+</section>
+<section id="reduction">
+<h2><code class="docutils literal notranslate"><span class="pre">reduction</span></code><a class="headerlink" href="#reduction" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="pynucastro.reduction.html#module-pynucastro.reduction" title="pynucastro.reduction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">reduction</span></code></a> provides tools for directed
+relation graph with error propagation and sensitivity analysis
+reduction of reaction networks.</p>
 </section>
 <section id="screening">
-<h2>screening<a class="headerlink" href="#screening" title="Permalink to this heading"></a></h2>
-<p>screening provides python screening routines for the rates.</p>
-</section>
-<section id="templates">
-<h2>templates<a class="headerlink" href="#templates" title="Permalink to this heading"></a></h2>
-<p>templates contains subdirectories for generating AmrexAstroCxxNetwork
-C++ files implementing the ODE right hand side, jacobian, and
-integration driver routines. pynucastro processes these template files
-by replacing tags of the form <cite>&lt;tag&gt;</cite> with generated code specific to
-a given choice of reaction rates.</p>
+<h2><code class="docutils literal notranslate"><span class="pre">screening</span></code><a class="headerlink" href="#screening" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="pynucastro.screening.html#module-pynucastro.screening" title="pynucastro.screening"><code class="xref py py-mod docutils literal notranslate"><span class="pre">screening</span></code></a> provides electron screening
+routines for modifying the reaction rates.</p>
 </section>
 <section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro.constants.html">pynucastro.constants package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.constants.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.constants.constants.html">pynucastro.constants.constants module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.MeV2erg"><code class="docutils literal notranslate"><span class="pre">MeV2erg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.N_A"><code class="docutils literal notranslate"><span class="pre">N_A</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.a"><code class="docutils literal notranslate"><span class="pre">a</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.c_light"><code class="docutils literal notranslate"><span class="pre">c_light</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.erg2MeV"><code class="docutils literal notranslate"><span class="pre">erg2MeV</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.h"><code class="docutils literal notranslate"><span class="pre">h</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.hbar"><code class="docutils literal notranslate"><span class="pre">hbar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.k"><code class="docutils literal notranslate"><span class="pre">k</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.k_MeV"><code class="docutils literal notranslate"><span class="pre">k_MeV</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.m_e"><code class="docutils literal notranslate"><span class="pre">m_e</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.m_e_MeV"><code class="docutils literal notranslate"><span class="pre">m_e_MeV</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.m_n"><code class="docutils literal notranslate"><span class="pre">m_n</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.m_n_C18"><code class="docutils literal notranslate"><span class="pre">m_n_C18</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.m_n_MeV"><code class="docutils literal notranslate"><span class="pre">m_n_MeV</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.m_n_MeV_C18"><code class="docutils literal notranslate"><span class="pre">m_n_MeV_C18</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.m_p"><code class="docutils literal notranslate"><span class="pre">m_p</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.m_p_MeV"><code class="docutils literal notranslate"><span class="pre">m_p_MeV</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.m_u"><code class="docutils literal notranslate"><span class="pre">m_u</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.m_u_C18"><code class="docutils literal notranslate"><span class="pre">m_u_C18</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.m_u_MeV"><code class="docutils literal notranslate"><span class="pre">m_u_MeV</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.m_u_MeV_C18"><code class="docutils literal notranslate"><span class="pre">m_u_MeV_C18</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.q_e"><code class="docutils literal notranslate"><span class="pre">q_e</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.constants.constants.html#pynucastro.constants.constants.sigma"><code class="docutils literal notranslate"><span class="pre">sigma</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro.eos.html">pynucastro.eos package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.eos.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.eos.degeneracy_parameter_bounds.html">pynucastro.eos.degeneracy_parameter_bounds module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.degeneracy_parameter_bounds.html#pynucastro.eos.degeneracy_parameter_bounds.get_eta_bounds"><code class="docutils literal notranslate"><span class="pre">get_eta_bounds()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.eos.difference_utils.html">pynucastro.eos.difference_utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.difference_utils.html#pynucastro.eos.difference_utils.adaptive_diff"><code class="docutils literal notranslate"><span class="pre">adaptive_diff()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.difference_utils.html#pynucastro.eos.difference_utils.eighth_order_diff"><code class="docutils literal notranslate"><span class="pre">eighth_order_diff()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.difference_utils.html#pynucastro.eos.difference_utils.fourth_order_diff"><code class="docutils literal notranslate"><span class="pre">fourth_order_diff()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.difference_utils.html#pynucastro.eos.difference_utils.sixth_order_diff"><code class="docutils literal notranslate"><span class="pre">sixth_order_diff()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.eos.electron_eos.html">pynucastro.eos.electron_eos module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.electron_eos.html#pynucastro.eos.electron_eos.ElectronEOS"><code class="docutils literal notranslate"><span class="pre">ElectronEOS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.eos.eos_components.html">pynucastro.eos.eos_components module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.eos_components.html#pynucastro.eos.eos_components.EOSComponentState"><code class="docutils literal notranslate"><span class="pre">EOSComponentState</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.eos_components.html#pynucastro.eos.eos_components.IdealGasEOS"><code class="docutils literal notranslate"><span class="pre">IdealGasEOS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.eos_components.html#pynucastro.eos.eos_components.RadiationEOS"><code class="docutils literal notranslate"><span class="pre">RadiationEOS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.eos.fermi_integrals.html">pynucastro.eos.fermi_integrals module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.fermi_integrals.html#pynucastro.eos.fermi_integrals.BreakPoints"><code class="docutils literal notranslate"><span class="pre">BreakPoints</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.fermi_integrals.html#pynucastro.eos.fermi_integrals.FermiIntegral"><code class="docutils literal notranslate"><span class="pre">FermiIntegral</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.eos.quadrature_weights.html">pynucastro.eos.quadrature_weights module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.quadrature_weights.html#pynucastro.eos.quadrature_weights.x_leg"><code class="docutils literal notranslate"><span class="pre">x_leg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.quadrature_weights.html#pynucastro.eos.quadrature_weights.w_leg"><code class="docutils literal notranslate"><span class="pre">w_leg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.quadrature_weights.html#pynucastro.eos.quadrature_weights.x_lag"><code class="docutils literal notranslate"><span class="pre">x_lag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.quadrature_weights.html#pynucastro.eos.quadrature_weights.w_lag"><code class="docutils literal notranslate"><span class="pre">w_lag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.eos.stellar_eos.html">pynucastro.eos.stellar_eos module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.stellar_eos.html#pynucastro.eos.stellar_eos.EOSState"><code class="docutils literal notranslate"><span class="pre">EOSState</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.eos.stellar_eos.html#pynucastro.eos.stellar_eos.StellarEOS"><code class="docutils literal notranslate"><span class="pre">StellarEOS</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro.networks.html">pynucastro.networks package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks.amrexastro_cxx_network">pynucastro.networks.amrexastro_cxx_network module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.amrexastro_cxx_network.AmrexAstroCxxNetwork"><code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.amrexastro_cxx_network.html">pynucastro.networks.amrexastro_cxx_network module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.amrexastro_cxx_network.html#pynucastro.networks.amrexastro_cxx_network.AmrexAstroCxxNetwork"><code class="docutils literal notranslate"><span class="pre">AmrexAstroCxxNetwork</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks.base_cxx_network">pynucastro.networks.base_cxx_network module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.base_cxx_network.BaseCxxNetwork"><code class="docutils literal notranslate"><span class="pre">BaseCxxNetwork</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.base_cxx_network.BaseCxxNetwork.compose_jacobian"><code class="docutils literal notranslate"><span class="pre">BaseCxxNetwork.compose_jacobian()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.base_cxx_network.BaseCxxNetwork.compose_ydot"><code class="docutils literal notranslate"><span class="pre">BaseCxxNetwork.compose_ydot()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.base_cxx_network.BaseCxxNetwork.get_indent_amt"><code class="docutils literal notranslate"><span class="pre">BaseCxxNetwork.get_indent_amt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.base_cxx_network.html">pynucastro.networks.base_cxx_network module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.base_cxx_network.html#pynucastro.networks.base_cxx_network.BaseCxxNetwork"><code class="docutils literal notranslate"><span class="pre">BaseCxxNetwork</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.fortran_network.html">pynucastro.networks.fortran_network module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.fortran_network.html#pynucastro.networks.fortran_network.FortranNetwork"><code class="docutils literal notranslate"><span class="pre">FortranNetwork</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks.python_network">pynucastro.networks.python_network module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.python_network.PythonNetwork"><code class="docutils literal notranslate"><span class="pre">PythonNetwork</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.python_network.PythonNetwork.full_jacobian_element_string"><code class="docutils literal notranslate"><span class="pre">PythonNetwork.full_jacobian_element_string()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.python_network.PythonNetwork.full_ydot_string"><code class="docutils literal notranslate"><span class="pre">PythonNetwork.full_ydot_string()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.python_network.PythonNetwork.rates_string"><code class="docutils literal notranslate"><span class="pre">PythonNetwork.rates_string()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.python_network.PythonNetwork.screening_string"><code class="docutils literal notranslate"><span class="pre">PythonNetwork.screening_string()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.helper.html">pynucastro.networks.helper module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.helper.html#pynucastro.networks.helper.network_helper"><code class="docutils literal notranslate"><span class="pre">network_helper()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.nse_network.html">pynucastro.networks.nse_network module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.nse_network.html#pynucastro.networks.nse_network.NSENetwork"><code class="docutils literal notranslate"><span class="pre">NSENetwork</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.nse_network.html#pynucastro.networks.nse_network.NSETableEntry"><code class="docutils literal notranslate"><span class="pre">NSETableEntry</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks.rate_collection">pynucastro.networks.rate_collection module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.Composition"><code class="docutils literal notranslate"><span class="pre">Composition</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.Composition.eval_abar"><code class="docutils literal notranslate"><span class="pre">Composition.eval_abar()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.Composition.eval_ye"><code class="docutils literal notranslate"><span class="pre">Composition.eval_ye()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.Composition.get_molar"><code class="docutils literal notranslate"><span class="pre">Composition.get_molar()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.Composition.normalize"><code class="docutils literal notranslate"><span class="pre">Composition.normalize()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.Composition.plot"><code class="docutils literal notranslate"><span class="pre">Composition.plot()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.Composition.set_all"><code class="docutils literal notranslate"><span class="pre">Composition.set_all()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.Composition.set_nuc"><code class="docutils literal notranslate"><span class="pre">Composition.set_nuc()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.Composition.set_solar_like"><code class="docutils literal notranslate"><span class="pre">Composition.set_solar_like()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.python_network.html">pynucastro.networks.python_network module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.python_network.html#pynucastro.networks.python_network.PythonNetwork"><code class="docutils literal notranslate"><span class="pre">PythonNetwork</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.Explorer"><code class="docutils literal notranslate"><span class="pre">Explorer</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.Explorer.explore"><code class="docutils literal notranslate"><span class="pre">Explorer.explore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.rate_collection.html">pynucastro.networks.rate_collection module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.rate_collection.html#pynucastro.networks.rate_collection.Composition"><code class="docutils literal notranslate"><span class="pre">Composition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.rate_collection.html#pynucastro.networks.rate_collection.Explorer"><code class="docutils literal notranslate"><span class="pre">Explorer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.rate_collection.html#pynucastro.networks.rate_collection.LoddersComposition"><code class="docutils literal notranslate"><span class="pre">LoddersComposition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.rate_collection.html#pynucastro.networks.rate_collection.RateCollection"><code class="docutils literal notranslate"><span class="pre">RateCollection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.rate_collection.html#pynucastro.networks.rate_collection.RateDuplicationError"><code class="docutils literal notranslate"><span class="pre">RateDuplicationError</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection"><code class="docutils literal notranslate"><span class="pre">RateCollection</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.add_rates"><code class="docutils literal notranslate"><span class="pre">RateCollection.add_rates()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.calc_count_matrices"><code class="docutils literal notranslate"><span class="pre">RateCollection.calc_count_matrices()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.clear_arrays"><code class="docutils literal notranslate"><span class="pre">RateCollection.clear_arrays()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.dedupe_partition_function_temperatures"><code class="docutils literal notranslate"><span class="pre">RateCollection.dedupe_partition_function_temperatures()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.evaluate_activity"><code class="docutils literal notranslate"><span class="pre">RateCollection.evaluate_activity()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.evaluate_activity_arr"><code class="docutils literal notranslate"><span class="pre">RateCollection.evaluate_activity_arr()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.evaluate_energy_generation"><code class="docutils literal notranslate"><span class="pre">RateCollection.evaluate_energy_generation()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.evaluate_jacobian"><code class="docutils literal notranslate"><span class="pre">RateCollection.evaluate_jacobian()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.evaluate_rates"><code class="docutils literal notranslate"><span class="pre">RateCollection.evaluate_rates()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.evaluate_rates_arr"><code class="docutils literal notranslate"><span class="pre">RateCollection.evaluate_rates_arr()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.evaluate_screening"><code class="docutils literal notranslate"><span class="pre">RateCollection.evaluate_screening()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.evaluate_ydots"><code class="docutils literal notranslate"><span class="pre">RateCollection.evaluate_ydots()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.evaluate_ydots_arr"><code class="docutils literal notranslate"><span class="pre">RateCollection.evaluate_ydots_arr()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.find_reverse"><code class="docutils literal notranslate"><span class="pre">RateCollection.find_reverse()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.find_unimportant_rates"><code class="docutils literal notranslate"><span class="pre">RateCollection.find_unimportant_rates()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.get_comp_nse"><code class="docutils literal notranslate"><span class="pre">RateCollection.get_comp_nse()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.get_forward_rates"><code class="docutils literal notranslate"><span class="pre">RateCollection.get_forward_rates()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.get_nuclei"><code class="docutils literal notranslate"><span class="pre">RateCollection.get_nuclei()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.get_nuclei_latex_string"><code class="docutils literal notranslate"><span class="pre">RateCollection.get_nuclei_latex_string()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.get_nuclei_needing_partition_functions"><code class="docutils literal notranslate"><span class="pre">RateCollection.get_nuclei_needing_partition_functions()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.get_rate"><code class="docutils literal notranslate"><span class="pre">RateCollection.get_rate()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.get_rate_by_name"><code class="docutils literal notranslate"><span class="pre">RateCollection.get_rate_by_name()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.get_rate_by_nuclei"><code class="docutils literal notranslate"><span class="pre">RateCollection.get_rate_by_nuclei()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.get_rate_pairs"><code class="docutils literal notranslate"><span class="pre">RateCollection.get_rate_pairs()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.get_rates"><code class="docutils literal notranslate"><span class="pre">RateCollection.get_rates()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.get_rates_latex_table_string"><code class="docutils literal notranslate"><span class="pre">RateCollection.get_rates_latex_table_string()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.get_reverse_rates"><code class="docutils literal notranslate"><span class="pre">RateCollection.get_reverse_rates()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.get_screening_map"><code class="docutils literal notranslate"><span class="pre">RateCollection.get_screening_map()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.gridplot"><code class="docutils literal notranslate"><span class="pre">RateCollection.gridplot()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.linking_nuclei"><code class="docutils literal notranslate"><span class="pre">RateCollection.linking_nuclei()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.make_ap_pg_approx"><code class="docutils literal notranslate"><span class="pre">RateCollection.make_ap_pg_approx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.network_overview"><code class="docutils literal notranslate"><span class="pre">RateCollection.network_overview()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.plot"><code class="docutils literal notranslate"><span class="pre">RateCollection.plot()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.plot_jacobian"><code class="docutils literal notranslate"><span class="pre">RateCollection.plot_jacobian()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.plot_network_chart"><code class="docutils literal notranslate"><span class="pre">RateCollection.plot_network_chart()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.pynucastro_dir"><code class="docutils literal notranslate"><span class="pre">RateCollection.pynucastro_dir</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.rate_pair_overview"><code class="docutils literal notranslate"><span class="pre">RateCollection.rate_pair_overview()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.remove_nuclei"><code class="docutils literal notranslate"><span class="pre">RateCollection.remove_nuclei()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.remove_rates"><code class="docutils literal notranslate"><span class="pre">RateCollection.remove_rates()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.update_prefac_arr"><code class="docutils literal notranslate"><span class="pre">RateCollection.update_prefac_arr()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.update_rate_coef_arr"><code class="docutils literal notranslate"><span class="pre">RateCollection.update_rate_coef_arr()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.update_yfac_arr"><code class="docutils literal notranslate"><span class="pre">RateCollection.update_yfac_arr()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.validate"><code class="docutils literal notranslate"><span class="pre">RateCollection.validate()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.RateCollection.write_network"><code class="docutils literal notranslate"><span class="pre">RateCollection.write_network()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.simple_cxx_network.html">pynucastro.networks.simple_cxx_network module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.simple_cxx_network.html#pynucastro.networks.simple_cxx_network.SimpleCxxNetwork"><code class="docutils literal notranslate"><span class="pre">SimpleCxxNetwork</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.ScreeningPair"><code class="docutils literal notranslate"><span class="pre">ScreeningPair</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.rate_collection.ScreeningPair.add_rate"><code class="docutils literal notranslate"><span class="pre">ScreeningPair.add_rate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.sympy_network_support.html">pynucastro.networks.sympy_network_support module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.sympy_network_support.html#pynucastro.networks.sympy_network_support.SympyRates"><code class="docutils literal notranslate"><span class="pre">SympyRates</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks.simple_cxx_network">pynucastro.networks.simple_cxx_network module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.simple_cxx_network.SimpleCxxNetwork"><code class="docutils literal notranslate"><span class="pre">SimpleCxxNetwork</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.networks.html#module-pynucastro.networks.sympy_network_support">pynucastro.networks.sympy_network_support module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.sympy_network_support.SympyRates"><code class="docutils literal notranslate"><span class="pre">SympyRates</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.sympy_network_support.SympyRates.cxxify"><code class="docutils literal notranslate"><span class="pre">SympyRates.cxxify()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.sympy_network_support.SympyRates.jacobian_term_symbol"><code class="docutils literal notranslate"><span class="pre">SympyRates.jacobian_term_symbol()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.sympy_network_support.SympyRates.specific_rate_symbol"><code class="docutils literal notranslate"><span class="pre">SympyRates.specific_rate_symbol()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.html#pynucastro.networks.sympy_network_support.SympyRates.ydot_term_symbol"><code class="docutils literal notranslate"><span class="pre">SympyRates.ydot_term_symbol()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro.neutrino_cooling.html">pynucastro.neutrino_cooling package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.neutrino_cooling.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.neutrino_cooling.neutrino_cooling.html">pynucastro.neutrino_cooling.neutrino_cooling module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.neutrino_cooling.neutrino_cooling.html#pynucastro.neutrino_cooling.neutrino_cooling.NeutrinoCooling"><code class="docutils literal notranslate"><span class="pre">NeutrinoCooling</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.neutrino_cooling.sneut5_mod.html">pynucastro.neutrino_cooling.sneut5_mod module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.neutrino_cooling.sneut5_mod.html#pynucastro.neutrino_cooling.sneut5_mod.NeutrinoComponents"><code class="docutils literal notranslate"><span class="pre">NeutrinoComponents</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.neutrino_cooling.sneut5_mod.html#pynucastro.neutrino_cooling.sneut5_mod.ifermi12"><code class="docutils literal notranslate"><span class="pre">ifermi12()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.neutrino_cooling.sneut5_mod.html#pynucastro.neutrino_cooling.sneut5_mod.sneut5"><code class="docutils literal notranslate"><span class="pre">sneut5()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -346,69 +867,36 @@ a given choice of reaction rates.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro.nucdata.html">pynucastro.nucdata package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.nucdata.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.nucdata.html#module-pynucastro.nucdata.binding_table">pynucastro.nucdata.binding_table module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.binding_table.BindingTable"><code class="docutils literal notranslate"><span class="pre">BindingTable</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.binding_table.BindingTable.get_binding_energy"><code class="docutils literal notranslate"><span class="pre">BindingTable.get_binding_energy()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.binding_table.BindingTable.header_length"><code class="docutils literal notranslate"><span class="pre">BindingTable.header_length</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.binding_table.BindingTable.read"><code class="docutils literal notranslate"><span class="pre">BindingTable.read()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.nucdata.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.elements.html">pynucastro.nucdata.elements module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.elements.html#pynucastro.nucdata.elements.Element"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.elements.html#pynucastro.nucdata.elements.PeriodicTable"><code class="docutils literal notranslate"><span class="pre">PeriodicTable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.elements.html#pynucastro.nucdata.elements.UnidentifiedElement"><code class="docutils literal notranslate"><span class="pre">UnidentifiedElement</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.halflife_table.html">pynucastro.nucdata.halflife_table module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.halflife_table.html#pynucastro.nucdata.halflife_table.HalfLifeTable"><code class="docutils literal notranslate"><span class="pre">HalfLifeTable</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.nucdata.html#module-pynucastro.nucdata.elements">pynucastro.nucdata.elements module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.elements.Element"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.elements.PeriodicTable"><code class="docutils literal notranslate"><span class="pre">PeriodicTable</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.elements.PeriodicTable.lookup_Z"><code class="docutils literal notranslate"><span class="pre">PeriodicTable.lookup_Z()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.elements.PeriodicTable.lookup_abbreviation"><code class="docutils literal notranslate"><span class="pre">PeriodicTable.lookup_abbreviation()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.elements.PeriodicTable.table"><code class="docutils literal notranslate"><span class="pre">PeriodicTable.table</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.mass_table.html">pynucastro.nucdata.mass_table module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.mass_table.html#pynucastro.nucdata.mass_table.MassTable"><code class="docutils literal notranslate"><span class="pre">MassTable</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.elements.UnidentifiedElement"><code class="docutils literal notranslate"><span class="pre">UnidentifiedElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.nucleus.html">pynucastro.nucdata.nucleus module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.nucleus.html#pynucastro.nucdata.nucleus.Nucleus"><code class="docutils literal notranslate"><span class="pre">Nucleus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.nucleus.html#pynucastro.nucdata.nucleus.UnsupportedNucleus"><code class="docutils literal notranslate"><span class="pre">UnsupportedNucleus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.nucleus.html#pynucastro.nucdata.nucleus.get_all_nuclei"><code class="docutils literal notranslate"><span class="pre">get_all_nuclei()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.nucleus.html#pynucastro.nucdata.nucleus.get_nuclei_in_range"><code class="docutils literal notranslate"><span class="pre">get_nuclei_in_range()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.nucdata.html#module-pynucastro.nucdata.mass_table">pynucastro.nucdata.mass_table module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.mass_table.MassTable"><code class="docutils literal notranslate"><span class="pre">MassTable</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.mass_table.MassTable.get_mass_diff"><code class="docutils literal notranslate"><span class="pre">MassTable.get_mass_diff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.partition_function.html">pynucastro.nucdata.partition_function module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.partition_function.html#pynucastro.nucdata.partition_function.PartitionFunction"><code class="docutils literal notranslate"><span class="pre">PartitionFunction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.partition_function.html#pynucastro.nucdata.partition_function.PartitionFunctionCollection"><code class="docutils literal notranslate"><span class="pre">PartitionFunctionCollection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.partition_function.html#pynucastro.nucdata.partition_function.PartitionFunctionTable"><code class="docutils literal notranslate"><span class="pre">PartitionFunctionTable</span></code></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.nucdata.html#module-pynucastro.nucdata.nucleus">pynucastro.nucdata.nucleus module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.nucleus.Nucleus"><code class="docutils literal notranslate"><span class="pre">Nucleus</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.nucleus.Nucleus.c"><code class="docutils literal notranslate"><span class="pre">Nucleus.c()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.nucleus.Nucleus.cindex"><code class="docutils literal notranslate"><span class="pre">Nucleus.cindex()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.nucleus.Nucleus.from_cache"><code class="docutils literal notranslate"><span class="pre">Nucleus.from_cache()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.nucleus.UnsupportedNucleus"><code class="docutils literal notranslate"><span class="pre">UnsupportedNucleus</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.nucdata.html#module-pynucastro.nucdata.partition_function">pynucastro.nucdata.partition_function module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunction"><code class="docutils literal notranslate"><span class="pre">PartitionFunction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunction.construct_spline_interpolant"><code class="docutils literal notranslate"><span class="pre">PartitionFunction.construct_spline_interpolant()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunction.eval"><code class="docutils literal notranslate"><span class="pre">PartitionFunction.eval()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunction.lower_partition"><code class="docutils literal notranslate"><span class="pre">PartitionFunction.lower_partition()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunction.lower_temperature"><code class="docutils literal notranslate"><span class="pre">PartitionFunction.lower_temperature()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunction.upper_partition"><code class="docutils literal notranslate"><span class="pre">PartitionFunction.upper_partition()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunction.upper_temperature"><code class="docutils literal notranslate"><span class="pre">PartitionFunction.upper_temperature()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunctionCollection"><code class="docutils literal notranslate"><span class="pre">PartitionFunctionCollection</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunctionCollection.get_nuclei"><code class="docutils literal notranslate"><span class="pre">PartitionFunctionCollection.get_nuclei()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunctionCollection.get_partition_function"><code class="docutils literal notranslate"><span class="pre">PartitionFunctionCollection.get_partition_function()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunctionTable"><code class="docutils literal notranslate"><span class="pre">PartitionFunctionTable</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunctionTable.get_nuclei"><code class="docutils literal notranslate"><span class="pre">PartitionFunctionTable.get_nuclei()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.partition_function.PartitionFunctionTable.get_partition_function"><code class="docutils literal notranslate"><span class="pre">PartitionFunctionTable.get_partition_function()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.nucdata.html#module-pynucastro.nucdata.spin_table">pynucastro.nucdata.spin_table module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.spin_table.SpinTable"><code class="docutils literal notranslate"><span class="pre">SpinTable</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.html#pynucastro.nucdata.spin_table.SpinTable.get_spin_states"><code class="docutils literal notranslate"><span class="pre">SpinTable.get_spin_states()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.nucdata.spin_table.html">pynucastro.nucdata.spin_table module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.nucdata.spin_table.html#pynucastro.nucdata.spin_table.SpinTable"><code class="docutils literal notranslate"><span class="pre">SpinTable</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -416,127 +904,152 @@ a given choice of reaction rates.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro.rates.html">pynucastro.rates package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.rates.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.rates.html#module-pynucastro.rates.library">pynucastro.rates.library module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.LangankeLibrary"><code class="docutils literal notranslate"><span class="pre">LangankeLibrary</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library"><code class="docutils literal notranslate"><span class="pre">Library</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.add_rate"><code class="docutils literal notranslate"><span class="pre">Library.add_rate()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.backward"><code class="docutils literal notranslate"><span class="pre">Library.backward()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.derived_backward"><code class="docutils literal notranslate"><span class="pre">Library.derived_backward()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.derived_forward"><code class="docutils literal notranslate"><span class="pre">Library.derived_forward()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.diff"><code class="docutils literal notranslate"><span class="pre">Library.diff()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.filter"><code class="docutils literal notranslate"><span class="pre">Library.filter()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.forward"><code class="docutils literal notranslate"><span class="pre">Library.forward()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.get_nuclei"><code class="docutils literal notranslate"><span class="pre">Library.get_nuclei()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.get_num_rates"><code class="docutils literal notranslate"><span class="pre">Library.get_num_rates()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.get_rate"><code class="docutils literal notranslate"><span class="pre">Library.get_rate()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.get_rate_by_name"><code class="docutils literal notranslate"><span class="pre">Library.get_rate_by_name()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.get_rate_by_nuclei"><code class="docutils literal notranslate"><span class="pre">Library.get_rate_by_nuclei()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.get_rates"><code class="docutils literal notranslate"><span class="pre">Library.get_rates()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.heaviest"><code class="docutils literal notranslate"><span class="pre">Library.heaviest()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.lightest"><code class="docutils literal notranslate"><span class="pre">Library.lightest()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.linking_nuclei"><code class="docutils literal notranslate"><span class="pre">Library.linking_nuclei()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.remove_rate"><code class="docutils literal notranslate"><span class="pre">Library.remove_rate()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.Library.write_to_file"><code class="docutils literal notranslate"><span class="pre">Library.write_to_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.load_rate"><code class="docutils literal notranslate"><span class="pre">load_rate()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.rates.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.alternate_rates.html">pynucastro.rates.alternate_rates module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.alternate_rates.html#pynucastro.rates.alternate_rates.DeBoerC12agO16"><code class="docutils literal notranslate"><span class="pre">DeBoerC12agO16</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.alternate_rates.html#pynucastro.rates.alternate_rates.IliadisO16pgF17"><code class="docutils literal notranslate"><span class="pre">IliadisO16pgF17</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.RateFilter"><code class="docutils literal notranslate"><span class="pre">RateFilter</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.RateFilter.invert"><code class="docutils literal notranslate"><span class="pre">RateFilter.invert()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.RateFilter.matches"><code class="docutils literal notranslate"><span class="pre">RateFilter.matches()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.approximate_rates.html">pynucastro.rates.approximate_rates module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.approximate_rates.html#pynucastro.rates.approximate_rates.ApproximateRate"><code class="docutils literal notranslate"><span class="pre">ApproximateRate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.approximate_rates.html#pynucastro.rates.approximate_rates.create_double_neutron_capture"><code class="docutils literal notranslate"><span class="pre">create_double_neutron_capture()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.ReacLibLibrary"><code class="docutils literal notranslate"><span class="pre">ReacLibLibrary</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.SuzukiLibrary"><code class="docutils literal notranslate"><span class="pre">SuzukiLibrary</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.TabularLibrary"><code class="docutils literal notranslate"><span class="pre">TabularLibrary</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.library.list_known_rates"><code class="docutils literal notranslate"><span class="pre">list_known_rates()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.derived_rate.html">pynucastro.rates.derived_rate module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.derived_rate.html#pynucastro.rates.derived_rate.DerivedRate"><code class="docutils literal notranslate"><span class="pre">DerivedRate</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.rates.html#module-pynucastro.rates.rate">pynucastro.rates.rate module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ApproximateRate"><code class="docutils literal notranslate"><span class="pre">ApproximateRate</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ApproximateRate.eval"><code class="docutils literal notranslate"><span class="pre">ApproximateRate.eval()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ApproximateRate.function_string_cxx"><code class="docutils literal notranslate"><span class="pre">ApproximateRate.function_string_cxx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ApproximateRate.function_string_py"><code class="docutils literal notranslate"><span class="pre">ApproximateRate.function_string_py()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ApproximateRate.get_child_rates"><code class="docutils literal notranslate"><span class="pre">ApproximateRate.get_child_rates()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.files.html">pynucastro.rates.files module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.files.html#pynucastro.rates.files.RateFileError"><code class="docutils literal notranslate"><span class="pre">RateFileError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.files.html#pynucastro.rates.files.get_rates_dir"><code class="docutils literal notranslate"><span class="pre">get_rates_dir()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.files.html#pynucastro.rates.files.get_tabular_dir"><code class="docutils literal notranslate"><span class="pre">get_tabular_dir()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.DerivedRate"><code class="docutils literal notranslate"><span class="pre">DerivedRate</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.DerivedRate.counter_factors"><code class="docutils literal notranslate"><span class="pre">DerivedRate.counter_factors()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.DerivedRate.eval"><code class="docutils literal notranslate"><span class="pre">DerivedRate.eval()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.DerivedRate.function_string_cxx"><code class="docutils literal notranslate"><span class="pre">DerivedRate.function_string_cxx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.DerivedRate.function_string_py"><code class="docutils literal notranslate"><span class="pre">DerivedRate.function_string_py()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.known_duplicates.html">pynucastro.rates.known_duplicates module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.known_duplicates.html#pynucastro.rates.known_duplicates.find_duplicate_rates"><code class="docutils literal notranslate"><span class="pre">find_duplicate_rates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.known_duplicates.html#pynucastro.rates.known_duplicates.is_allowed_dupe"><code class="docutils literal notranslate"><span class="pre">is_allowed_dupe()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Rate"><code class="docutils literal notranslate"><span class="pre">Rate</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Rate.cname"><code class="docutils literal notranslate"><span class="pre">Rate.cname()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Rate.eval"><code class="docutils literal notranslate"><span class="pre">Rate.eval()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Rate.eval_jacobian_term"><code class="docutils literal notranslate"><span class="pre">Rate.eval_jacobian_term()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Rate.get_rate_id"><code class="docutils literal notranslate"><span class="pre">Rate.get_rate_id()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Rate.heaviest"><code class="docutils literal notranslate"><span class="pre">Rate.heaviest()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Rate.jacobian_string_py"><code class="docutils literal notranslate"><span class="pre">Rate.jacobian_string_py()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Rate.lightest"><code class="docutils literal notranslate"><span class="pre">Rate.lightest()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Rate.ydot_string_py"><code class="docutils literal notranslate"><span class="pre">Rate.ydot_string_py()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.library.html">pynucastro.rates.library module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.FFNLibrary"><code class="docutils literal notranslate"><span class="pre">FFNLibrary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.LangankeLibrary"><code class="docutils literal notranslate"><span class="pre">LangankeLibrary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.Library"><code class="docutils literal notranslate"><span class="pre">Library</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.OdaLibrary"><code class="docutils literal notranslate"><span class="pre">OdaLibrary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.PruetFullerLibrary"><code class="docutils literal notranslate"><span class="pre">PruetFullerLibrary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.RateFilter"><code class="docutils literal notranslate"><span class="pre">RateFilter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.ReacLibLibrary"><code class="docutils literal notranslate"><span class="pre">ReacLibLibrary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.StarLibLibrary"><code class="docutils literal notranslate"><span class="pre">StarLibLibrary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.SuzukiLibrary"><code class="docutils literal notranslate"><span class="pre">SuzukiLibrary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.TabularLibrary"><code class="docutils literal notranslate"><span class="pre">TabularLibrary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.capitalize_id"><code class="docutils literal notranslate"><span class="pre">capitalize_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.library.html#pynucastro.rates.library.full_library"><code class="docutils literal notranslate"><span class="pre">full_library()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.RateFileError"><code class="docutils literal notranslate"><span class="pre">RateFileError</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.RatePair"><code class="docutils literal notranslate"><span class="pre">RatePair</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ReacLibRate"><code class="docutils literal notranslate"><span class="pre">ReacLibRate</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ReacLibRate.eval"><code class="docutils literal notranslate"><span class="pre">ReacLibRate.eval()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ReacLibRate.eval_deriv"><code class="docutils literal notranslate"><span class="pre">ReacLibRate.eval_deriv()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ReacLibRate.function_string_cxx"><code class="docutils literal notranslate"><span class="pre">ReacLibRate.function_string_cxx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ReacLibRate.function_string_py"><code class="docutils literal notranslate"><span class="pre">ReacLibRate.function_string_py()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ReacLibRate.get_rate_exponent"><code class="docutils literal notranslate"><span class="pre">ReacLibRate.get_rate_exponent()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ReacLibRate.get_rate_id"><code class="docutils literal notranslate"><span class="pre">ReacLibRate.get_rate_id()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ReacLibRate.modify_products"><code class="docutils literal notranslate"><span class="pre">ReacLibRate.modify_products()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ReacLibRate.plot"><code class="docutils literal notranslate"><span class="pre">ReacLibRate.plot()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.ReacLibRate.write_to_file"><code class="docutils literal notranslate"><span class="pre">ReacLibRate.write_to_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.modified_rate.html">pynucastro.rates.modified_rate module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.modified_rate.html#pynucastro.rates.modified_rate.ModifiedRate"><code class="docutils literal notranslate"><span class="pre">ModifiedRate</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.SingleSet"><code class="docutils literal notranslate"><span class="pre">SingleSet</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.SingleSet.dfdT"><code class="docutils literal notranslate"><span class="pre">SingleSet.dfdT()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.SingleSet.dln_set_string_dT9_cxx"><code class="docutils literal notranslate"><span class="pre">SingleSet.dln_set_string_dT9_cxx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.SingleSet.f"><code class="docutils literal notranslate"><span class="pre">SingleSet.f()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.SingleSet.set_string_cxx"><code class="docutils literal notranslate"><span class="pre">SingleSet.set_string_cxx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.SingleSet.set_string_py"><code class="docutils literal notranslate"><span class="pre">SingleSet.set_string_py()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.rate.html">pynucastro.rates.rate module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.rate.html#pynucastro.rates.rate.BaryonConservationError"><code class="docutils literal notranslate"><span class="pre">BaryonConservationError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.rate.html#pynucastro.rates.rate.Rate"><code class="docutils literal notranslate"><span class="pre">Rate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.rate.html#pynucastro.rates.rate.RatePair"><code class="docutils literal notranslate"><span class="pre">RatePair</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.rate.html#pynucastro.rates.rate.RateSource"><code class="docutils literal notranslate"><span class="pre">RateSource</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.rate.html#pynucastro.rates.rate.Tfactors"><code class="docutils literal notranslate"><span class="pre">Tfactors</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.TabularRate"><code class="docutils literal notranslate"><span class="pre">TabularRate</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.TabularRate.eval"><code class="docutils literal notranslate"><span class="pre">TabularRate.eval()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.TabularRate.function_string_py"><code class="docutils literal notranslate"><span class="pre">TabularRate.function_string_py()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.TabularRate.get_nu_loss"><code class="docutils literal notranslate"><span class="pre">TabularRate.get_nu_loss()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.TabularRate.get_rate_id"><code class="docutils literal notranslate"><span class="pre">TabularRate.get_rate_id()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.TabularRate.get_tabular_rate"><code class="docutils literal notranslate"><span class="pre">TabularRate.get_tabular_rate()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.TabularRate.plot"><code class="docutils literal notranslate"><span class="pre">TabularRate.plot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.reaclib_rate.html">pynucastro.rates.reaclib_rate module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.reaclib_rate.html#pynucastro.rates.reaclib_rate.ReacLibRate"><code class="docutils literal notranslate"><span class="pre">ReacLibRate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.reaclib_rate.html#pynucastro.rates.reaclib_rate.SingleSet"><code class="docutils literal notranslate"><span class="pre">SingleSet</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Tfactors"><code class="docutils literal notranslate"><span class="pre">Tfactors</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.Tfactors.class_type"><code class="docutils literal notranslate"><span class="pre">Tfactors.class_type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.starlib_rate.html">pynucastro.rates.starlib_rate module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.starlib_rate.html#pynucastro.rates.starlib_rate.StarLibRate"><code class="docutils literal notranslate"><span class="pre">StarLibRate</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.get_rates_dir"><code class="docutils literal notranslate"><span class="pre">get_rates_dir()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.get_tabular_dir"><code class="docutils literal notranslate"><span class="pre">get_tabular_dir()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.html#pynucastro.rates.rate.load_rate"><code class="docutils literal notranslate"><span class="pre">load_rate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.tabular_rate.html">pynucastro.rates.tabular_rate module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.tabular_rate.html#pynucastro.rates.tabular_rate.TableIndex"><code class="docutils literal notranslate"><span class="pre">TableIndex</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.tabular_rate.html#pynucastro.rates.tabular_rate.TableInterpolator"><code class="docutils literal notranslate"><span class="pre">TableInterpolator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.tabular_rate.html#pynucastro.rates.tabular_rate.TabularRate"><code class="docutils literal notranslate"><span class="pre">TabularRate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.rates.temperature_tabular_rate.html">pynucastro.rates.temperature_tabular_rate module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.temperature_tabular_rate.html#pynucastro.rates.temperature_tabular_rate.TempTableInterpolator"><code class="docutils literal notranslate"><span class="pre">TempTableInterpolator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.rates.temperature_tabular_rate.html#pynucastro.rates.temperature_tabular_rate.TemperatureTabularRate"><code class="docutils literal notranslate"><span class="pre">TemperatureTabularRate</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro.reduction.html">pynucastro.reduction package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.reduction.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.reduction.drgep_module.html">pynucastro.reduction.drgep_module module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.reduction.drgep_module.html#pynucastro.reduction.drgep_module.calc_interaction_matrix"><code class="docutils literal notranslate"><span class="pre">calc_interaction_matrix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.reduction.drgep_module.html#pynucastro.reduction.drgep_module.drgep"><code class="docutils literal notranslate"><span class="pre">drgep()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.reduction.drgep_module.html#pynucastro.reduction.drgep_module.drgep_dijkstras"><code class="docutils literal notranslate"><span class="pre">drgep_dijkstras()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.reduction.drgep_module.html#pynucastro.reduction.drgep_module.get_adj_nuc"><code class="docutils literal notranslate"><span class="pre">get_adj_nuc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.reduction.drgep_module.html#pynucastro.reduction.drgep_module.to_list"><code class="docutils literal notranslate"><span class="pre">to_list()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.reduction.sensitivity_analysis.html">pynucastro.reduction.sensitivity_analysis module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.reduction.sensitivity_analysis.html#pynucastro.reduction.sensitivity_analysis.binary_search_trim"><code class="docutils literal notranslate"><span class="pre">binary_search_trim()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.reduction.sensitivity_analysis.html#pynucastro.reduction.sensitivity_analysis.sens_analysis"><code class="docutils literal notranslate"><span class="pre">sens_analysis()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro.screening.html">pynucastro.screening package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.screening.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pynucastro.screening.html#module-pynucastro.screening.screen">pynucastro.screening.screen module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.screening.html#pynucastro.screening.screen.PlasmaState"><code class="docutils literal notranslate"><span class="pre">PlasmaState</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.html#pynucastro.screening.screen.PlasmaState.class_type"><code class="docutils literal notranslate"><span class="pre">PlasmaState.class_type</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.screening.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.screening.screen.html">pynucastro.screening.screen module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.NseState"><code class="docutils literal notranslate"><span class="pre">NseState</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.PlasmaState"><code class="docutils literal notranslate"><span class="pre">PlasmaState</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.ScreenFactors"><code class="docutils literal notranslate"><span class="pre">ScreenFactors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.chugunov_2007"><code class="docutils literal notranslate"><span class="pre">chugunov_2007()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.chugunov_2009"><code class="docutils literal notranslate"><span class="pre">chugunov_2009()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.debye_huckel"><code class="docutils literal notranslate"><span class="pre">debye_huckel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.f0"><code class="docutils literal notranslate"><span class="pre">f0()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.make_plasma_state"><code class="docutils literal notranslate"><span class="pre">make_plasma_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.make_screen_factors"><code class="docutils literal notranslate"><span class="pre">make_screen_factors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.potekhin_1998"><code class="docutils literal notranslate"><span class="pre">potekhin_1998()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.screen5"><code class="docutils literal notranslate"><span class="pre">screen5()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.screening_check"><code class="docutils literal notranslate"><span class="pre">screening_check()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.smooth_clip"><code class="docutils literal notranslate"><span class="pre">smooth_clip()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.screening.html#pynucastro.screening.screen.ScreenFactors"><code class="docutils literal notranslate"><span class="pre">ScreenFactors</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.html#pynucastro.screening.screen.ScreenFactors.class_type"><code class="docutils literal notranslate"><span class="pre">ScreenFactors.class_type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pynucastro.screening.screening_util.html">pynucastro.screening.screening_util module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screening_util.html#pynucastro.screening.screening_util.ScreeningPair"><code class="docutils literal notranslate"><span class="pre">ScreeningPair</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.screening.screening_util.html#pynucastro.screening.screening_util.get_screening_map"><code class="docutils literal notranslate"><span class="pre">get_screening_map()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.screening.html#pynucastro.screening.screen.chugunov_2007"><code class="docutils literal notranslate"><span class="pre">chugunov_2007()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.screening.html#pynucastro.screening.screen.chugunov_2009"><code class="docutils literal notranslate"><span class="pre">chugunov_2009()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.screening.html#pynucastro.screening.screen.make_plasma_state"><code class="docutils literal notranslate"><span class="pre">make_plasma_state()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.screening.html#pynucastro.screening.screen.make_screen_factors"><code class="docutils literal notranslate"><span class="pre">make_screen_factors()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pynucastro.screening.html#pynucastro.screening.screen.potekhin_1998"><code class="docutils literal notranslate"><span class="pre">potekhin_1998()</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro.mpi_utils.html">pynucastro.mpi_utils module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.mpi_utils.html#pynucastro.mpi_utils.FailedMPIImport"><code class="docutils literal notranslate"><span class="pre">FailedMPIImport</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.mpi_utils.html#pynucastro.mpi_utils.MPIImportError"><code class="docutils literal notranslate"><span class="pre">MPIImportError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.mpi_utils.html#pynucastro.mpi_utils.mpi_importer"><code class="docutils literal notranslate"><span class="pre">mpi_importer()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.mpi_utils.html#pynucastro.mpi_utils.mpi_numpy_decomp"><code class="docutils literal notranslate"><span class="pre">mpi_numpy_decomp()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro.numba_util.html">pynucastro.numba_util module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro.utils.html">pynucastro.utils module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.utils.html#pynucastro.utils.pynucastro_version"><code class="docutils literal notranslate"><span class="pre">pynucastro_version()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pynucastro.yt_utils.html">pynucastro.yt_utils module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.yt_utils.html#pynucastro.yt_utils.get_point"><code class="docutils literal notranslate"><span class="pre">get_point()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pynucastro.yt_utils.html#pynucastro.yt_utils.to_conditions"><code class="docutils literal notranslate"><span class="pre">to_conditions()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -545,34 +1058,114 @@ a given choice of reaction rates.</p>
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="modules.html" class="btn btn-neutral float-left" title="pynucastro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pynucastro.networks.html" class="btn btn-neutral float-right" title="pynucastro.networks package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+                </article>
+              
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2023, pynucastro development team.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="modules.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pynucastro</p>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class="right-next"
+       href="pynucastro.constants.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pynucastro.constants package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-</body>
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constants"><code class="docutils literal notranslate"><span class="pre">constants</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eos"><code class="docutils literal notranslate"><span class="pre">eos</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#networks"><code class="docutils literal notranslate"><span class="pre">networks</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neutrino-cooling"><code class="docutils literal notranslate"><span class="pre">neutrino_cooling</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nucdata"><code class="docutils literal notranslate"><span class="pre">nucdata</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rates"><code class="docutils literal notranslate"><span class="pre">rates</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction"><code class="docutils literal notranslate"><span class="pre">reduction</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#screening"><code class="docutils literal notranslate"><span class="pre">screening</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By pynucastro development team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024-2026, pynucastro development team.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>
