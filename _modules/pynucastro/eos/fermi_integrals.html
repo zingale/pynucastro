@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pynucastro.eos.fermi_integrals &#8212; pynucastro 1.7.0.post726+g90e398717 documentation</title>
+    <title>pynucastro.eos.fermi_integrals &#8212; pynucastro 1.7.0.post746+g2c13c8728 documentation</title>
   
   
   
@@ -26,8 +26,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
@@ -36,12 +36,12 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/myfile.css?v=15ab05d9" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
 
-    <script src="../../../_static/documentation_options.js?v=15e5edec"></script>
+    <script src="../../../_static/documentation_options.js?v=9ae0a069"></script>
     <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -49,19 +49,24 @@
     <script src="../../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pynucastro/eos/fermi_integrals';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="1.7" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
@@ -93,7 +98,7 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -169,7 +174,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../plot-types.html">Plotting Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../basic_network.html">Basic Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../pynucastro-integration.html">Integrating a Network</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../starlib.html">Network Integration with StarLib rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../starlib.html">Networks with StarLib rates</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Working with Libraries</span></p>
 <ul class="nav bd-sidenav">
@@ -252,6 +257,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/he-burning.html">Ratio of C/O from He burning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/supernova-lightcurve.html">A Supernova Lightcurve</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../testing.html">Testing and Comparing Backends</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../citing.html">Citing pynucastro</a></li>
@@ -277,6 +286,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../pynucastro.networks.base_cxx_network.html">pynucastro.networks.base_cxx_network module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../pynucastro.networks.fortran_network.html">pynucastro.networks.fortran_network module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../pynucastro.networks.helper.html">pynucastro.networks.helper module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../pynucastro.networks.network_compare.html">pynucastro.networks.network_compare module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../pynucastro.networks.nse_network.html">pynucastro.networks.nse_network module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../pynucastro.networks.python_network.html">pynucastro.networks.python_network module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../pynucastro.networks.rate_collection.html">pynucastro.networks.rate_collection module</a></li>
@@ -639,9 +649,6 @@
     <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">MAX_EXPONENT</span><span class="p">:</span>
         <span class="n">inv_cosh_term</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">delta</span><span class="p">))</span>
 
-    <span class="c1"># this is (exp(xsq - eta) - 1.0) / (exp(xsq - eta) + 1.0)</span>
-    <span class="n">tanh_half_delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">delta</span><span class="p">)</span>
-
     <span class="n">testm</span> <span class="o">=</span> <span class="n">delta</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">MAX_EXPONENT</span>
     <span class="k">if</span> <span class="n">testm</span><span class="p">:</span>
         <span class="n">denomi</span> <span class="o">=</span> <span class="mf">1.0</span>
@@ -678,6 +685,8 @@
         <span class="c1"># this is IB = 3 from Gong et al.</span>
         <span class="c1"># this corresponds to eq A.3 in terms of x**2</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">testm</span><span class="p">:</span>
+            <span class="c1"># this is (exp(xsq - eta) - 1.0) / (exp(xsq - eta) + 1.0)</span>
+            <span class="n">tanh_half_delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">delta</span><span class="p">)</span>
             <span class="n">result</span> <span class="o">=</span> <span class="n">num</span> <span class="o">*</span> <span class="n">inv_cosh_term</span> <span class="o">*</span> <span class="n">tanh_half_delta</span>
 
     <span class="k">elif</span> <span class="n">eta_der</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">beta_der</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -715,9 +724,6 @@
     <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">MAX_EXPONENT</span><span class="p">:</span>
         <span class="n">inv_cosh_term</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">delta</span><span class="p">))</span>
 
-    <span class="c1"># this is (exp(x - eta) - 1.0) / (exp(x - eta) + 1.0)</span>
-    <span class="n">tanh_half_delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">delta</span><span class="p">)</span>
-
     <span class="n">testm</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">eta</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">MAX_EXPONENT</span>
     <span class="k">if</span> <span class="n">testm</span><span class="p">:</span>
         <span class="n">denomi</span> <span class="o">=</span> <span class="mf">1.0</span>
@@ -752,6 +758,8 @@
         <span class="c1"># this is IB = 3 from Gong et al.</span>
         <span class="c1"># this corresponds to eq A.3</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">testm</span><span class="p">:</span>
+            <span class="c1"># this is (exp(x - eta) - 1.0) / (exp(x - eta) + 1.0)</span>
+            <span class="n">tanh_half_delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">delta</span><span class="p">)</span>
             <span class="n">result</span> <span class="o">=</span> <span class="n">num</span> <span class="o">*</span> <span class="n">inv_cosh_term</span> <span class="o">*</span> <span class="n">tanh_half_delta</span>
 
     <span class="k">elif</span> <span class="n">eta_der</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">beta_der</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -828,8 +836,6 @@
                           <span class="n">k</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span>
                           <span class="n">eta_der</span><span class="p">,</span> <span class="n">beta_der</span><span class="p">):</span>
 
-        <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_leg</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
-
         <span class="c1"># We set the correspondence (a+b)/2 -&gt; 0 and map the (-1,0) and (0,1)</span>
         <span class="c1"># intervals separately.</span>
 
@@ -840,7 +846,7 @@
                                <span class="n">eta_der</span><span class="o">=</span><span class="n">eta_der</span><span class="p">,</span> <span class="n">beta_der</span><span class="o">=</span><span class="n">beta_der</span><span class="p">)</span> <span class="o">+</span>
                         <span class="n">kernel</span><span class="p">(</span><span class="n">fac1</span> <span class="o">-</span> <span class="n">fac2</span> <span class="o">*</span> <span class="n">root</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span>
                                <span class="n">eta_der</span><span class="o">=</span><span class="n">eta_der</span><span class="p">,</span> <span class="n">beta_der</span><span class="o">=</span><span class="n">beta_der</span><span class="p">))</span> <span class="o">*</span> <span class="n">weight</span>
-                       <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">weight</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_leg</span><span class="p">[</span><span class="n">N</span><span class="p">:],</span> <span class="n">w_leg</span><span class="p">[</span><span class="n">N</span><span class="p">:]))</span>
+                       <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">weight</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_leg</span><span class="p">,</span> <span class="n">w_leg</span><span class="p">))</span>
 
         <span class="n">integral</span> <span class="o">*=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
         <span class="k">return</span> <span class="n">integral</span>
@@ -1003,8 +1009,8 @@ By pynucastro development team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
 
   <footer class="bd-footer">
   </footer>

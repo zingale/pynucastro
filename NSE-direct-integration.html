@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>NSE vs. Direct Integration &#8212; pynucastro 1.7.0.post726+g90e398717 documentation</title>
+    <title>NSE vs. Direct Integration &#8212; pynucastro 1.7.0.post746+g2c13c8728 documentation</title>
   
   
   
@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
@@ -37,12 +37,12 @@
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=15ab05d9" />
   
   <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
 
-    <script src="_static/documentation_options.js?v=15e5edec"></script>
+    <script src="_static/documentation_options.js?v=9ae0a069"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -53,6 +53,7 @@
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'NSE-direct-integration';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Creating an NSE table" href="nse_table.html" />
@@ -60,14 +61,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="1.7" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
@@ -99,7 +104,7 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -173,7 +178,7 @@
 <li class="toctree-l1"><a class="reference internal" href="plot-types.html">Plotting Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic_network.html">Basic Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pynucastro-integration.html">Integrating a Network</a></li>
-<li class="toctree-l1"><a class="reference internal" href="starlib.html">Network Integration with StarLib rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="starlib.html">Networks with StarLib rates</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Working with Libraries</span></p>
 <ul class="nav bd-sidenav">
@@ -256,6 +261,10 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/he-burning.html">Ratio of C/O from He burning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/supernova-lightcurve.html">A Supernova Lightcurve</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing and Comparing Backends</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="citing.html">Citing pynucastro</a></li>
@@ -281,6 +290,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.base_cxx_network.html">pynucastro.networks.base_cxx_network module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.fortran_network.html">pynucastro.networks.fortran_network module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.helper.html">pynucastro.networks.helper module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.network_compare.html">pynucastro.networks.network_compare module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.nse_network.html">pynucastro.networks.nse_network module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.python_network.html">pynucastro.networks.python_network module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pynucastro.networks.rate_collection.html">pynucastro.networks.rate_collection module</a></li>
@@ -566,7 +576,7 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nse-compatibility">NSE Compatibility</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-integration">Direct integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-with-nse-calculation">Comparing with NSE calculation</a></li>
@@ -596,7 +606,7 @@
 </div>
 <section id="nse-compatibility">
 <h2>NSE Compatibility<a class="headerlink" href="#nse-compatibility" title="Link to this heading">#</a></h2>
-<p>Previously, we have demonstrated the ability to compute an unique composition by solving the NSE equation given input, <span class="math notranslate nohighlight">\((\rho, T, Y_e)\)</span>.
+<p>Previously, we have demonstrated the ability to compute a unique composition by solving the NSE equation given input, <span class="math notranslate nohighlight">\((\rho, T, Y_e)\)</span>.
 Now the question arises on whether the equilibrium mass abundance obtained from integrating the reaction network will match, up to machine precision, with what is predicted from the NSE equation.
 To understand this, we need to revisit the assumptions made when deriving the NSE equation, i.e.</p>
 <ol class="arabic simple">
@@ -793,86 +803,33 @@ Is net compatible with NSE? True
 </section>
 <section id="direct-integration">
 <h2>Direct integration<a class="headerlink" href="#direct-integration" title="Link to this heading">#</a></h2>
-<p>Now we want to integrate.  Since we will compare to NSE, we want to use the same screening that NSE uses – <a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.potekhin_1998" title="pynucastro.screening.screen.potekhin_1998"><code class="xref py py-meth docutils literal notranslate"><span class="pre">potekhin_1998</span></code></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pynucastro.screening</span><span class="w"> </span><span class="kn">import</span> <span class="n">potekhin_1998</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>and we’ll integrate using <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> from <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code></p>
+<p>Now we want to integrate. For convenience, let’s use <a class="reference internal" href="pynucastro.networks.python_network.html#pynucastro.networks.python_network.PythonNetwork.integrate_network" title="pynucastro.networks.python_network.PythonNetwork.integrate_network"><code class="xref py py-meth docutils literal notranslate"><span class="pre">integrate_network</span></code></a>
+Since we will compare to NSE, we want to use the same screening that NSE uses – <a class="reference internal" href="pynucastro.screening.screen.html#pynucastro.screening.screen.potekhin_1998" title="pynucastro.screening.screen.potekhin_1998"><code class="xref py py-meth docutils literal notranslate"><span class="pre">potekhin_1998</span></code></a>. This can be enabled via <code class="docutils literal notranslate"><span class="pre">screen_method=&quot;potekhin_1998</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">importlib.util</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">integrate_network</span><span class="p">(</span><span class="n">tmax</span><span class="o">=</span><span class="mf">1.e-1</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">1e7</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">6e9</span><span class="p">,</span> <span class="n">initial_comp</span><span class="o">=</span><span class="s2">&quot;uniform&quot;</span><span class="p">,</span> 
+                            <span class="n">screen_method</span><span class="o">=</span><span class="s2">&quot;potekhin_1998&quot;</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">3.e-14</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">3.e-14</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We can write out python module that contains essential functions needed for integration, such as the <code class="docutils literal notranslate"><span class="pre">rhs</span></code> and <code class="docutils literal notranslate"><span class="pre">jacobian</span></code>.
-Set up an initial condition and let it evolve until we reach equilibrium.</p>
+<p>Let’s plot the evolution to see how mass fraction evolve with time via <a class="reference internal" href="pynucastro.networks.python_network.html#pynucastro.networks.python_network.PythonNetwork.plot_evolution" title="pynucastro.networks.python_network.PythonNetwork.plot_evolution"><code class="xref py py-meth docutils literal notranslate"><span class="pre">plot_evolution</span></code></a>. Equilibrium is indicated by flat lines.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">integrate_network</span><span class="p">(</span><span class="n">mynet</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">1e7</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">6e9</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">1.e-1</span><span class="p">):</span>
-
-    <span class="c1"># Write out the module for rhs, jacobian ...</span>
-    <span class="n">mynet</span><span class="o">.</span><span class="n">write_network</span><span class="p">(</span><span class="n">outfile</span><span class="o">=</span><span class="s2">&quot;network.py&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Load in the module</span>
-    <span class="n">spec</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">spec_from_file_location</span><span class="p">(</span><span class="s2">&quot;network&quot;</span><span class="p">,</span> <span class="s2">&quot;network.py&quot;</span><span class="p">)</span>
-    <span class="n">network</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">module_from_spec</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
-    <span class="n">spec</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">exec_module</span><span class="p">(</span><span class="n">network</span><span class="p">)</span>
-
-    <span class="c1"># Assume uniform composition as initial condition then integrate</span>
-    <span class="n">X0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">nnuc</span><span class="p">)</span>
-    <span class="n">X0</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X0</span><span class="p">)</span>
-    <span class="n">Y0</span> <span class="o">=</span> <span class="n">X0</span><span class="o">/</span><span class="n">network</span><span class="o">.</span><span class="n">A</span>
-
-    <span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">rhs</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">],</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BDF&quot;</span><span class="p">,</span>
-                    <span class="n">dense_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">potekhin_1998</span><span class="p">),</span>
-                    <span class="n">rtol</span><span class="o">=</span><span class="mf">3.e-14</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">3.e-14</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span><span class="n">network</span><span class="o">.</span><span class="n">jacobian</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">sol</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">integrate_network</span><span class="p">(</span><span class="n">net</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s plot the evolution to see how mass fraction evolve with time. Equilibrium is indicated by flat lines.</p>
-<div class="cell tag_nbval-ignore-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_evolution</span><span class="p">(</span><span class="n">mynet</span><span class="p">,</span> <span class="n">sol</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">1.e-1</span><span class="p">):</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">nuc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mynet</span><span class="o">.</span><span class="n">unique_nuclei</span><span class="p">):</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><span class="o">*</span><span class="n">nuc</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;X($</span><span class="si">{</span><span class="n">nuc</span><span class="o">.</span><span class="n">pretty</span><span class="si">}</span><span class="s2">$)&quot;</span><span class="p">)</span>
-
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">1e-16</span><span class="p">,</span> <span class="n">tmax</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;time [s]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mass fractions&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_evolution</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">sol</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">plot_evolution</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/69b38485aa2fdd342cebeebbd4a59cb1210da4f6775ec3e163a751b5142869be.png" src="_images/69b38485aa2fdd342cebeebbd4a59cb1210da4f6775ec3e163a751b5142869be.png" />
+<img alt="_images/2264f8e1c20661e3c2e767302cb71adbda56d60189925351fa8b1a25ba307a2a.png" src="_images/2264f8e1c20661e3c2e767302cb71adbda56d60189925351fa8b1a25ba307a2a.png" />
 </div>
 </div>
 </section>
@@ -952,6 +909,13 @@ graphically using the network <a class="reference internal" href="pynucastro.net
 and plotting the difference between the forward and reverse rates (<code class="docutils literal notranslate"><span class="pre">use_net_rate=True</span></code>).  We will also normalize
 by the total activity of the rate (forward + reverse) by doing <code class="docutils literal notranslate"><span class="pre">normalize_net_rate=True</span></code>.</p>
 <p>First we’ll convert the final composition from the integration into a pynucastro <a class="reference internal" href="pynucastro.networks.rate_collection.html#pynucastro.networks.rate_collection.Composition" title="pynucastro.networks.rate_collection.Composition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Composition</span></code></a>, keeping in mind that the network evolved molar fractions (<span class="math notranslate nohighlight">\(Y = X / A\)</span>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pynucastro.screening</span><span class="w"> </span><span class="kn">import</span> <span class="n">potekhin_1998</span> 
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_nbval-ignore-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="mf">1e7</span>
@@ -1025,14 +989,15 @@ Is net compatible with NSE? False
 But let’s verify it by integrating the network.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">integrate_network</span><span class="p">(</span><span class="n">net</span><span class="p">)</span>
-<span class="n">plot_evolution</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">sol</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">integrate_network</span><span class="p">(</span><span class="n">tmax</span><span class="o">=</span><span class="mf">1.e-1</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">1e7</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">6e9</span><span class="p">,</span> <span class="n">initial_comp</span><span class="o">=</span><span class="s2">&quot;uniform&quot;</span><span class="p">,</span> 
+                            <span class="n">screen_method</span><span class="o">=</span><span class="s2">&quot;potekhin_1998&quot;</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">3.e-14</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">3.e-14</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">plot_evolution</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
 <span class="n">NSE_comparison</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">sol</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5e377eb3f579aea0083b11a17dde74c4605f85722aa0d0c0ba6725883f15d378.png" src="_images/5e377eb3f579aea0083b11a17dde74c4605f85722aa0d0c0ba6725883f15d378.png" />
+<img alt="_images/487de6eedbc0668daeba6f0fd88c1ff085a9fc9f2db6073aee27451158dd110e.png" src="_images/487de6eedbc0668daeba6f0fd88c1ff085a9fc9f2db6073aee27451158dd110e.png" />
 <img alt="_images/e37f8e7a5af29d03375bd7debf370667916ad6dab83ed592ac7d1039ebc95fd4.png" src="_images/e37f8e7a5af29d03375bd7debf370667916ad6dab83ed592ac7d1039ebc95fd4.png" />
 </div>
 </div>
@@ -1105,18 +1070,19 @@ Is net compatible with NSE? True
 </div>
 </div>
 <p>We see that using the double neutron-capture approximation remains compatible with NSE.
-It reduces both the rank of the stoichiometric matrix and and the number of species by one, leaving nullity unchanged.
+It reduces both the rank of the stoichiometric matrix and the number of species by one, leaving nullity unchanged.
 Let’s verify its prediction by integrating the network.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">integrate_network</span><span class="p">(</span><span class="n">net</span><span class="p">)</span>
-<span class="n">plot_evolution</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">sol</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">integrate_network</span><span class="p">(</span><span class="n">tmax</span><span class="o">=</span><span class="mf">1.e-1</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">1e7</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">6e9</span><span class="p">,</span> <span class="n">initial_comp</span><span class="o">=</span><span class="s2">&quot;uniform&quot;</span><span class="p">,</span> 
+                            <span class="n">screen_method</span><span class="o">=</span><span class="s2">&quot;potekhin_1998&quot;</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">3.e-14</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">3.e-14</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">plot_evolution</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
 <span class="n">NSE_comparison</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">sol</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4ee6c86924817f78bf1af6186ec6a9a8c4d102251e6c99dba11b9535ffc4a779.png" src="_images/4ee6c86924817f78bf1af6186ec6a9a8c4d102251e6c99dba11b9535ffc4a779.png" />
+<img alt="_images/bee9f05b8b2a6e08bb840a7f5cca372a80d225339ffe25e80024fad55ab5349b.png" src="_images/bee9f05b8b2a6e08bb840a7f5cca372a80d225339ffe25e80024fad55ab5349b.png" />
 <img alt="_images/81aaa96ee52e66bd7396a1c5dfaf42fa44bb56fd1bd03c7ffcee0924ed385f9d.png" src="_images/81aaa96ee52e66bd7396a1c5dfaf42fa44bb56fd1bd03c7ffcee0924ed385f9d.png" />
 </div>
 </div>
@@ -1170,7 +1136,7 @@ Let’s verify its prediction by integrating the network.</p>
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nse-compatibility">NSE Compatibility</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-integration">Direct integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-with-nse-calculation">Comparing with NSE calculation</a></li>
@@ -1224,8 +1190,8 @@ By pynucastro development team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
 
   <footer class="bd-footer">
   </footer>
