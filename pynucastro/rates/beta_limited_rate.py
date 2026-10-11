@@ -86,6 +86,8 @@ class BetaLimitedRate(Rate):
         self.rate_eval_needs_rho = True
         self.rate_eval_needs_comp = True
 
+        self.rate_eval_needs_tfactors = False
+
         self._set_print_representation()
 
     def _set_screening(self):
