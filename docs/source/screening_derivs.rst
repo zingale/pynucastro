@@ -1,3 +1,5 @@
+.. _sec:screening_derivs:
+
 Screening composition derivatives
 =================================
 
